@@ -1,0 +1,19 @@
+phase,optimization,wavenumber_cm1,intensity_rel
+ice V,atomonly,188.200000,0.030621
+ice V,atomonly,859.800000,0.138762
+ice V,atomonly,1665.000000,0.069807
+ice V,atomonly,3331.400000,1.000000
+ice V,fullcell,248.400000,0.031445
+ice V,fullcell,936.000000,0.107360
+ice V,fullcell,1675.400000,0.055004
+ice V,fullcell,3128.000000,1.000000
+ice Ih,atomonly,185.400000,0.030890
+ice Ih,atomonly,970.200000,0.070108
+ice Ih,atomonly,1675.800000,0.030774
+ice Ih,atomonly,3248.200000,1.000000
+ice Ih,atomonly,3424.800000,0.085146
+ice Ih,fullcell,255.200000,0.029744
+ice Ih,fullcell,1100.200000,0.036720
+ice Ih,fullcell,1676.800000,0.014781
+ice Ih,fullcell,2940.200000,1.000000
+ice Ih,fullcell,3255.400000,0.026659
