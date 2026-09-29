@@ -43,6 +43,13 @@ BROADENING_FWHM = 100.0 #cm-1
 
 MAIN_SPECTRA = {"ice V": -160, "ice Ih": -165} # Temperatures in Degree
 
+# Transmission spectra (column labels in data/transmission) compared with the ATR main spectra
+TRANSMISSION_SPECTRA = {"ice V": "IceV_100K", "ice Ih": "IceIh_100K"}
+TRANS_BASELINE_LAM = 2e6
+TRANS_BASELINE_DIFF_ORDER = 3
+TRANS_BASELINE_DIFF_ORDER_OVERRIDE = {"ice Ih": 3}
+TRANS_SAVGOL_WINDOW, TRANS_SAVGOL_ORDER = 111, 5   # transmission data is noisier than ATR
+
 # XRD Settings
 XRD_WAVELENGTH = 1.5406 # Cu K-alpha wavelength in Angstroms
 XRD_RANGE = (1.7, 3.4) # Angstrom
@@ -72,6 +79,7 @@ SI_REGIONS = [("full", 500, 4000), ("stretching", 2800, 3600), ("combination", 2
               ("bending", 1000, 1800), ("libration", 500, 1000)]
  
 C_MEAS, C_BERTIE, C_CALC = "black", "darkorange", "royalblue"
+C_TRANS = "red"
  
 plt.rcParams.update({"font.size": 10, "axes.labelsize": 11, "legend.fontsize": 9,
                      "xtick.direction": "in", "ytick.direction": "in", "pdf.fonttype": 42})
@@ -161,6 +169,20 @@ def read_crystal_modes(path):
         print(f"  {Path(path).name}: {n_imag} imaginary mode(s) omitted")
     return df[df["frequency_cm1"] >= 0].reset_index(drop=True)
 
+def read_transmission(phase):
+    """Transmission spectra (stored as absorbance) -> {label: (temperature_K or None, wavenumber, absorbance)}."""
+    tag = {"ice V": "V", "ice Ih": "Ih"}[phase]
+    df = pd.read_csv(DATA / "transmission" / f"ice_{tag}_transmission.csv", sep=";", skiprows=4)
+    df = df.dropna(axis=1, how="all").sort_values(df.columns[0])   # drop trailing empty ;;; columns
+    x = df.iloc[:, 0].to_numpy()
+    spectra = {}
+    for col in df.columns[1:]:
+        m = re.search(r"T=(\d+(?:,\d+)?)|_(\d+)K$", col, re.I)
+        t_k = float((m[1] or m[2]).replace(",", ".")) if m else None
+        spectra[col] = (t_k, x, df[col].to_numpy(float))
+    return spectra
+
+
 
 """  
 Data Processing
@@ -188,6 +210,19 @@ def process_atr(wavenumber, absorbance, t_c):
         #TODO
         raise NotImplementedError("ATR correction not implemented yet")
     return x, y
+
+def process_transmission(wavenumber, absorbance, phase):
+    """
+    Same steps as process_atr (cutoff, Savitzky-Golay, irsqr baseline).
+    Returns wavenumber, corrected absorbance and the subtracted baseline.
+    """
+    m = wavenumber > IR_MIN_WAVENUMBER
+    x, y = wavenumber[m], absorbance[m]
+    y = savgol_filter(y, TRANS_SAVGOL_WINDOW, TRANS_SAVGOL_ORDER)
+    base, _ = Baseline(x_data=x).irsqr(y, lam=TRANS_BASELINE_LAM, quantile=BASELINE_QUANTILE,
+                                       diff_order=TRANS_BASELINE_DIFF_ORDER_OVERRIDE.get(
+                                           phase, TRANS_BASELINE_DIFF_ORDER))
+    return x, y - base, base
 
 def broaden(freqs, intensities, fwhm=BROADENING_FWHM):
     """
@@ -407,6 +442,38 @@ def ir_main_figure(processed, modes, spectra):
     save_table(pd.DataFrame(fwhm_rows), "table_ir_fwhm.csv")
 
 
+def ir_transmission_figure(processed, trans_raw, trans_processed):
+    """ATR main spectra (left axis) against the transmission spectra (right axis)."""
+    fig, axes = plt.subplots(2, 1, figsize=(7, 5.8), sharex=True)
+    for ax, (phase, t_c) in zip(axes, MAIN_SPECTRA.items()):
+        xm, ym = select(*processed[t_c][1:], 500, 4000)
+        xt, yt, _ = trans_processed[phase]
+        xt, yt = select(xt, yt, 500, 4000)
+        t_k = trans_raw[phase][0]
+
+        axt = ax.twinx()
+        h_t, = axt.plot(xt, normalize(yt), color=C_TRANS, lw=1.2)
+        axt.set_ylim(0, 105)
+        axt.tick_params(axis="y", labelcolor=C_TRANS, color=C_TRANS)
+        axt.spines["right"].set_color(C_TRANS)
+
+        h_m, = ax.plot(xm, normalize(ym), color=C_MEAS, lw=1.2)
+        ax.set_xlim(4000, 500)
+        ax.set_ylim(0, 105)
+        ax.set_title(phase.replace("Ih", r"I$_\mathrm{h}$"))
+        ax.grid(True, color="0.9")
+        ax.set_zorder(axt.get_zorder() + 1)
+        ax.patch.set_visible(False)
+        ax.legend([h_m, h_t], [f"ATR, {kelvin(t_c)}", f"Transmission, {t_k:.0f} K"],
+                  loc="upper right", framealpha=0.9, edgecolor="0.8")
+    axes[-1].set_xlabel(r"Wavenumber (cm$^{-1}$)")
+    fig.tight_layout()
+    fig.supylabel(y_label(), x=-0.005, fontsize=11)
+    fig.text(1.0, 0.5, "Normalized transmission (%)", color=C_TRANS, rotation=270,
+             va="center", ha="left", fontsize=11)
+    save(fig, "fig_ir_atr_vs_transmission")
+
+
 def ir_temperature_series(processed):
     for name, lo, hi in SI_REGIONS:
         fig, axes = plt.subplots(3, 1, figsize=(7, 7.8), sharex=True)
@@ -509,7 +576,54 @@ def baseline_check(raw):
     for ax in axes.flat[len(temps):]:
         ax.axis("off")
     fig.tight_layout()
-    save(fig, "check_baselines")    
+    save(fig, "check_baselines")
+
+
+def transmission_check(phase):
+    """Raw transmission spectra of one phase, one panel per spectrum, to check for any issues."""
+    trans = read_transmission(phase)
+    rows = int(np.ceil(len(trans) / 3))
+    fig, axes = plt.subplots(rows, 3, figsize=(11, 2.2 * rows), sharex=True, squeeze=False)
+    for ax, (label, (t_k, x, y)) in zip(axes.flat, trans.items()):
+        m = x > IR_MIN_WAVENUMBER
+        ax.plot(x[m], y[m], "k", lw=0.8)
+        ax.set_title(label if t_k is None else f"{label}  ({t_k:.0f} K)", fontsize=9)
+        ax.set_xlim(4000, IR_MIN_WAVENUMBER)
+        ax.grid(alpha=0.3)
+    for ax in axes.flat[len(trans):]:
+        ax.axis("off")
+    for ax in axes.flat[max(0, len(trans) - 3):len(trans)]:   # lowest panel in each column
+        ax.tick_params(labelbottom=True)
+        ax.set_xlabel(r"Wavenumber (cm$^{-1}$)")
+    fig.supylabel("Absorbance")
+    fig.tight_layout()
+    save(fig, f"check_transmission_{phase.replace(' ', '')}")
+
+
+def transmission_baseline_check(trans_raw, trans_processed):
+    """Raw and smoothed transmission spectra with their baselines (left), corrected spectra (right)."""
+    fig, axes = plt.subplots(len(trans_processed), 2, figsize=(10, 3 * len(trans_processed)),
+                             sharex=True, squeeze=False)
+    for (ax_b, ax_c), (phase, (x, y, base)) in zip(axes, trans_processed.items()):
+        label = TRANSMISSION_SPECTRA[phase]
+        _, xr, yr = trans_raw[phase]
+        m = xr > IR_MIN_WAVENUMBER
+        ax_b.plot(xr[m], yr[m], color="0.75", lw=0.6, label="raw")
+        ax_b.plot(x, y + base, "k", lw=0.9, label="smoothed")
+        ax_b.plot(x, base, "r", lw=1.0, label="baseline")
+        ax_b.set_title(f"{phase}: {label}", fontsize=9)
+        ax_b.legend(fontsize=7, frameon=False)
+        ax_c.plot(x, y, "k", lw=0.9)
+        ax_c.axhline(0, color="r", lw=0.6, ls="--")
+        ax_c.set_title(f"{phase}: baseline corrected", fontsize=9)
+        for ax in (ax_b, ax_c):
+            ax.set_xlim(4000, IR_MIN_WAVENUMBER)
+            ax.grid(alpha=0.3)
+    for ax in axes[-1]:
+        ax.set_xlabel(r"Wavenumber (cm$^{-1}$)")
+    fig.supylabel("Absorbance")
+    fig.tight_layout()
+    save(fig, "check_transmission_baselines")
 
 
 def main():
@@ -532,6 +646,18 @@ def main():
     ir_temperature_series(processed)
     band_centre_figures(processed)
     baseline_check(raw)
+
+    # Import transmission spectra and check for issues
+    for phase in MAIN_SPECTRA:
+        transmission_check(phase)
+
+    print("Processing transmission spectra...")
+    trans_raw = {phase: read_transmission(phase)[label] for phase, label in TRANSMISSION_SPECTRA.items()}
+    trans_processed = {phase: process_transmission(x, a, phase) for phase, (_, x, a) in trans_raw.items()}
+    transmission_baseline_check(trans_raw, trans_processed)
+    ir_transmission_figure(processed, trans_raw, trans_processed)
+
+
     print("Analysis complete.")
     
 if __name__ == "__main__":
