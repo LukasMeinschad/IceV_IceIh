@@ -1,86 +1,86 @@
 import re
 from pathlib import Path
 
-
-
-import os
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
-from scipy.signal import savgol_filter, peak_widths, find_peaks
 from pybaselines import Baseline
 from scipy.optimize import curve_fit
-import numpy as np
+from scipy.signal import savgol_filter, peak_widths, find_peaks
 
 """
-General Settings
+Settings
 """
-# PATH Settings
-HERE = Path(__file__).resolve().parent 
+# ---------------------------------------------------------------- Paths
+HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
 OUT = HERE / "out"
 
+# ----------------------------------------------------------------
+MAIN_SPECTRA = {"ice V": ("IceV", -160), "ice Ih": ("Ih", -160)}
 
+SEPARATE_ATR = [("Ih", -160), ("Ih", -165)]
 
-USE_KUBELKA_MUNK = False
-
-ATR_CORRECTION = False  
-
-IR_MIN_WAVENUMBER = 500
-
-
-# Spectral Correction Plots
-SAVGOL_WINDOW, SAVGOL_ORDER = 81, 5
-BASELINE_LAM = 1e8
-BASELINE_LAM_OVERRIDE = {-165: 1e8}
-BASELINE_DIFF_ORDER = 3
-BASELINE_DIFF_ORDER_OVERRIDE = {-165: 2} # stiffer baseline for ice Ih so it does not bend into the plateau
-BASELINE_QUANTILE = 0.05
-
-# Broadening for Simulated Spectra
-BROADENING_FWHM = 100.0 #cm-1
-
-
-MAIN_SPECTRA = {"ice V": -160, "ice Ih": -165} # Temperatures in Degree
-
-# Transmission spectra (column labels in data/transmission) compared with the ATR main spectra
 TRANSMISSION_SPECTRA = {"ice V": "IceV_100K", "ice Ih": "IceIh_100K"}
+
+GROUPS = [
+    ("ice I$_\\mathrm{h}$", "Ih", (-160, -160), None),
+    ("ice V, 113$-$158 K", "IceV", (-160, -115),
+     ["#00001a", "#000080", "#0000CD", "#3366FF", "#66B2FF", "#B3E0FF"]),
+    ("ice V, 163$-$193 K", "IceV", (-110, -80),
+     ["#002200", "#006400", "#228B22", "#4CAF50", "#8BC34A", "#C8E6A0"]),
+]
+
+# ---------------------------------------------------------------- ATR processing
+IR_MIN_WAVENUMBER = 500      # cm^-1, everything below is cut off
+USE_KUBELKA_MUNK = False     # convert absorbance to the Kubelka-Munk function
+ATR_CORRECTION = False       # not implemented yet
+
+SAVGOL_WINDOW, SAVGOL_ORDER = 81, 5
+
+# irsqr baseline (pybaselines). The overrides are keyed by (phase, temperature in °C).
+BASELINE_QUANTILE = 0.05
+BASELINE_LAM = 1e8
+BASELINE_LAM_OVERRIDE = {}
+BASELINE_DIFF_ORDER = 3
+BASELINE_DIFF_ORDER_OVERRIDE = {("Ih", -160): 2, ("Ih", -165): 2}
+
+# ---------------------------------------------------------------- Transmission processing
+TRANS_SAVGOL_WINDOW, TRANS_SAVGOL_ORDER = 111, 5   # transmission data is noisier
 TRANS_BASELINE_LAM = 2e6
 TRANS_BASELINE_DIFF_ORDER = 3
-TRANS_BASELINE_DIFF_ORDER_OVERRIDE = {"ice Ih": 3}
-TRANS_SAVGOL_WINDOW, TRANS_SAVGOL_ORDER = 111, 5   # transmission data is noisier than ATR
+TRANS_BASELINE_DIFF_ORDER_OVERRIDE = {"ice Ih": 3}   
 
-# XRD Settings
-XRD_WAVELENGTH = 1.5406 # Cu K-alpha wavelength in Angstroms
-XRD_RANGE = (1.7, 3.4) # Angstrom
-XRD_SIGMA = 0.001 # Width to draw simulated peaks 
-XRD_MERGE_TOL = 0.05 # Reflections within this d-spacing tolerance are merged
+# ---------------------------------------------------------------- DFT spectra
+BROADENING_FWHM = 100.0 
 
-
-XRD_LITERATURE = { 
-    "Bertie et al. (1963)": [3.02, 2.82, 2.65, 2.43, 2.29, 2.19, 2.05, 1.96, 1.88, 1.78, 1.72, 1.63, 1.56, 1.49, 1.44, 1.38, 1.29],
-    "Kamb et al. (1967)": [3.03, 2.93, 2.86, 2.75, 2.68, 2.52, 2.45, 2.40, 2.29, 2.05],
-    "Salzmann et al. (2021)": [3.01, 2.98, 2.91, 2.84, 2.73, 2.65, 2.50, 2.43, 2.30, 1.57]
-}
-
-# Fit Regions for Gaussians
+# ---------------------------------------------------------------- Band analysis (regions in cm^-1)
 FIT_REGIONS = {"stretching": (3000, 3500), "bending": (1200, 1800), "libration": (550, 1000)}
+
 FWHM_REGIONS = {"stretching": (2800, 4000), "combination": (2000, 2600),
                 "bending": (1000, 1800), "libration": (500, 1000)}
 
-GROUPS = [
-    ("ice I$_\\mathrm{h}$, recooled", (-165, -165), None),
-    ("ice V, 113$-$158 K", (-160, -115),
-     ["#00001a", "#000080", "#0000CD", "#3366FF", "#66B2FF", "#B3E0FF"]),
-    ("ice V, 163$-$193 K", (-110, -80),
-     ["#002200", "#006400", "#228B22", "#4CAF50", "#8BC34A", "#C8E6A0"]),
-]
 SI_REGIONS = [("full", 500, 4000), ("stretching", 2800, 3600), ("combination", 2000, 2600),
               ("bending", 1000, 1800), ("libration", 500, 1000)]
- 
-C_MEAS, C_BERTIE, C_CALC = "black", "darkorange", "royalblue"
-C_TRANS = "red"
- 
+
+# ---------------------------------------------------------------- XRD
+XRD_WAVELENGTH = 1.5406      # Å, Cu K-alpha
+XRD_RANGE = (1.7, 3.4)       # Å, plotted d-spacing range
+XRD_SIGMA = 0.001            # Å, width of the simulated peaks
+XRD_MERGE_TOL = 0.05         # Å, reflections closer than this are merged
+
+# literature d-spacings of ice V in Å
+XRD_LITERATURE = {
+    "Bertie et al. (1963)": [3.02, 2.82, 2.65, 2.43, 2.29, 2.19, 2.05, 1.96, 1.88, 1.78, 1.72,
+                             1.63, 1.56, 1.49, 1.44, 1.38, 1.29],
+    "Kamb et al. (1967)": [3.03, 2.93, 2.86, 2.75, 2.68, 2.52, 2.45, 2.40, 2.29, 2.05],
+    "Salzmann et al. (2021)": [3.01, 2.98, 2.91, 2.84, 2.73, 2.65, 2.50, 2.43, 2.30, 1.57],
+}
+
+# ---------------------------------------------------------------- Plot style
+C_MEAS, C_BERTIE, C_CALC, C_TRANS = "black", "darkorange", "royalblue", "red"
+
 plt.rcParams.update({"font.size": 10, "axes.labelsize": 11, "legend.fontsize": 9,
                      "xtick.direction": "in", "ytick.direction": "in", "pdf.fonttype": 42})
 
@@ -127,17 +127,27 @@ def y_label():
 """  
 Data READ
 """
+def read_atr_file(path):
+    """Return (phase, temperature_degC, wavenumber, absorbance), or None for an unexpected file name."""
+    m = re.match(r"^([A-Za-z]+)_(-?\d+)_\d+_scans_\d+\.csv$", path.name)
+    if not m:
+        return None
+    df = pd.read_csv(path, sep=";", decimal=",", skiprows=1, encoding="utf-8-sig")
+    df = df.iloc[:, :2].sort_values(df.columns[0])
+    return m[1], int(m[2]), df.iloc[:, 0].to_numpy(), df.iloc[:, 1].to_numpy()
+
 def read_atr_spectra():
-    """Return {temperature_degC: (phase, wavenumber, absorbance)}."""
+    """Return {(phase, temperature_degC): (phase, wavenumber, absorbance)}."""
     spectra = {}
     for path in sorted((DATA / "atr").glob("*.csv")):
-        m = re.match(r"^([A-Za-z]+)_(-?\d+)_\d+_scans_\d+\.csv$", path.name)
-        if not m:
+        res = read_atr_file(path)
+        if res is None:
             print(f"  skipping {path.name} (unexpected name)")
             continue
-        df = pd.read_csv(path, sep=";", decimal=",", skiprows=1, encoding="utf-8-sig")
-        df = df.iloc[:, :2].sort_values(df.columns[0])
-        spectra[int(m[2])] = (m[1], df.iloc[:, 0].to_numpy(), df.iloc[:, 1].to_numpy())
+        phase, t_c, x, a = res
+        if (phase, t_c) in spectra:
+            raise ValueError(f"{path.name}: second {phase} spectrum at {t_c} °C")
+        spectra[(phase, t_c)] = (phase, x, a)
     return dict(sorted(spectra.items()))
 
 def read_bertie(phase):
@@ -188,7 +198,7 @@ def read_transmission(phase):
 Data Processing
 """
 
-def process_atr(wavenumber, absorbance, t_c):
+def process_atr(wavenumber, absorbance, key):
     """
     Follow the steps in the paper
     1. Remove low wavenumber region (below 500 cm^-1)
@@ -202,9 +212,9 @@ def process_atr(wavenumber, absorbance, t_c):
         r = 10.0 ** (-y)
         y = (1 - r) ** 2 / (2 * r)
     y = savgol_filter(y, SAVGOL_WINDOW, SAVGOL_ORDER)
-    lam = BASELINE_LAM_OVERRIDE.get(t_c, BASELINE_LAM)
+    lam = BASELINE_LAM_OVERRIDE.get(key, BASELINE_LAM)
     base, _ = Baseline(x_data=x).irsqr(y, lam=lam, quantile=BASELINE_QUANTILE,
-                                       diff_order=BASELINE_DIFF_ORDER_OVERRIDE.get(t_c, BASELINE_DIFF_ORDER))
+                                       diff_order=BASELINE_DIFF_ORDER_OVERRIDE.get(key, BASELINE_DIFF_ORDER))
     y = y - base
     if ATR_CORRECTION and not USE_KUBELKA_MUNK:
         #TODO
@@ -258,10 +268,12 @@ def fit_band(x, y, window):
     return dict(popt=popt, center=popt[1], fwhm=popt[2], r2=r2, x=xr, y=yr)
 
 
-def band_fwhm(x, y, label):
-    """Peak positions and FWHM at half height in each FWHM region."""
+def band_fwhm(x, y, label, shift=True):
+    """Peak positions and FWHM at half height in each FWHM region.
+    shift=False scales to the maximum only (baseline-corrected spectra)."""
     order = np.argsort(x)
-    x, y = np.asarray(x)[order], normalize(np.asarray(y)[order]) / 100
+    x, y = np.asarray(x)[order], np.asarray(y, float)[order]
+    y = normalize(y) / 100 if shift else y / np.nanmax(y)
     rows = []
     for region, (lo, hi) in FWHM_REGIONS.items():
         xr, yr = select(x, y, lo, hi)
@@ -399,13 +411,14 @@ def dft_figures():
 def ir_main_figure(processed, modes, spectra):
     fig, axes = plt.subplots(2, 1, figsize=(7, 5.8), sharex=True)
     fwhm_rows = []
-    for ax, (phase, t_c) in zip(axes, MAIN_SPECTRA.items()):
-        xm, ym = processed[t_c][1:]
+    for ax, (phase, key) in zip(axes, MAIN_SPECTRA.items()):
+        t_c = key[1]
+        xm, ym = processed[key][1:]
         xb, yb = read_bertie(phase)
         xc, yc = spectra[(phase, "atomonly")]
         df = modes[(phase, "atomonly")]
  
-        fwhm_rows += band_fwhm(xm, ym, f"{phase} this work {kelvin(t_c)}")
+        fwhm_rows += band_fwhm(xm, ym, f"{phase} this work {kelvin(t_c)}", shift=False)
         fwhm_rows += band_fwhm(xb, yb, f"{phase} Bertie and Whalley")
         fwhm_rows += band_fwhm(xc, yc, f"{phase} HSEsol")
  
@@ -423,7 +436,7 @@ def ir_main_figure(processed, modes, spectra):
         xb, yb = select(xb, yb, 500, 4000)
         xm, ym = select(xm, ym, 500, 4000)
         h_b, = ax.plot(xb, normalize(yb), color=C_BERTIE, ls="--", lw=1.2)
-        h_m, = ax.plot(xm, normalize(ym), color=C_MEAS, lw=1.2)
+        h_m, = ax.plot(xm, 100 * ym / ym.max(), color=C_MEAS, lw=1.2)   # baseline corrected: no minimum shift
         ax.set_xlim(4000, 500)
         ax.set_ylim(0, 105)
         ax.set_title(phase.replace("Ih", r"I$_\mathrm{h}$"))
@@ -432,7 +445,7 @@ def ir_main_figure(processed, modes, spectra):
         ax.patch.set_visible(False)
         ax.legend([h_m, h_b, h_c], [f"This work, {kelvin(t_c)}", "Bertie and Whalley (1964)",
                                     "HSEsol/POB-TZVP (harmonic)"],
-                  loc="upper right", framealpha=0.9, edgecolor="0.8")
+                  loc="upper center", framealpha=0.9, edgecolor="0.8")
     axes[-1].set_xlabel(r"Wavenumber (cm$^{-1}$)")
     fig.tight_layout()
     fig.supylabel(y_label(), x=-0.005, fontsize=11)
@@ -442,11 +455,56 @@ def ir_main_figure(processed, modes, spectra):
     save_table(pd.DataFrame(fwhm_rows), "table_ir_fwhm.csv")
 
 
+def ir_main_figure_ih_comparison(processed, modes, spectra):
+    """FOR DISCUSSION ONLY, remove later: main figure with both ice Ih measurements in the ice Ih panel."""
+    measured = {"ice V": [(MAIN_SPECTRA["ice V"], C_MEAS)],
+                "ice Ih": [(("Ih", -160), C_MEAS), (("Ih", -165), "crimson")]}
+    fig, axes = plt.subplots(2, 1, figsize=(7, 5.8), sharex=True)
+    for ax, (phase, curves) in zip(axes, measured.items()):
+        xb, yb = select(*read_bertie(phase), 500, 4000)
+        xc, yc = select(*spectra[(phase, "atomonly")], 500, 4000)
+        df = modes[(phase, "atomonly")]
+
+        axc = ax.twinx()
+        f, s = df["frequency_cm1"].to_numpy(), df["ir_intensity"].to_numpy()
+        ok = (f >= 500) & (f <= 4000)
+        axc.vlines(f[ok], 0, 100 * s[ok] / s[ok].max(), color=C_CALC, lw=0.6, alpha=0.45)
+        h_c, = axc.plot(xc, 100 * yc / yc.max(), color=C_CALC, lw=1.2)
+        axc.fill_between(xc, 0, 100 * yc / yc.max(), color=C_CALC, alpha=0.15)
+        axc.set_ylim(0, 105)
+        axc.tick_params(axis="y", labelcolor=C_CALC, color=C_CALC)
+        axc.spines["right"].set_color(C_CALC)
+
+        h_b, = ax.plot(xb, normalize(yb), color=C_BERTIE, ls="--", lw=1.2)
+        handles, labels = [], []
+        for key, color in curves:
+            xm, ym = select(*processed[key][1:], 500, 4000)
+            h_m, = ax.plot(xm, 100 * ym / ym.max(), color=color, lw=1.2)
+            handles.append(h_m)
+            labels.append(f"This work, {kelvin(key[1])}")
+        ax.set_xlim(4000, 500)
+        ax.set_ylim(0, 105)
+        ax.set_title(phase.replace("Ih", r"I$_\mathrm{h}$"))
+        ax.grid(True, color="0.9")
+        ax.set_zorder(axc.get_zorder() + 1)
+        ax.patch.set_visible(False)
+        ax.legend([*handles, h_b, h_c], [*labels, "Bertie and Whalley (1964)",
+                                         "HSEsol/POB-TZVP (harmonic)"],
+                  loc="upper center", framealpha=0.9, edgecolor="0.8")
+    axes[-1].set_xlabel(r"Wavenumber (cm$^{-1}$)")
+    fig.tight_layout()
+    fig.supylabel(y_label(), x=-0.005, fontsize=11)
+    fig.text(1.0, 0.5, "Normalized IR intensity (%)", color=C_CALC, rotation=270,
+             va="center", ha="left", fontsize=11)
+    save(fig, "discussion_ir_main_ih_comparison")
+
+
 def ir_transmission_figure(processed, trans_raw, trans_processed):
     """ATR main spectra (left axis) against the transmission spectra (right axis)."""
     fig, axes = plt.subplots(2, 1, figsize=(7, 5.8), sharex=True)
-    for ax, (phase, t_c) in zip(axes, MAIN_SPECTRA.items()):
-        xm, ym = select(*processed[t_c][1:], 500, 4000)
+    for ax, (phase, key) in zip(axes, MAIN_SPECTRA.items()):
+        t_c = key[1]
+        xm, ym = select(*processed[key][1:], 500, 4000)
         xt, yt, _ = trans_processed[phase]
         xt, yt = select(xt, yt, 500, 4000)
         t_k = trans_raw[phase][0]
@@ -457,7 +515,7 @@ def ir_transmission_figure(processed, trans_raw, trans_processed):
         axt.tick_params(axis="y", labelcolor=C_TRANS, color=C_TRANS)
         axt.spines["right"].set_color(C_TRANS)
 
-        h_m, = ax.plot(xm, normalize(ym), color=C_MEAS, lw=1.2)
+        h_m, = ax.plot(xm, 100 * ym / ym.max(), color=C_MEAS, lw=1.2)   # baseline corrected: no minimum shift
         ax.set_xlim(4000, 500)
         ax.set_ylim(0, 105)
         ax.set_title(phase.replace("Ih", r"I$_\mathrm{h}$"))
@@ -465,7 +523,7 @@ def ir_transmission_figure(processed, trans_raw, trans_processed):
         ax.set_zorder(axt.get_zorder() + 1)
         ax.patch.set_visible(False)
         ax.legend([h_m, h_t], [f"ATR, {kelvin(t_c)}", f"Transmission, {t_k:.0f} K"],
-                  loc="upper right", framealpha=0.9, edgecolor="0.8")
+                  loc="upper center", framealpha=0.9, edgecolor="0.8")
     axes[-1].set_xlabel(r"Wavenumber (cm$^{-1}$)")
     fig.tight_layout()
     fig.supylabel(y_label(), x=-0.005, fontsize=11)
@@ -477,8 +535,8 @@ def ir_transmission_figure(processed, trans_raw, trans_processed):
 def ir_temperature_series(processed):
     for name, lo, hi in SI_REGIONS:
         fig, axes = plt.subplots(3, 1, figsize=(7, 7.8), sharex=True)
-        for ax, (title, (t_lo, t_hi), colors) in zip(axes, GROUPS):
-            temps = [t for t in processed if t_lo <= t <= t_hi]
+        for ax, (title, group_phase, (t_lo, t_hi), colors) in zip(axes, GROUPS):
+            temps = [t for ph, t in processed if ph == group_phase and t_lo <= t <= t_hi]
             if colors:
                 cmap = LinearSegmentedColormap.from_list(title, colors)
                 cols = cmap(np.linspace(0, 1, len(temps)) if len(temps) > 1 else [0.5])
@@ -486,7 +544,7 @@ def ir_temperature_series(processed):
                 cols = ["black"] * len(temps)
             top = 1
             for t, c in zip(temps, cols):
-                _, x, y = processed[t]
+                _, x, y = processed[(group_phase, t)]
                 x, y = select(x, 100 * y / y.max(), lo, hi)   # normalized to the full spectrum
                 ax.plot(x, y, color=c, lw=1.1, label=kelvin(t))
                 top = max(top, y.max())
@@ -503,7 +561,8 @@ def ir_temperature_series(processed):
  
 def band_centre_figures(processed):
     rows, example = [], {}
-    for t, (phase, x, y) in processed.items():
+    for key, (phase, x, y) in processed.items():
+        t = key[1]
         y = 100 * y / y.max()
         for region, window in FIT_REGIONS.items():
             res = fit_band(x, y, window)
@@ -512,7 +571,7 @@ def band_centre_figures(processed):
                              center_cm1=res["center"] if res else np.nan,
                              fwhm_fit_cm1=res["fwhm"] if res else np.nan,
                              r2=res["r2"] if res else np.nan))
-            if t == MAIN_SPECTRA["ice V"]:
+            if key == MAIN_SPECTRA["ice V"]:
                 example[region] = res
     centres = pd.DataFrame(rows)
     save_table(centres, "table_band_centres.csv")
@@ -520,7 +579,7 @@ def band_centre_figures(processed):
     # band centre vs temperature (ice V only)
     colors = {"stretching": "#1f4e8c", "bending": "#c0392b", "libration": "#2e8b57"}
     fig, axes = plt.subplots(1, 3, figsize=(10, 3.2))
-    icev = centres[centres["temperature_C"] != MAIN_SPECTRA["ice Ih"]]
+    icev = centres[centres["phase"] == MAIN_SPECTRA["ice V"][0]]
     for ax, (region, (lo, hi)) in zip(axes, FIT_REGIONS.items()):
         d = icev[icev["region"] == region].sort_values("temperature_K")
         ax.plot(d["temperature_K"], d["center_cm1"], "o--", color=colors[region], ms=4, lw=0.8)
@@ -540,7 +599,7 @@ def band_centre_figures(processed):
             continue
         xf = np.linspace(lo, hi, 600)
         ax.plot(res["x"], res["y"], color="royalblue", lw=1.2,
-                label=f"ATR, {kelvin(MAIN_SPECTRA['ice V'])}")
+                label=f"ATR, {kelvin(MAIN_SPECTRA['ice V'][1])}")
         ax.plot(xf, pseudo_voigt(xf, *res["popt"]), color="red", lw=1, label="pseudo-Voigt fit")
         ax.axvline(res["center"], color="green", ls="--", lw=0.8,
                    label=f"centre {res['center']:.1f} cm$^{{-1}}$")
@@ -559,16 +618,17 @@ def baseline_check(raw):
     temps = list(raw)
     fig, axes = plt.subplots(int(np.ceil(len(temps) / 3)), 3,
                              figsize=(11, 2.2 * np.ceil(len(temps) / 3)), sharex=True)
-    for ax, t in zip(axes.flat, temps):
-        phase, x, a = raw[t]
+    for ax, key in zip(axes.flat, temps):
+        phase, x, a = raw[key]
+        t = key[1]
         m = x > IR_MIN_WAVENUMBER
         x, y = x[m], a[m]
         if USE_KUBELKA_MUNK:
             y = (1 - 10.0 ** -y) ** 2 / (2 * 10.0 ** -y)
         y = savgol_filter(y, SAVGOL_WINDOW, SAVGOL_ORDER)
-        base, _ = Baseline(x_data=x).irsqr(y, lam=BASELINE_LAM_OVERRIDE.get(t, BASELINE_LAM),
+        base, _ = Baseline(x_data=x).irsqr(y, lam=BASELINE_LAM_OVERRIDE.get(key, BASELINE_LAM),
                                            quantile=BASELINE_QUANTILE,
-                                           diff_order=BASELINE_DIFF_ORDER_OVERRIDE.get(t, BASELINE_DIFF_ORDER))
+                                           diff_order=BASELINE_DIFF_ORDER_OVERRIDE.get(key, BASELINE_DIFF_ORDER))
         ax.plot(x, y, "k", lw=0.8)
         ax.plot(x, base, "r", lw=0.8)
         ax.set_title(f"{phase} {kelvin(t)}", fontsize=9)
@@ -577,6 +637,38 @@ def baseline_check(raw):
         ax.axis("off")
     fig.tight_layout()
     save(fig, "check_baselines")
+
+
+def separate_atr_figures(raw, processed):
+    """Each SEPARATE_ATR spectrum on its own: smoothed with baseline (top), corrected (bottom)."""
+    for key in SEPARATE_ATR:
+        phase, t_c = key
+        _, xr, a = raw[key]
+        _, x, y = processed[key]
+        tag = f"{phase}_{kelvin(t_c).replace(' ', '')}"
+
+        m = xr > IR_MIN_WAVENUMBER
+        ys = a[m]
+        if USE_KUBELKA_MUNK:
+            ys = (1 - 10.0 ** -ys) ** 2 / (2 * 10.0 ** -ys)
+        ys = savgol_filter(ys, SAVGOL_WINDOW, SAVGOL_ORDER)
+
+        fig, (ax_b, ax_c) = plt.subplots(2, 1, figsize=(7, 5.8), sharex=True)
+        ax_b.plot(x, ys, "k", lw=0.9, label="smoothed")
+        ax_b.plot(x, ys - y, "r", lw=1.0, label="baseline")
+        ax_b.set_ylabel("Absorbance")
+        ax_b.legend(frameon=False)
+        xs, yc = select(x, y, 500, 4000)
+        ax_c.plot(xs, 100 * yc / yc.max(), color=C_MEAS, lw=1.2)   # no minimum shift: negative edge below ~560 cm^-1
+        ax_c.set_ylim(0, 105)
+        ax_c.set_ylabel(y_label())
+        ax_c.set_xlabel(r"Wavenumber (cm$^{-1}$)")
+        ax_b.set_title(phase.replace("Ih", r"ice I$_\mathrm{h}$") + f", {kelvin(t_c)}")
+        for ax in (ax_b, ax_c):
+            ax.set_xlim(4000, 500)
+            ax.grid(True, color="0.9")
+        fig.tight_layout()
+        save(fig, f"fig_ir_{tag}")
 
 
 def transmission_check(phase):
@@ -636,16 +728,18 @@ def main():
 
     print("Processing ATR spectra...")
     raw = read_atr_spectra()
-    processed = {t: (ph, *process_atr(x, a, t)) for t, (ph, x, a) in raw.items()}
-    table = pd.DataFrame({"wavenumber_cm-1": processed[next(iter(processed))][1]})
-    for t, (ph, x, y) in processed.items():
-        table[f"{ph}_{kelvin(t).replace(' ', '')}"] = y
-    save_table(table, "table_atr_processed.csv")
+    processed = {key: (ph, *process_atr(x, a, key)) for key, (ph, x, a) in raw.items()}
+    # spectra can cover different wavenumber ranges -> align on the wavenumber
+    table = pd.concat({f"{ph}_{kelvin(t).replace(' ', '')}": pd.Series(y, index=x)
+                       for (ph, t), (_, x, y) in processed.items()}, axis=1)
+    save_table(table.sort_index().rename_axis("wavenumber_cm-1").reset_index(), "table_atr_processed.csv")
 
     ir_main_figure(processed, modes, spectra)
+    ir_main_figure_ih_comparison(processed, modes, spectra)   # discussion only, remove later
     ir_temperature_series(processed)
     band_centre_figures(processed)
     baseline_check(raw)
+    separate_atr_figures(raw, processed)
 
     # Import transmission spectra and check for issues
     for phase in MAIN_SPECTRA:

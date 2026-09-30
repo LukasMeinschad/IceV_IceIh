@@ -1,10 +1,10 @@
 spectrum,region,position_cm1,height_rel,fwhm_cm1
 ice V this work 113 K,stretching,3226.000000,1.000000,209.506117
-ice V this work 113 K,combination,2315.000000,0.122541,16.423322
-ice V this work 113 K,combination,2355.500000,0.251398,21.129695
-ice V this work 113 K,bending,1633.500000,0.162095,391.737092
-ice V this work 113 K,libration,666.000000,0.473491,347.389382
-ice V this work 113 K,libration,816.000000,0.441438,124.729626
+ice V this work 113 K,combination,2315.000000,0.078850,16.423322
+ice V this work 113 K,combination,2355.500000,0.214123,21.129695
+ice V this work 113 K,bending,1633.500000,0.120374,391.737092
+ice V this work 113 K,libration,666.000000,0.447274,347.389382
+ice V this work 113 K,libration,816.000000,0.413625,124.729626
 ice V Bertie and Whalley,stretching,3283.800000,1.000000,352.524804
 ice V Bertie and Whalley,combination,2270.600000,0.202310,248.417760
 ice V Bertie and Whalley,bending,1695.600000,0.256673,166.000730
@@ -13,10 +13,13 @@ ice V Bertie and Whalley,libration,696.700000,0.677428,193.834387
 ice V HSEsol,stretching,3331.400000,1.000000,173.413763
 ice V HSEsol,bending,1665.000000,0.069807,134.986548
 ice V HSEsol,libration,859.800000,0.138762,164.891631
-ice Ih this work 108 K,stretching,3111.500000,1.000000,232.021329
-ice Ih this work 108 K,combination,2417.000000,0.222014,24.355791
-ice Ih this work 108 K,bending,1504.500000,0.186173,298.408742
-ice Ih this work 108 K,libration,820.000000,0.557969,202.792416
+ice Ih this work 113 K,stretching,3203.500000,1.000000,228.240711
+ice Ih this work 113 K,combination,2413.000000,0.322027,49.132428
+ice Ih this work 113 K,bending,1481.000000,0.123640,238.210612
+ice Ih this work 113 K,libration,516.000000,-0.181943,11.127608
+ice Ih this work 113 K,libration,591.500000,0.240404,12.271273
+ice Ih this work 113 K,libration,617.000000,0.242491,13.717500
+ice Ih this work 113 K,libration,821.000000,0.917935,197.536252
 ice Ih Bertie and Whalley,stretching,3259.000000,1.000000,373.064554
 ice Ih Bertie and Whalley,bending,1613.000000,0.206224,106.711049
 ice Ih Bertie and Whalley,libration,605.000000,0.179158,60.323462
