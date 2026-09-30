@@ -4,9 +4,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib.colors import LinearSegmentedColormap
 from pybaselines import Baseline
-from scipy.optimize import curve_fit
 from scipy.signal import savgol_filter, peak_widths, find_peaks
 
 """
@@ -56,13 +56,19 @@ TRANS_BASELINE_DIFF_ORDER_OVERRIDE = {"ice Ih": 3}
 BROADENING_FWHM = 100.0 
 
 # ---------------------------------------------------------------- Band analysis (regions in cm^-1)
-FIT_REGIONS = {"stretching": (3000, 3500), "bending": (1200, 1800), "libration": (550, 1000)}
-
 FWHM_REGIONS = {"stretching": (2800, 4000), "combination": (2000, 2600),
                 "bending": (1000, 1800), "libration": (500, 1000)}
 
 SI_REGIONS = [("full", 500, 4000), ("stretching", 2800, 3600), ("combination", 2000, 2600),
               ("bending", 1000, 1800), ("libration", 500, 1000)]
+
+# Detail plots for reading off the band maxima: local maxima with at least this prominence
+# (% of the highest band) are marked and listed in table_band_maxima.csv
+MAXIMA_MIN_PROMINENCE = 1.0
+MAXIMA_TICKS = (50, 10)      # cm^-1, labelled and unlabelled x ticks
+
+# Band maxima read off by hand (columns: temperature_K, phase, peak, freq_cm1, intensity, note)
+BAND_MAXIMA_FILE = DATA / "atr" / "band_maxima_manual.csv"
 
 # ---------------------------------------------------------------- XRD
 XRD_WAVELENGTH = 1.5406      # Å, Cu K-alpha
@@ -192,6 +198,10 @@ def read_transmission(phase):
         spectra[col] = (t_k, x, df[col].to_numpy(float))
     return spectra
 
+def read_band_maxima():
+    """Band maxima read off by hand from check_band_maxima.pdf."""
+    return pd.read_csv(BAND_MAXIMA_FILE)
+
 
 
 """  
@@ -244,29 +254,6 @@ def broaden(freqs, intensities, fwhm=BROADENING_FWHM):
     for f, a in zip(freqs, intensities):
         y += a * np.exp(-0.5 * ((x - f) / sigma) ** 2)
     return x, y
-
-def pseudo_voigt(x, amp, cen, fwhm, eta, slope, offset):
-    """Gaussian and Lorentzian with common FWHM, mixed by eta, on a linear background."""
-    g = np.exp(-4 * np.log(2) * ((x - cen) / fwhm) ** 2)
-    lor = 1 / (1 + (2 * (x - cen) / fwhm) ** 2)
-    return amp * ((1 - eta) * g + eta * lor) + slope * x + offset
-
-def fit_band(x, y, window):
-    lo, hi = window
-    xr, yr = select(x, y, lo, hi)
-    ys = savgol_filter(yr, 25, 3)
-    i0 = np.argmax(ys)
-    p0 = [ys[i0] - yr.min(), xr[i0], (hi - lo) / 4, 0.3, 0, yr.min()]
-    bounds = ([0, lo, 1, 0, -np.inf, -np.inf], [np.inf, hi, 2 * (hi - lo), 1, np.inf, np.inf])
-    try:
-        popt, _ = curve_fit(pseudo_voigt, xr, yr, p0=p0, bounds=bounds,
-                            loss="soft_l1", max_nfev=10000)
-    except (RuntimeError, ValueError):
-        return None
-    resid = yr - pseudo_voigt(xr, *popt)
-    r2 = 1 - np.sum(resid ** 2) / np.sum((yr - yr.mean()) ** 2)
-    return dict(popt=popt, center=popt[1], fwhm=popt[2], r2=r2, x=xr, y=yr)
-
 
 def band_fwhm(x, y, label, shift=True):
     """Peak positions and FWHM at half height in each FWHM region.
@@ -559,60 +546,76 @@ def ir_temperature_series(processed):
         save(fig, f"figS_ir_series_{name}")
  
  
-def band_centre_figures(processed):
-    rows, example = [], {}
-    for key, (phase, x, y) in processed.items():
-        t = key[1]
-        y = 100 * y / y.max()
-        for region, window in FIT_REGIONS.items():
-            res = fit_band(x, y, window)
-            rows.append(dict(temperature_C=t, temperature_K=t + 273.15, phase=phase,
-                             region=region,
-                             center_cm1=res["center"] if res else np.nan,
-                             fwhm_fit_cm1=res["fwhm"] if res else np.nan,
-                             r2=res["r2"] if res else np.nan))
-            if key == MAIN_SPECTRA["ice V"]:
-                example[region] = res
-    centres = pd.DataFrame(rows)
-    save_table(centres, "table_band_centres.csv")
- 
-    # band centre vs temperature (ice V only)
-    colors = {"stretching": "#1f4e8c", "bending": "#c0392b", "libration": "#2e8b57"}
-    fig, axes = plt.subplots(1, 3, figsize=(10, 3.2))
-    icev = centres[centres["phase"] == MAIN_SPECTRA["ice V"][0]]
-    for ax, (region, (lo, hi)) in zip(axes, FIT_REGIONS.items()):
-        d = icev[icev["region"] == region].sort_values("temperature_K")
-        ax.plot(d["temperature_K"], d["center_cm1"], "o--", color=colors[region], ms=4, lw=0.8)
-        ax.set_title(f"{region.capitalize()} ({hi}$-${lo} cm$^{{-1}}$)")
+def band_maxima_figures(processed):
+    """One page per spectrum with every band region on a fine wavenumber grid, to read off the maxima.
+    The local maxima marked on the pages are also written to table_band_maxima.csv."""
+    major, minor = MAXIMA_TICKS
+    regions = [r for r in SI_REGIONS if r[0] != "full"]
+    rows = []
+    OUT.mkdir(exist_ok=True)
+    with PdfPages(OUT / "check_band_maxima.pdf") as pdf:
+        for (phase, t), (_, x, y) in processed.items():
+            y = 100 * y / y.max()
+            fig, axes = plt.subplots(len(regions), 1, figsize=(11, 3.2 * len(regions)))
+            for ax, (region, lo, hi) in zip(axes, regions):
+                xr, yr = select(x, y, lo, hi)
+                ax.plot(xr, yr, color=C_MEAS, lw=1.0)
+                dist = max(1, int(10 / np.median(np.diff(xr))))
+                pk, prop = find_peaks(yr, prominence=MAXIMA_MIN_PROMINENCE, distance=dist)
+                for k, prom in zip(pk, prop["prominences"]):
+                    ax.axvline(xr[k], color="crimson", lw=0.6, ls=":")
+                    ax.annotate(f"{xr[k]:.1f}", (xr[k], yr[k]), xytext=(0, 4),
+                                textcoords="offset points", ha="center", fontsize=7, color="crimson")
+                    rows.append(dict(phase=phase, temperature_C=t, temperature_K=t + 273.15,
+                                     region=region, position_cm1=xr[k], height_pct=yr[k],
+                                     prominence_pct=prom, highest_in_region=k == np.argmax(yr)))
+                ax.set_xlim(hi, lo)
+                ax.margins(y=0.12)
+                ax.xaxis.set_major_locator(plt.MultipleLocator(major))
+                ax.xaxis.set_minor_locator(plt.MultipleLocator(minor))
+                ax.tick_params(axis="x", which="both", top=True)
+                ax.grid(which="major", color="0.75", lw=0.6)
+                ax.grid(which="minor", color="0.9", lw=0.4)
+                ax.set_title(f"{region.capitalize()} ({hi}$-${lo} cm$^{{-1}}$)", fontsize=10)
+            axes[-1].set_xlabel(r"Wavenumber (cm$^{-1}$)")
+            fig.suptitle(f"{phase} {kelvin(t)}", fontsize=12)
+            fig.supylabel(y_label(), fontsize=11)
+            fig.tight_layout()
+            pdf.savefig(fig)
+            plt.close(fig)
+    print(f"Saved check_band_maxima to {OUT}")
+    save_table(pd.DataFrame(rows), "table_band_maxima.csv")
+
+
+def band_temperature_figure(maxima, column, ylabel, name):
+    """One column of the hand-picked band maxima against temperature, one panel per band."""
+    peaks = list(dict.fromkeys(maxima["peak"]))   # order of appearance in the file
+    ncol = 4
+    nrow = int(np.ceil(len(peaks) / ncol))
+    fig, axes = plt.subplots(nrow, ncol, figsize=(2.9 * ncol, 2.6 * nrow), sharex=True, squeeze=False)
+    styles = {"V": dict(marker="o", color=C_MEAS, label="ice V"),
+              "Ih": dict(marker="s", facecolors="none", edgecolors="crimson",
+                         label=r"ice I$_\mathrm{h}$")}
+    for ax, peak in zip(axes.flat, peaks):
+        d = maxima[maxima["peak"] == peak]
+        for phase, style in styles.items():
+            p = d[d["phase"] == phase]
+            ax.scatter(p["temperature_K"], p[column], s=22, **style)
+        ax.set_title(peak, fontsize=9)
+        ax.margins(y=0.2)
+        ax.ticklabel_format(axis="y", useOffset=False)
+        ax.grid(alpha=0.3)
+    for ax in axes.flat[len(peaks):]:
+        ax.axis("off")
+    for ax in axes.flat[max(0, len(peaks) - ncol):len(peaks)]:   # lowest panel in each column
+        ax.tick_params(labelbottom=True)
         ax.set_xlabel("Temperature (K)")
-        ax.grid(alpha=0.3)
-    axes[0].set_ylabel(r"Band centre (cm$^{-1}$)")
+    axes.flat[0].legend(fontsize=7, frameon=False)
+    fig.supylabel(ylabel, fontsize=11)
     fig.tight_layout()
-    save(fig, "fig_band_shifts")
- 
-    # fit example
-    fig, axes = plt.subplots(1, 3, figsize=(10, 3.2))
-    for ax, (region, res) in zip(axes, example.items()):
-        lo, hi = FIT_REGIONS[region]
-        if res is None:
-            ax.set_title(f"{region}: fit failed")
-            continue
-        xf = np.linspace(lo, hi, 600)
-        ax.plot(res["x"], res["y"], color="royalblue", lw=1.2,
-                label=f"ATR, {kelvin(MAIN_SPECTRA['ice V'][1])}")
-        ax.plot(xf, pseudo_voigt(xf, *res["popt"]), color="red", lw=1, label="pseudo-Voigt fit")
-        ax.axvline(res["center"], color="green", ls="--", lw=0.8,
-                   label=f"centre {res['center']:.1f} cm$^{{-1}}$")
-        ax.set_xlim(hi, lo)
-        ax.set_title(f"{region.capitalize()} ($R^2$ = {res['r2']:.3f})")
-        ax.set_xlabel(r"Wavenumber (cm$^{-1}$)")
-        ax.legend(fontsize=7, frameon=False)
-        ax.grid(alpha=0.3)
-    axes[0].set_ylabel(y_label())
-    fig.tight_layout()
-    save(fig, "figS_band_fit_example")
- 
- 
+    save(fig, name)
+
+
 def baseline_check(raw):
     """Smoothed spectra with their baselines, to check the baseline parameters."""
     temps = list(raw)
@@ -737,7 +740,10 @@ def main():
     ir_main_figure(processed, modes, spectra)
     ir_main_figure_ih_comparison(processed, modes, spectra)   # discussion only, remove later
     ir_temperature_series(processed)
-    band_centre_figures(processed)
+    band_maxima_figures(processed)
+    maxima = read_band_maxima()
+    band_temperature_figure(maxima, "freq_cm1", r"Wavenumber (cm$^{-1}$)", "fig_band_shifts")
+    band_temperature_figure(maxima, "intensity", y_label(), "fig_band_intensities")
     baseline_check(raw)
     separate_atr_figures(raw, processed)
 
