@@ -22,6 +22,9 @@ enumeration/            structure.txt, configs.dat (bond variables), summary.csv
                         cif/ xyz/ d12/ (P1 and symmetry-adapted geometries)
 hsesol_d3/
   jobs.csv              id, directory, input name, space group, #symops, asym. atoms, weight
+  iceIh_orthorhombic_topologies.cif
+                        all 24 structures in one CIF (one data block each, symmetry-adapted;
+                        ids 106 114 118 122 130 135 138 have an 8-H2O unit cell)
   submit_all.sh         submits all (or selected) opt jobs + dependent freq jobs
   config_XXXXX/
     opt/ih_cXXXXX.d12   space group + asymmetric unit, OPTGEOM ATOMONLY (literature cell kept)
@@ -29,6 +32,7 @@ hsesol_d3/
     freq/ih_cXXXXX.d12  EXTERNAL (optimised geometry incl. symmetry) + FREQCALC INTENS
     freq/ih_cXXXXX.sjob copies ../opt/ih_cXXXXX.gui (fort.34) and runs CRYSTAL
     ih_cXXXXX_P1_geometry.d12   same structure in P1 (reference only)
+    ih_cXXXXX_sym.cif / _P1.cif  CIF of the starting structure (symmetry-adapted / P1)
 ```
 
 The settings are copied from `iceih/disp_cor/opt` and `iceih/disp_cor/freq`:

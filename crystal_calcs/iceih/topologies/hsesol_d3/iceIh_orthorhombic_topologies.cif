@@ -1,0 +1,808 @@
+# Ice Ih (16 H2O orthohexagonal cell, literature P6_3/mmc cell a=4.4973 c=7.3240 A)
+# 24 symmetry-distinct proton-ordered topologies with orthorhombic subgroups of P6_3/mmc
+# symmetry-adapted (asymmetric unit + symmetry operations); H on O...O lines at 1.0 A (unoptimised)
+
+data_iceIh_ih_c00003_Pca2_1
+# topology id 3: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 11.3171
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 8.994600
+_cell_length_b 7.324000
+_cell_length_c 7.789552
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.87500000 0.68750000 0.66666667
+O2 O 0.62500000 0.81250000 0.83333333
+O3 O 0.62500000 0.18750000 0.83333333
+O4 O 0.87500000 0.31250000 0.66666667
+H1 H 0.71580383 0.76709808 0.77279744
+H2 H 0.87500000 0.44903741 0.66666667
+H3 H 0.87500000 0.73290192 0.54559489
+H4 H 0.96580383 0.73290192 0.72720256
+H5 H 0.62500000 0.05096259 0.83333333
+H6 H 0.53419617 0.76709808 0.77279744
+H7 H 0.71580383 0.23290192 0.77279744
+H8 H 0.87500000 0.26709808 0.54559489
+
+data_iceIh_ih_c00036_Pmc2_1
+# topology id 36: Pmc2_1 (No. 26), multiplicity 8, weight 0.002694, |P| 5.3301
+_symmetry_space_group_name_H-M 'Pmc2_1'
+_space_group_IT_number 26
+_cell_length_a 8.994600
+_cell_length_b 7.789552
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x,y,z'
+'x,-y,z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.75000000 0.33333333 0.06250000
+O2 O 0.00000000 0.16666667 0.93750000
+O3 O 0.00000000 0.16666667 0.56250000
+O4 O 0.75000000 0.33333333 0.43750000
+O5 O 0.50000000 0.16666667 0.93750000
+O6 O 0.50000000 0.16666667 0.56250000
+H1 H 0.90919617 0.22720256 0.98290192
+H2 H 0.75000000 0.33333333 0.30096259
+H3 H 0.75000000 0.45440511 0.01709808
+H4 H 0.65919617 0.27279744 0.01709808
+H5 H 0.00000000 0.16666667 0.69903741
+H6 H 0.00000000 0.95440511 0.01709808
+H7 H 0.84080383 0.27279744 0.48290192
+H8 H 0.59080383 0.22720256 0.51709808
+H9 H 0.50000000 0.16666667 0.80096259
+H10 H 0.50000000 0.04559489 0.98290192
+
+data_iceIh_ih_c00040_Pca2_1
+# topology id 40: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 8.994600
+_cell_length_b 7.324000
+_cell_length_c 7.789552
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.87500000 0.68750000 0.66666667
+O2 O 0.62500000 0.81250000 0.83333333
+O3 O 0.62500000 0.18750000 0.83333333
+O4 O 0.87500000 0.31250000 0.66666667
+H1 H 0.71580383 0.76709808 0.77279744
+H2 H 0.87500000 0.44903741 0.66666667
+H3 H 0.87500000 0.73290192 0.54559489
+H4 H 0.96580383 0.73290192 0.72720256
+H5 H 0.62500000 0.05096259 0.83333333
+H6 H 0.53419617 0.76709808 0.77279744
+H7 H 0.78419617 0.26709808 0.72720256
+H8 H 0.87500000 0.23290192 0.45440511
+
+data_iceIh_ih_c00072_Pca2_1
+# topology id 72: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 8.994600
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.93750000 0.66666667 0.00000000
+O2 O 0.06250000 0.83333333 0.75000000
+O3 O 0.43750000 0.83333333 0.75000000
+O4 O 0.56250000 0.66666667 0.00000000
+H1 H 0.01709808 0.77279744 0.84080383
+H2 H 0.69903741 0.66666667 0.00000000
+H3 H 0.98290192 0.54559489 0.00000000
+H4 H 0.98290192 0.72720256 0.09080383
+H5 H 0.30096259 0.83333333 0.75000000
+H6 H 0.01709808 0.77279744 0.65919617
+H7 H 0.98290192 0.04559489 0.75000000
+H8 H 0.51709808 0.72720256 0.90919617
+
+data_iceIh_ih_c00073_P2_12_12_1
+# topology id 73: P2_12_12_1 (No. 19), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'P2_12_12_1'
+_space_group_IT_number 19
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 8.994600
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x+1/2,-y,z+1/2'
+'x+1/2,-y+1/2,-z'
+'-x,y+1/2,-z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.68750000 0.66666667 0.87500000
+O2 O 0.81250000 0.83333333 0.62500000
+O3 O 0.18750000 0.83333333 0.62500000
+O4 O 0.31250000 0.66666667 0.87500000
+H1 H 0.76709808 0.77279744 0.71580383
+H2 H 0.44903741 0.66666667 0.87500000
+H3 H 0.73290192 0.54559489 0.87500000
+H4 H 0.73290192 0.72720256 0.96580383
+H5 H 0.05096259 0.83333333 0.62500000
+H6 H 0.76709808 0.77279744 0.53419617
+H7 H 0.73290192 0.04559489 0.62500000
+H8 H 0.23290192 0.77279744 0.71580383
+
+data_iceIh_ih_c00078_P2_12_12_1
+# topology id 78: P2_12_12_1 (No. 19), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'P2_12_12_1'
+_space_group_IT_number 19
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 8.994600
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x+1/2,-y,z+1/2'
+'x+1/2,-y+1/2,-z'
+'-x,y+1/2,-z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.68750000 0.66666667 0.62500000
+O2 O 0.81250000 0.83333333 0.37500000
+O3 O 0.81250000 0.33333333 0.62500000
+O4 O 0.18750000 0.33333333 0.62500000
+H1 H 0.76709808 0.77279744 0.46580383
+H2 H 0.44903741 0.66666667 0.62500000
+H3 H 0.73290192 0.54559489 0.62500000
+H4 H 0.73290192 0.72720256 0.71580383
+H5 H 0.73290192 0.72720256 0.21580383
+H6 H 0.73290192 0.04559489 0.37500000
+H7 H 0.05096259 0.33333333 0.62500000
+H8 H 0.76709808 0.27279744 0.53419617
+
+data_iceIh_ih_c00083_P2_12_12_1
+# topology id 83: P2_12_12_1 (No. 19), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'P2_12_12_1'
+_space_group_IT_number 19
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 8.994600
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x+1/2,-y,z+1/2'
+'x+1/2,-y+1/2,-z'
+'-x,y+1/2,-z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.68750000 0.66666667 0.87500000
+O2 O 0.81250000 0.83333333 0.62500000
+O3 O 0.18750000 0.83333333 0.62500000
+O4 O 0.31250000 0.66666667 0.87500000
+H1 H 0.76709808 0.77279744 0.71580383
+H2 H 0.44903741 0.66666667 0.87500000
+H3 H 0.73290192 0.54559489 0.87500000
+H4 H 0.73290192 0.72720256 0.96580383
+H5 H 0.94903741 0.83333333 0.62500000
+H6 H 0.73290192 0.72720256 0.46580383
+H7 H 0.73290192 0.04559489 0.62500000
+H8 H 0.23290192 0.77279744 0.71580383
+
+data_iceIh_ih_c00093_Pca2_1
+# topology id 93: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 7.789552
+_cell_length_b 8.994600
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.41666667 0.87500000 0.93750000
+O2 O 0.58333333 0.62500000 0.06250000
+O3 O 0.58333333 0.62500000 0.43750000
+O4 O 0.41666667 0.87500000 0.56250000
+H1 H 0.52279744 0.71580383 0.01709808
+H2 H 0.41666667 0.87500000 0.69903741
+H3 H 0.29559489 0.87500000 0.98290192
+H4 H 0.47720256 0.96580383 0.98290192
+H5 H 0.58333333 0.62500000 0.30096259
+H6 H 0.52279744 0.53419617 0.01709808
+H7 H 0.79559489 0.62500000 0.98290192
+H8 H 0.47720256 0.78419617 0.51709808
+
+data_iceIh_ih_c00096_Pca2_1
+# topology id 96: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 11.3171
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 8.994600
+_cell_length_b 7.324000
+_cell_length_c 7.789552
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.62500000 0.68750000 0.66666667
+O2 O 0.37500000 0.81250000 0.83333333
+O3 O 0.37500000 0.18750000 0.83333333
+O4 O 0.62500000 0.31250000 0.66666667
+H1 H 0.46580383 0.76709808 0.77279744
+H2 H 0.62500000 0.44903741 0.66666667
+H3 H 0.62500000 0.73290192 0.54559489
+H4 H 0.71580383 0.73290192 0.72720256
+H5 H 0.37500000 0.05096259 0.83333333
+H6 H 0.28419617 0.76709808 0.77279744
+H7 H 0.37500000 0.73290192 0.04559489
+H8 H 0.46580383 0.23290192 0.77279744
+
+data_iceIh_ih_c00100_Pca2_1
+# topology id 100: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 10.6602
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 7.789552
+_cell_length_b 8.994600
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.41666667 0.62500000 0.93750000
+O2 O 0.58333333 0.37500000 0.06250000
+O3 O 0.41666667 0.12500000 0.93750000
+O4 O 0.58333333 0.87500000 0.06250000
+H1 H 0.52279744 0.46580383 0.01709808
+H2 H 0.41666667 0.62500000 0.69903741
+H3 H 0.29559489 0.62500000 0.98290192
+H4 H 0.47720256 0.71580383 0.98290192
+H5 H 0.47720256 0.21580383 0.98290192
+H6 H 0.47720256 0.03419617 0.98290192
+H7 H 0.58333333 0.87500000 0.19903741
+H8 H 0.70440511 0.87500000 0.01709808
+
+data_iceIh_ih_c00106_P2_12_12_1
+# topology id 106: P2_12_12_1 (No. 19), multiplicity 4, weight 0.001347, |P| 0.0
+_symmetry_space_group_name_H-M 'P2_12_12_1'
+_space_group_IT_number 19
+_cell_length_a 4.497300
+_cell_length_b 7.324000
+_cell_length_c 7.789552
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x+1/2,-y,z+1/2'
+'x+1/2,-y+1/2,-z'
+'-x,y+1/2,-z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.00000000 0.68750000 0.41666667
+O2 O 0.50000000 0.18750000 0.58333333
+H1 H 0.68160767 0.76709808 0.52279744
+H2 H 0.00000000 0.44903741 0.41666667
+H3 H 0.00000000 0.73290192 0.29559489
+H4 H 0.68160767 0.23290192 0.52279744
+
+data_iceIh_ih_c00108_Pca2_1
+# topology id 108: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 8.994600
+_cell_length_b 7.324000
+_cell_length_c 7.789552
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.62500000 0.68750000 0.66666667
+O2 O 0.37500000 0.81250000 0.83333333
+O3 O 0.37500000 0.18750000 0.83333333
+O4 O 0.62500000 0.31250000 0.66666667
+H1 H 0.46580383 0.76709808 0.77279744
+H2 H 0.62500000 0.44903741 0.66666667
+H3 H 0.62500000 0.73290192 0.54559489
+H4 H 0.71580383 0.73290192 0.72720256
+H5 H 0.37500000 0.05096259 0.83333333
+H6 H 0.21580383 0.73290192 0.72720256
+H7 H 0.37500000 0.76709808 0.95440511
+H8 H 0.46580383 0.23290192 0.77279744
+
+data_iceIh_ih_c00114_P2_12_12_1
+# topology id 114: P2_12_12_1 (No. 19), multiplicity 4, weight 0.001347, |P| 0.0
+_symmetry_space_group_name_H-M 'P2_12_12_1'
+_space_group_IT_number 19
+_cell_length_a 4.497300
+_cell_length_b 7.324000
+_cell_length_c 7.789552
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x+1/2,-y,z+1/2'
+'x+1/2,-y+1/2,-z'
+'-x,y+1/2,-z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.00000000 0.68750000 0.41666667
+O2 O 0.50000000 0.18750000 0.58333333
+H1 H 0.68160767 0.76709808 0.52279744
+H2 H 0.00000000 0.44903741 0.41666667
+H3 H 0.00000000 0.73290192 0.29559489
+H4 H 0.81839233 0.26709808 0.47720256
+
+data_iceIh_ih_c00117_P2_12_12_1
+# topology id 117: P2_12_12_1 (No. 19), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'P2_12_12_1'
+_space_group_IT_number 19
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 8.994600
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x+1/2,-y,z+1/2'
+'x+1/2,-y+1/2,-z'
+'-x,y+1/2,-z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.68750000 0.66666667 0.87500000
+O2 O 0.81250000 0.83333333 0.62500000
+O3 O 0.18750000 0.83333333 0.62500000
+O4 O 0.31250000 0.66666667 0.87500000
+H1 H 0.76709808 0.77279744 0.71580383
+H2 H 0.44903741 0.66666667 0.87500000
+H3 H 0.73290192 0.54559489 0.87500000
+H4 H 0.73290192 0.72720256 0.96580383
+H5 H 0.05096259 0.83333333 0.62500000
+H6 H 0.73290192 0.72720256 0.46580383
+H7 H 0.76709808 0.95440511 0.62500000
+H8 H 0.26709808 0.72720256 0.78419617
+
+data_iceIh_ih_c00118_Pna2_1
+# topology id 118: Pna2_1 (No. 33), multiplicity 4, weight 0.001347, |P| 10.6602
+_symmetry_space_group_name_H-M 'Pna2_1'
+_space_group_IT_number 33
+_cell_length_a 7.789552
+_cell_length_b 4.497300
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y+1/2,z+1/2'
+'x+1/2,-y+1/2,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.66666667 0.00000000 0.93750000
+O2 O 0.83333333 0.50000000 0.06250000
+H1 H 0.77279744 0.68160767 0.01709808
+H2 H 0.66666667 0.00000000 0.69903741
+H3 H 0.54559489 0.00000000 0.98290192
+H4 H 0.72720256 0.18160767 0.98290192
+
+data_iceIh_ih_c00122_Cmc2_1
+# topology id 122: Cmc2_1 (No. 36), multiplicity 6, weight 0.002020, |P| 10.6602
+_symmetry_space_group_name_H-M 'Cmc2_1'
+_space_group_IT_number 36
+_cell_length_a 4.497300
+_cell_length_b 7.789552
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x,y,z'
+'x,-y,z+1/2'
+'x+1/2,y+1/2,z'
+'-x+1/2,-y+1/2,z+1/2'
+'-x+1/2,y+1/2,z'
+'x+1/2,-y+1/2,z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.50000000 0.83333333 0.93750000
+O2 O 0.50000000 0.16666667 0.06250000
+H1 H 0.50000000 0.04559489 0.01709808
+H2 H 0.50000000 0.83333333 0.69903741
+H3 H 0.68160767 0.77279744 0.98290192
+
+data_iceIh_ih_c00128_Pna2_1
+# topology id 128: Pna2_1 (No. 33), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'Pna2_1'
+_space_group_IT_number 33
+_cell_length_a 7.789552
+_cell_length_b 8.994600
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y+1/2,z+1/2'
+'x+1/2,-y+1/2,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.41666667 0.87500000 0.93750000
+O2 O 0.58333333 0.62500000 0.06250000
+O3 O 0.58333333 0.62500000 0.43750000
+O4 O 0.41666667 0.87500000 0.56250000
+H1 H 0.52279744 0.71580383 0.01709808
+H2 H 0.41666667 0.87500000 0.69903741
+H3 H 0.29559489 0.87500000 0.98290192
+H4 H 0.47720256 0.96580383 0.98290192
+H5 H 0.58333333 0.62500000 0.30096259
+H6 H 0.52279744 0.53419617 0.01709808
+H7 H 0.47720256 0.78419617 0.51709808
+H8 H 0.20440511 0.87500000 0.48290192
+
+data_iceIh_ih_c00130_Pna2_1
+# topology id 130: Pna2_1 (No. 33), multiplicity 4, weight 0.001347, |P| 0.0
+_symmetry_space_group_name_H-M 'Pna2_1'
+_space_group_IT_number 33
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 4.497300
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y+1/2,z+1/2'
+'x+1/2,-y+1/2,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.93750000 0.41666667 0.00000000
+O2 O 0.43750000 0.58333333 0.50000000
+H1 H 0.01709808 0.52279744 0.68160767
+H2 H 0.69903741 0.41666667 0.00000000
+H3 H 0.98290192 0.29559489 0.00000000
+H4 H 0.51709808 0.47720256 0.81839233
+
+data_iceIh_ih_c00132_Pca2_1
+# topology id 132: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 7.789552
+_cell_length_b 8.994600
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.41666667 0.87500000 0.93750000
+O2 O 0.58333333 0.62500000 0.06250000
+O3 O 0.58333333 0.62500000 0.43750000
+O4 O 0.41666667 0.87500000 0.56250000
+H1 H 0.52279744 0.71580383 0.01709808
+H2 H 0.41666667 0.87500000 0.69903741
+H3 H 0.29559489 0.87500000 0.98290192
+H4 H 0.47720256 0.96580383 0.98290192
+H5 H 0.58333333 0.62500000 0.30096259
+H6 H 0.47720256 0.46580383 0.98290192
+H7 H 0.70440511 0.62500000 0.01709808
+H8 H 0.47720256 0.78419617 0.51709808
+
+data_iceIh_ih_c00133_Pna2_1
+# topology id 133: Pna2_1 (No. 33), multiplicity 8, weight 0.002694, |P| 0.0
+_symmetry_space_group_name_H-M 'Pna2_1'
+_space_group_IT_number 33
+_cell_length_a 7.789552
+_cell_length_b 8.994600
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y+1/2,z+1/2'
+'x+1/2,-y+1/2,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.41666667 0.87500000 0.93750000
+O2 O 0.58333333 0.62500000 0.06250000
+O3 O 0.58333333 0.62500000 0.43750000
+O4 O 0.41666667 0.87500000 0.56250000
+H1 H 0.52279744 0.71580383 0.01709808
+H2 H 0.41666667 0.87500000 0.69903741
+H3 H 0.29559489 0.87500000 0.98290192
+H4 H 0.47720256 0.96580383 0.98290192
+H5 H 0.58333333 0.62500000 0.30096259
+H6 H 0.52279744 0.53419617 0.01709808
+H7 H 0.52279744 0.71580383 0.48290192
+H8 H 0.29559489 0.87500000 0.51709808
+
+data_iceIh_ih_c00135_Pna2_1
+# topology id 135: Pna2_1 (No. 33), multiplicity 4, weight 0.001347, |P| 13.0679
+_symmetry_space_group_name_H-M 'Pna2_1'
+_space_group_IT_number 33
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 4.497300
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y+1/2,z+1/2'
+'x+1/2,-y+1/2,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.93750000 0.41666667 0.00000000
+O2 O 0.43750000 0.58333333 0.50000000
+H1 H 0.01709808 0.52279744 0.68160767
+H2 H 0.69903741 0.41666667 0.00000000
+H3 H 0.98290192 0.29559489 0.00000000
+H4 H 0.48290192 0.52279744 0.68160767
+
+data_iceIh_ih_c00137_Pca2_1
+# topology id 137: Pca2_1 (No. 29), multiplicity 8, weight 0.002694, |P| 13.0679
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 7.324000
+_cell_length_b 7.789552
+_cell_length_c 8.994600
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.93750000 0.66666667 0.00000000
+O2 O 0.06250000 0.83333333 0.75000000
+O3 O 0.43750000 0.83333333 0.75000000
+O4 O 0.56250000 0.66666667 0.00000000
+H1 H 0.01709808 0.77279744 0.84080383
+H2 H 0.69903741 0.66666667 0.00000000
+H3 H 0.98290192 0.54559489 0.00000000
+H4 H 0.98290192 0.72720256 0.09080383
+H5 H 0.30096259 0.83333333 0.75000000
+H6 H 0.98290192 0.72720256 0.59080383
+H7 H 0.01709808 0.95440511 0.75000000
+H8 H 0.48290192 0.77279744 0.84080383
+
+data_iceIh_ih_c00138_Pca2_1
+# topology id 138: Pca2_1 (No. 29), multiplicity 4, weight 0.001347, |P| 10.6602
+_symmetry_space_group_name_H-M 'Pca2_1'
+_space_group_IT_number 29
+_cell_length_a 7.789552
+_cell_length_b 4.497300
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y,z+1/2'
+'x+1/2,-y,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.41666667 0.75000000 0.93750000
+O2 O 0.58333333 0.25000000 0.06250000
+H1 H 0.52279744 0.43160767 0.01709808
+H2 H 0.41666667 0.75000000 0.69903741
+H3 H 0.29559489 0.75000000 0.98290192
+H4 H 0.47720256 0.93160767 0.98290192
+
+data_iceIh_ih_c00139_Pna2_1
+# topology id 139: Pna2_1 (No. 33), multiplicity 8, weight 0.002694, |P| 10.6602
+_symmetry_space_group_name_H-M 'Pna2_1'
+_space_group_IT_number 33
+_cell_length_a 7.789552
+_cell_length_b 8.994600
+_cell_length_c 7.324000
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x,-y,z+1/2'
+'-x+1/2,y+1/2,z+1/2'
+'x+1/2,-y+1/2,z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.41666667 0.87500000 0.93750000
+O2 O 0.58333333 0.62500000 0.06250000
+O3 O 0.58333333 0.62500000 0.43750000
+O4 O 0.41666667 0.87500000 0.56250000
+H1 H 0.52279744 0.71580383 0.01709808
+H2 H 0.41666667 0.87500000 0.69903741
+H3 H 0.29559489 0.87500000 0.98290192
+H4 H 0.47720256 0.96580383 0.98290192
+H5 H 0.58333333 0.62500000 0.19903741
+H6 H 0.47720256 0.46580383 0.98290192
+H7 H 0.52279744 0.71580383 0.48290192
+H8 H 0.29559489 0.87500000 0.51709808
