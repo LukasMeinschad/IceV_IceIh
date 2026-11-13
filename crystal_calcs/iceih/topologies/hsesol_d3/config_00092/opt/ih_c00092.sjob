@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --partition=CPU_rune
+#SBATCH --nodelist=
+#SBATCH -J IhTop92_opt
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=50
+#SBATCH --cpus-per-task=1
+
+source /usr/local/_tci_software_environment_.sh
+module purge
+module load rune/crystal/17_v1.0.2
+
+#set some necessary environment before running
+export CRY17_SCRDIR="/scratch/lme"
+
+#run your job
+runmpi17 50 ih_c00092

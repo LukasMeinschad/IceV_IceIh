@@ -146,3 +146,18 @@ spglib analysis of all topologies.
   the CRYSTAL `IFSO` flag for those inputs (not expected for ordered Ih / V).
 * The protons are placed on straight O···O lines, so the structures need a
   geometry optimisation (`atompos` or `full`) before you compare energies.
+
+## CRYSTAL job generation
+
+`make_crystal_jobs.py` turns the `*_sym.d12` geometries into opt + freq job pairs.
+The job settings and SLURM script are taken from existing inputs. Example (this
+is how `crystal_calcs/iceih/topologies/hsesol_d3` was made):
+
+```
+python enumerate_ice.py Ih --cell ortho2x1x1 --write-all -o ../crystal_calcs/iceih/topologies/enumeration
+python make_crystal_jobs.py ../crystal_calcs/iceih/topologies/enumeration \
+    --opt-template  ../crystal_calcs/iceih/disp_cor/opt/iceih.d12 \
+    --freq-template ../crystal_calcs/iceih/disp_cor/freq/iceih.d12 \
+    --sjob-template ../crystal_calcs/iceih/disp_cor/opt/iceih.sjob \
+    --prefix ih --jobname IhTop --out ../crystal_calcs/iceih/topologies/hsesol_d3
+```
