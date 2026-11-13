@@ -1,0 +1,2 @@
+numpy
+spglib>=2.0
