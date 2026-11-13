@@ -3,7 +3,7 @@
 #SBATCH --nodelist=
 #SBATCH -J IhTop73_opt
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=50
+#SBATCH --ntasks-per-node=10
 #SBATCH --cpus-per-task=1
 
 source /usr/local/_tci_software_environment_.sh
@@ -14,4 +14,4 @@ module load rune/crystal/17_v1.0.2
 export CRY17_SCRDIR="/scratch/lme"
 
 #run your job
-runmpi17 50 ih_c00073
+runmpi17 10 ih_c00073

@@ -6,6 +6,14 @@ runs). They are built on the literature structure: P6_3/mmc, a = 4.4973 Å,
 c = 7.3240 Å (Röttger et al. 1994, 10 K), O at 4f. I generated them with
 `graph_enumeration/enumerate_ice.py` and `graph_enumeration/make_crystal_jobs.py`.
 
+**Jobs were set up only for the 24 topologies whose ordered structure has an
+orthorhombic subgroup of P6_3/mmc:** Cmc2_1 (ice XI) 1, Pca2_1 10, Pna2_1 6,
+P2_12_12_1 6, Pmc2_1 1 (ids 3 36 40 72 73 78 83 93 96 100 106 108 114 117 118
+122 128 130 132 133 135 137 138 139). No proton-ordered structure can keep
+P6_3/mmc itself: that symmetry only exists for the H-disordered average. The
+other 115 (P1, P2_1, Pc, Cc) are in `enumeration/` and can be added with
+`make_crystal_jobs.py --ids ...`.
+
 ## Layout
 
 ```
@@ -26,25 +34,20 @@ hsesol_d3/
 The settings are copied from `iceih/disp_cor/opt` and `iceih/disp_cor/freq`:
 HSEsol-D3, POB-TZVP, SHRINK 4 4, TOLINTEG 10 10 10 10 18, FMIXING 70, DIIS.
 The ATOMONLY optimisation uses TOLDEG 1e-5, TOLDEX 4e-5, TOLDEE 10 and
-MAXCYCLE 200. The SLURM settings are copied from the same sjob: CPU_rune,
-50 cores, CRYSTAL 17, scratch /scratch/lme.
+MAXCYCLE 200. The SLURM settings are copied from the same sjob (CPU_rune, CRYSTAL 17,
+scratch /scratch/lme), but each job uses **10 cores**.
 
 ## Running on the cluster
 
 ```bash
 cd crystal_calcs/iceih/topologies/hsesol_d3
-./submit_all.sh             # all 139 topologies (278 jobs)
+./submit_all.sh             # all 24 orthorhombic topologies (48 jobs)
 ./submit_all.sh 3 52 87     # or selected ids (see jobs.csv)
 ```
 
 Each freq job waits for its opt job (`--dependency=afterok`). It then takes the
 optimised structure from `opt/ih_cXXXXX.gui`, which `runmpi17` passes to CRYSTAL
 as fort.34, so the frequency run keeps the space group.
-
-Space groups of the topologies: P1 65, P2_1 30, Pc 19, Pca2_1 10,
-P2_12_12_1 6, Pna2_1 6, Pmc2_1 1, Cc 1, Cmc2_1 1 (ice XI).
-The symmetric ones are much cheaper than P1. To start with those:
-`awk -F, 'NR>1 && $6>1 {print $1}' jobs.csv | xargs ./submit_all.sh`.
 
 For Boltzmann/statistical averages, weight each topology by its
 `multiplicity` (or `weight`) from jobs.csv.
