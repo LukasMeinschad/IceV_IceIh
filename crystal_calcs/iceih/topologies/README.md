@@ -42,7 +42,7 @@ scratch /scratch/lme), but each job uses **10 cores**.
 ```bash
 cd crystal_calcs/iceih/topologies/hsesol_d3
 ./submit_all.sh             # all 24 orthorhombic topologies (48 jobs)
-./submit_all.sh 3 52 87     # or selected ids (see jobs.csv)
+./submit_all.sh 122 3 73    # or selected ids (see jobs.csv; 122 = ice XI)
 ```
 
 Each freq job waits for its opt job (`--dependency=afterok`). It then takes the
