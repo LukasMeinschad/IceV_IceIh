@@ -29,7 +29,8 @@ hsesol_d3/
   config_XXXXX/
     opt/ih_cXXXXX.d12   space group + asymmetric unit, OPTGEOM ATOMONLY (literature cell kept)
     opt/ih_cXXXXX.sjob
-    freq/ih_cXXXXX.d12  EXTERNAL (optimised geometry incl. symmetry) + FREQCALC INTENS
+    freq/ih_cXXXXX.d12  EXTERNAL (optimised geometry incl. symmetry) + FREQCALC with
+                        IR and Raman intensities (INTENS, INTRAMAN, INTCPHF ... END)
     freq/ih_cXXXXX.sjob copies ../opt/ih_cXXXXX.gui (fort.34) and runs CRYSTAL
     ih_cXXXXX_P1_geometry.d12   same structure in P1 (reference only)
     ih_cXXXXX_sym.cif / _P1.cif  CIF of the starting structure (symmetry-adapted / P1)
@@ -40,6 +41,32 @@ HSEsol-D3, POB-TZVP, SHRINK 4 4, TOLINTEG 10 10 10 10 18, FMIXING 70, DIIS.
 The ATOMONLY optimisation uses TOLDEG 1e-5, TOLDEX 4e-5, TOLDEE 10 and
 MAXCYCLE 200. The SLURM settings are copied from the same sjob (CPU_rune, CRYSTAL 17,
 scratch /scratch/lme), but each job uses **10 cores**.
+
+### IR and Raman intensities
+
+The frequency runs compute IR **and** Raman intensities with the analytical
+CPHF/CPKS scheme:
+
+```
+FREQCALC
+INTENS
+INTRAMAN
+INTCPHF
+END
+ENDFREQ
+```
+
+With INTCPHF the IR intensities also come from CPHF (analytical Born charges),
+not from the Berry phase. The CPHF/CPKS step makes the frequency run noticeably
+more expensive. Two things to check:
+
+* Test one job first (e.g. id 122, ice XI). Some CRYSTAL versions do not
+  support CPKS with screened hybrids such as HSEsol. If the job stops in the
+  CPHF step for that reason, keep only `INTENS` (IR, Berry phase) or use a
+  global hybrid for the Raman part.
+* The intensities are printed in the `.out` file. For spectra with
+  experimental conditions you can add `RAMANEXP` (temperature in K, laser
+  wavelength in nm) and the `IRSPEC` / `RAMSPEC` blocks inside FREQCALC.
 
 ## Running on the cluster
 

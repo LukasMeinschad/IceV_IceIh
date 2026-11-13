@@ -53,6 +53,18 @@ def make_sjob(template, jobname, inp, ncores, pre=""):
     return s
 
 
+def add_raman(tail):
+    """Insert INTRAMAN + INTCPHF into the FREQCALC block (INTENS is kept/added)."""
+    lines = tail.splitlines()
+    i = next(k for k, l in enumerate(lines) if l.strip().upper() == "FREQCALC")
+    j = next(k for k, l in enumerate(lines) if l.strip().upper() == "ENDFREQ")
+    body = [l for l in lines[i + 1:j] if l.strip().upper() not in ("INTENS", "INTRAMAN")]
+    if any(l.strip().upper() == "INTCPHF" for l in body):
+        raise ValueError("template already contains INTCPHF")
+    new = ["FREQCALC", "INTENS", "INTRAMAN", "INTCPHF", "END"] + body + ["ENDFREQ"]
+    return "\n".join(lines[:i] + new + lines[j + 1:]) + "\n"
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("results", help="output directory of enumerate_ice.py (contains d12/ and summary.csv)")
@@ -64,10 +76,15 @@ def main():
     p.add_argument("--jobname", default=None, help="SLURM job-name prefix (default: prefix)")
     p.add_argument("--ncores", type=int, default=None, help="override ntasks-per-node / runmpi cores")
     p.add_argument("--ids", type=int, nargs="+", help="only these topology ids")
+    p.add_argument("--raman", action="store_true",
+                   help="IR + Raman intensities in the frequency run via CPHF/CPKS "
+                        "(INTENS, INTRAMAN, INTCPHF ... END inside FREQCALC)")
     a = p.parse_args()
 
     opt_tail = read_d12_template(a.opt_template)
     freq_tail = read_d12_template(a.freq_template)
+    if a.raman:
+        freq_tail = add_raman(freq_tail)
     m = re.search(r"--ntasks-per-node=(\d+)", open(a.sjob_template).read())
     ncores = a.ncores or (int(m.group(1)) if m else None)
     jn = a.jobname or a.prefix

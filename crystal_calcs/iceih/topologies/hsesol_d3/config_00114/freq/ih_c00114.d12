@@ -2,6 +2,9 @@ ice Ih config_00114 H-bond topology, P2_12_12_1 (No. 19), multiplicity 4 - frequ
 EXTERNAL
 FREQCALC
 INTENS
+INTRAMAN
+INTCPHF
+END
 ENDFREQ
 BASISSET
 POB-TZVP 

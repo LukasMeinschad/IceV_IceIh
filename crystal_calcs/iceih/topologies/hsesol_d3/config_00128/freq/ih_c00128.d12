@@ -2,6 +2,9 @@ ice Ih config_00128 H-bond topology, Pna2_1 (No. 33), multiplicity 8 - frequenci
 EXTERNAL
 FREQCALC
 INTENS
+INTRAMAN
+INTCPHF
+END
 ENDFREQ
 BASISSET
 POB-TZVP 
