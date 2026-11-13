@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# ---- CRYSTAL large / binary / restart files (regenerable, up to 130 MB each) ----
+*.optinfo
+*.freqinfo
+*.f98
+*.f9
+*.f13
+*.f20
+*.f28
+*.SCFLOG
+*.hessopt
+*.hessfreq
+*.optstory/
+
+# Kept (small): *.d12 inputs, *.out logs, *.xyz, *.cif, *.born, *.gui, *.sjob, *.csv
