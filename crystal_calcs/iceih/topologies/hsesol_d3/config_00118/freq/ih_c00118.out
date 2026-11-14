@@ -1,4 +1,4 @@
-date Fri Nov 13 14:09:08 CET 2026
+date Sat Nov 14 18:31:12 CET 2026
 master hostname rune05
 master system Linux rune05 6.6.32 #1 SMP PREEMPT_DYNAMIC Tue May 6 15:02:32 CEST 2025 x86_64 GNU/Linux
 user lme
@@ -8,7 +8,7 @@ Pcrystal executable in /usr/local/Crystal-17_v1.0.2/bin/Linux-ifort_openmpi-2.1_
 input data in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3/config_00118/freq/ih_c00118.d12
 file machines.LINUX in /usr/local/Crystal-17_v1.0.2/utils17
 list of nodes in /usr/local/Crystal-17_v1.0.2/utils17/nodes.par
-creating temporary directories /scratch/lme/tmp_p425862_lme on each node
+creating temporary directories /scratch/lme/tmp_p517434_lme on each node
 copying Pcrystal executable on each node
 copying input file on each node
 external geometry input from /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3/config_00118/freq/ih_c00118.gui
@@ -17,9 +17,6 @@ ice Ih config_00118 H-bond topology, Pna2_1 (No. 33), multiplicity 4 - frequenci
 EXTERNAL
 FREQCALC
 INTENS
-INTRAMAN
-INTCPHF
-END
 ENDFREQ
 BASISSET
 POB-TZVP 
@@ -35,17 +32,17 @@ FMIXING
 MEMOPRT
 DIIS
 ENDSCF
-Fri Nov 13 14:09:09 CET 2026
- PROCESS            0  OF           10  WORKING
- PROCESS            1  OF           10  WORKING
- PROCESS            3  OF           10  WORKING
- PROCESS            9  OF           10  WORKING
+Sat Nov 14 18:31:12 CET 2026
  PROCESS            2  OF           10  WORKING
  PROCESS            4  OF           10  WORKING
  PROCESS            5  OF           10  WORKING
  PROCESS            6  OF           10  WORKING
- PROCESS            7  OF           10  WORKING
  PROCESS            8  OF           10  WORKING
+ PROCESS            9  OF           10  WORKING
+ PROCESS            0  OF           10  WORKING
+ PROCESS            1  OF           10  WORKING
+ PROCESS            3  OF           10  WORKING
+ PROCESS            7  OF           10  WORKING
 
          
  *******************************************************************************
@@ -90,7 +87,7 @@ Fri Nov 13 14:09:09 CET 2026
  *(18) CAMBRIDGE UNIVERSITY - CAMBRIDGE (UK)                                   *
  *                                                                             *
  *******************************************************************************
- EEEEEEEEEE STARTING  DATE 13 11 2026 TIME 14:09:09.7
+ EEEEEEEEEE STARTING  DATE 14 11 2026 TIME 18:31:13.8
  ice Ih config_00118 H-bond topology, Pna2_1 (No. 33), multiplicity 4 - frequenci
 
  GEOMETRY INPUT FROM EXTERNAL FILE (FORTRAN UNIT 34)
@@ -179,7 +176,6 @@ Fri Nov 13 14:09:09 CET 2026
 
                        FREQUENCY CALCULATION
 
- INFORMATION **** INPFREQ **** IR INTENSITIES EVALUATED THROUGH CPHF APPROACH
  INFORMATION **** INPFREQ **** NEW DEFAULT - IMPOSING ECKART CONDITIONS TO THE HESSIAN
 
  GCALCO - MAX INDICES DIRECT LATTICE VECTOR    12    21    12
@@ -372,63 +368,485 @@ Fri Nov 13 14:09:09 CET 2026
   S. Grimme, A. Hansen, J. G. Brandenburg, and C. Bannwarth,
   Chem. Rev. 116 (2016), 5105-5154
 
+ INFORMATION **** TOLINTEG **** COULOMB AND EXCHANGE SERIES TOLERANCES MODIFIED
+ INFORMATION **** DIIS **** DIIS FOR SCF ACTIVE
+ INFORMATION **** DIIS **** LEVEL SHIFTER DISABLED
+ *******************************************************************************
+ N. OF ATOMS PER CELL        24  COULOMB OVERLAP TOL         (T1) 10**  -10
+ NUMBER OF SHELLS           128  COULOMB PENETRATION TOL     (T2) 10**  -10
+ NUMBER OF AO               240  EXCHANGE OVERLAP TOL        (T3) 10**  -10
+ N. OF ELECTRONS PER CELL    80  EXCHANGE PSEUDO OVP (F(G))  (T4) 10**  -10
+ CORE ELECTRONS PER CELL     16  EXCHANGE PSEUDO OVP (P(G))  (T5) 10**  -18
+ N. OF SYMMETRY OPERATORS     4  POLE ORDER IN MONO ZONE                  4
+ *******************************************************************************
+ TYPE OF CALCULATION :  RESTRICTED CLOSED SHELL
+ KOHN-SHAM HAMILTONIAN
 
  (EXCHANGE)[CORRELATION] FUNCTIONAL:(HSEsol GGA)[PBEsol]
- WARNING **** NOT SUPPORTED BY CPHF/KS
 
- CURRENT XC FUNCTIONALS AVAILABLE FOR CPHF/KS:
- -EXCHANGE:
-  LDA, BECKE, PBE, PBESOL, PWGGA, SOGGA, WCGGA
- -CORRELATION:
-  PWLSD, VWN, PBE, PBESOL, LYP
- -HYBRIDS:
-  B3PW, B3LYP, PBE0, PBESOL0, WC1LYP, B97H, RSHXLDA, wB97, wB97X, LC-BLYP, CAM-B3LYP, SC-BLYP
+ RANGE-SEPARATED HYBRID FUNCTIONAL 
+ OMEGA (SHORT-RANGE)[LONG-RANGE]:(    0.1100)[    0.0000]
 
- ERROR **** CPHF/KS **** EXCHANGE (CORRELATION) FUNCTIONAL NOT SUPPORTED BY CPHF/KS
- TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT ERR         TELAPSE        2.11 TCPU        0.03
---------------------------------------------------------------------------
-Sorry!  You were supposed to get help about:
-    mpi-abort
-But I couldn't open the help file:
-    /opt/openmpi-2.1.0/share/openmpi/help-mpi-api.txt: No such file or directory.  Sorry!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Sorry!  You were supposed to get help about:
-    mpi-abort
-But I couldn't open the help file:
-    /opt/openmpi-2.1.0/share/openmpi/help-mpi-api.txt: No such file or directory.  Sorry!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Sorry!  You were supposed to get help about:
-    mpi-abort
-But I couldn't open the help file:
-    /opt/openmpi-2.1.0/share/openmpi/help-mpi-api.txt: No such file or directory.  Sorry!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Sorry!  You were supposed to get help about:
-    mpi-abort
-But I couldn't open the help file:
-    /opt/openmpi-2.1.0/share/openmpi/help-mpi-api.txt: No such file or directory.  Sorry!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Sorry!  You were supposed to get help about:
-    mpi-abort
-But I couldn't open the help file:
-    /opt/openmpi-2.1.0/share/openmpi/help-mpi-api.txt: No such file or directory.  Sorry!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-Sorry!  You were supposed to get help about:
-    mpi-abort
-But I couldn't open the help file:
-    /opt/openmpi-2.1.0/share/openmpi/help-mpi-api.txt: No such file or directory.  Sorry!
---------------------------------------------------------------------------
-Fri Nov 13 14:09:11 CET 2026
-Contents of temporary directory in master node rune05:
-total 41156
--rw-r--r-- 1 lme users     2818 Nov 13 14:09 fort.34
--rw-r--r-- 1 lme users      168 Nov 13 14:09 fort.87
--rw-r--r-- 1 lme users      248 Nov 13 14:09 INPUT
--rwxr-xr-x 1 lme users 42130718 Nov 13 14:09 Pcrystal
-SCF abnormal end - no wf written in fort.9
-geometry input file fort.34 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3/config_00118/freq/ih_c00118.gui
-removing temporary directories /scratch/lme/tmp_p425862_lme from each node
+ HYBRID EXCHANGE - PERCENTAGE OF FOCK EXCHANGE    25.0000
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ *******************************************************************************
+ MAX NUMBER OF SCF CYCLES      50  CONVERGENCE ON DELTAP        10**-16
+ WEIGHT OF F(I) IN F(I+1)      70% CONVERGENCE ON ENERGY        10**-10
+ SHRINK. FACT.(MONKH.)    4  4  4  NUMBER OF K POINTS IN THE IBZ     27
+ SHRINKING FACTOR(GILAT NET)    4  NUMBER OF K POINTS(GILAT NET)     27
+ *******************************************************************************
+ *** K POINTS COORDINATES (OBLIQUE COORDINATES IN UNITS OF IS =  4)
+   1-R(  0  0  0)   2-C(  1  0  0)   3-R(  2  0  0)   4-C(  0  1  0)
+   5-C(  1  1  0)   6-C(  2  1  0)   7-R(  0  2  0)   8-C(  1  2  0)
+   9-R(  2  2  0)  10-C(  0  0  1)  11-C(  1  0  1)  12-C(  2  0  1)
+  13-C(  0  1  1)  14-C(  1  1  1)  15-C(  2  1  1)  16-C(  0  2  1)
+  17-C(  1  2  1)  18-C(  2  2  1)  19-R(  0  0  2)  20-C(  1  0  2)
+  21-R(  2  0  2)  22-C(  0  1  2)  23-C(  1  1  2)  24-C(  2  1  2)
+  25-R(  0  2  2)  26-C(  1  2  2)  27-R(  2  2  2)
+
+ DIRECT LATTICE VECTORS COMPON. (A.U.)     RECIP. LATTICE VECTORS COMPON. (A.U.) 
+        X            Y            Z              X            Y            Z
+   14.7201200    0.0000000    0.0000000      0.4268433    0.0000000    0.0000000
+    0.0000000    8.4986653    0.0000000      0.0000000    0.7393144    0.0000000
+    0.0000000    0.0000000   13.8403542      0.0000000    0.0000000    0.4539758
+
+ DISK SPACE FOR EIGENVECTORS (FTN 10)     2649600 REALS
+
+ SYMMETRY ADAPTION OF THE BLOCH FUNCTIONS ENABLED
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT gordsh1     TELAPSE        0.17 TCPU        0.04
+ MMMMM gordsh1     USED MEM(MB)      2.01 MAX MEM      2.07 TOT MEM        20.09
+
+ MATRIX SIZE: P(G)  430416, F(G)   88092, P(G) IRR   56690, F(G) IRR   23056
+ MAX G-VECTOR INDEX FOR 1- AND 2-ELECTRON INTEGRALS 115
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INPUT       TELAPSE        0.18 TCPU        0.04
+ MMMMM INPUT       USED MEM(MB)      2.62 MAX MEM      2.69 TOT MEM        26.21
+
+ NEIGHBORS OF THE NON-EQUIVALENT ATOMS
+
+ N = NUMBER OF NEIGHBORS AT DISTANCE R
+    ATOM  N     R/ANG      R/AU   NEIGHBORS (ATOM LABELS AND CELL INDICES)
+   1 O    1     0.9924     1.8753   17 H    0 0 0
+   1 O    1     0.9942     1.8787   21 H    0 0 0
+   1 O    1     1.7587     3.3235    9 H    0 0 0
+   1 O    1     1.7592     3.3243   13 H    0 0 0
+   1 O    1     2.7399     5.1777    5 O    0 0 0
+   1 O    1     2.7519     5.2003    5 O    0-1 0
+
+   5 O    1     0.9932     1.8768   15 H    0 0 0
+   5 O    1     0.9933     1.8772    9 H    0 1 0
+   5 O    1     1.7461     3.2997   21 H    0 0 0
+   5 O    1     1.7705     3.3457   20 H    0 0 0
+   5 O    1     2.7399     5.1777    1 O    0 0 0
+   5 O    1     2.7519     5.2003    1 O    0 1 0
+
+   9 H    1     0.9933     1.8772    5 O    0-1 0
+   9 H    1     1.6012     3.0258   15 H    0-1 0
+   9 H    1     1.7587     3.3235    1 O    0 0 0
+   9 H    1     2.2887     4.3250   21 H    0-1 0
+   9 H    1     2.2920     4.3313   17 H    0 0 0
+   9 H    1     2.2997     4.3458   21 H    0 0 0
+
+  13 H    1     0.9932     1.8768    7 O    0 0 0
+  13 H    1     1.6012     3.0258   11 H    0 0 0
+  13 H    1     1.7592     3.3243    1 O    0 0 0
+  13 H    1     2.2849     4.3178   23 H    0 0-1
+  13 H    1     2.2896     4.3268   21 H    0 0 0
+  13 H    1     2.2967     4.3402   18 H   -1 0-1
+
+  17 H    1     0.9924     1.8753    1 O    0 0 0
+  17 H    1     1.6028     3.0289   21 H    0 0 0
+  17 H    1     1.7705     3.3457    8 O   -1 0 0
+  17 H    1     2.2920     4.3313    9 H    0 0 0
+  17 H    1     2.2967     4.3402   14 H   -1 0 0
+  17 H    1     2.2992     4.3448   13 H    0 0 0
+
+  21 H    1     0.9942     1.8787    1 O    0 0 0
+  21 H    1     1.6028     3.0289   17 H    0 0 0
+  21 H    1     1.7461     3.2997    5 O    0 0 0
+  21 H    1     2.2849     4.3178   15 H    0 0 0
+  21 H    1     2.2887     4.3250    9 H    0 1 0
+  21 H    1     2.2896     4.3268   13 H    0 0 0
+
+
+ SYMMETRY ALLOWED INTERNAL DEGREE(S) OF FREEDOM:  17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SYMM        TELAPSE        0.18 TCPU        0.05
+ MMMMM SYMM        USED MEM(MB)      2.63 MAX MEM      2.85 TOT MEM        26.35
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_SCREEN  TELAPSE        0.18 TCPU        0.05
+ MMMMM INT_SCREEN  USED MEM(MB)      4.29 MAX MEM      4.31 TOT MEM        42.90
+
+ *******************************************************************************
+ *                                                                             *
+ *                                                                             *
+ *         FFFFF  RRRR   EEEE   QQQ   U   U  EEEE  N   N   CCC  Y   Y          *
+ *         F      R   R  E     Q   Q  U   U  E     NN  N  C      Y Y           *
+ *         FFF    RRRR   EEEE  Q   Q  U   U  EEEE  N N N  C       Y            *
+ *         F      R   R  E     Q  QQ  U   U  E     N  NN  C       Y            *
+ *         F      R   R  EEEE   QQ Q   UUU   EEEE  N   N   CCC    Y            *
+ *                                                                             *
+ *                                                                             *
+ * CALCULATION OF PHONON FREQUENCIES AT THE GAMMA POINT.                       *
+ *                                                                             *
+ * SYMMETRY IS EXPLOITED TO BUILD THE TOTAL HESSIAN MATRIX.                    *
+ * (F. PASCALE PHD THESIS TURIN-PARIS 2002)                                    *
+ *                                                                             *
+ *******************************************************************************
+
+
+ * INTENSITIES COMPUTED VIA THE BERRY PHASE APPROACH                           *
+ *                                                                             *
+ * REFERENCES TO BE QUOTED WHEN USING THIS MODULE:                             *
+ *                                                                             *
+ * F. Pascale, C.M. Zicovich-Wilson, F. Lopez, B. Civalleri                    *
+ * R. Orlando, R. Dovesi                                                       *
+ * The calculation of the vibration frequencies of crystalline                 *
+ * compounds and its implementation in the CRYSTAL code                        *
+ * J. Comput. Chem. 25 (2004) 888-897                                          *
+ *                                                                             *
+ * C.M. Zicovich-Wilson, F. Pascale, C. Roetti, V.R. Saunders,                 *
+ * R. Orlando, R. Dovesi                                                       *
+ * The calculation of the vibration frequencies of alpha-quartz:               *
+ * the effect of hamiltonian and basis set                                     *
+ * J. Comput. Chem. 25 (2004) 1873-1881                                        *
+ *******************************************************************************
+
+
+
+ ATOMS ISOTOPIC MASS (AMU) FOR FREQUENCY CALCULATION 
+
+    1 O      15.9949    2 O      15.9949    3 O      15.9949    4 O      15.9949
+    5 O      15.9949    6 O      15.9949    7 O      15.9949    8 O      15.9949
+    9 H       1.0078   10 H       1.0078   11 H       1.0078   12 H       1.0078
+   13 H       1.0078   14 H       1.0078   15 H       1.0078   16 H       1.0078
+   17 H       1.0078   18 H       1.0078   19 H       1.0078   20 H       1.0078
+   21 H       1.0078   22 H       1.0078   23 H       1.0078   24 H       1.0078
+
+ INFORMATION CONCERNING THE SCF+GRADIENT CALCULATIONS REQUIRED FOR
+ GENERATING FREQUENCIES. IN PRINCIPLE 3N+1 SCF + GRADIENT
+ CALCULATIONS  ARE REQUIRED;
+ FOR EACH OF THEM THE REMAINING POINT SYMMETRY IS INDICATED.
+ POINT SYMMETRY PERMITS TO GENERATE GRADIENTS FOR DISPLACEMENT B 
+ STARTING FROM THE GRADIENT GENERATED BY DISPLACEMENT A.
+
+   N   LABEL SYMBOL DISPLACEMENT     SYM. 
+
+   1     EQUILIBRIUM GEOMETRY            4
+
+   2      1   O            DX           1
+   3      1   O            DY           1
+   4      1   O            DZ           1
+   5      5   O            DX           1
+   6      5   O            DY           1
+   7      5   O            DZ           1
+   8      9   H            DX           1
+   9      9   H            DY           1
+  10      9   H            DZ           1
+  11     13   H            DX           1
+  12     13   H            DY           1
+  13     13   H            DZ           1
+  14     17   H            DX           1
+  15     17   H            DY           1
+  16     17   H            DZ           1
+  17     21   H            DX           1
+  18     21   H            DY           1
+  19     21   H            DZ           1
+ USE OF RESIDUAL SYMMETRY AFTER DISPLACEMENT
+
+ NUMERICAL GRADIENT COMPUTED WITH A SINGLE DISPLACEMENT (+DX) FOR EACH
+ CARTESIAN COORDINATE WITH RESPECT TO THE EQUILIBRIUM CONFIGURATION
+ DX=  0.003 ANGSTROM
+ NUMBER OF IRREDUCIBLE ATOMS                     6
+ NUMBER OF SCF+GRADIENT CALCULATIONS            19
+
+  ATOM  SYMOP  ORDER
+    1      1      1
+    5      1      1
+    9      1      1
+   13      1      1
+   17      1      1
+   21      1      1
+
+ ATOM  : IRREDUCIBLE ATOM
+ SYMOP : NUMBER OF SYMMETRY OPERATORS THAT DOESN'T MOVE THE IRREDUCIBLE ATOM
+ ORDER : MAXIMUM ORDER AMONG THE OPERATORS OF THE IRREDUCIBLE ATOM
+
+ *******************************************************************************
+
+
+ GCALCO - MAX INDICES DIRECT LATTICE VECTOR    12    21    12
+ NO.OF VECTORS CREATED 6999 STARS 1045 RMAX   142.45188 BOHR
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT gordsh1     TELAPSE        0.19 TCPU        0.05
+ MMMMM gordsh1     USED MEM(MB)      3.88 MAX MEM      5.69 TOT MEM        37.32
+
+ MATRIX SIZE: P(G)  430416, F(G)   88092, P(G) IRR   56690, F(G) IRR   23056
+ MAX G-VECTOR INDEX FOR 1- AND 2-ELECTRON INTEGRALS 115
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INPUT       TELAPSE        0.19 TCPU        0.06
+ MMMMM INPUT       USED MEM(MB)      4.32 MAX MEM      4.55 TOT MEM        41.71
+
+ SYMMETRY ALLOWED INTERNAL DEGREE(S) OF FREEDOM:  17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SYMM        TELAPSE        0.19 TCPU        0.06
+ MMMMM SYMM        USED MEM(MB)      4.32 MAX MEM      4.54 TOT MEM        41.71
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_SCREEN  TELAPSE        0.20 TCPU        0.06
+ MMMMM INT_SCREEN  USED MEM(MB)      4.32 MAX MEM      4.34 TOT MEM        41.71
+
+ DFT PARAMETERS
+
+     ATOM       ELECTRONS   NET CHARGE   R(ANGSTROM)
+   1   8  O       8.0000      0.0000     0.74000000
+   9   1  H       1.0000      0.0000     1.11000000
+
+ SIZE OF GRID=     146002
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MAKE_GRID2  TELAPSE        1.54 TCPU        1.41
+ MMMMM MAKE_GRID2  USED MEM(MB)     12.46 MAX MEM     21.27 TOT MEM       123.19
+ BECKE WEIGHT FUNCTION
+ RADSAFE =     2.00
+ TOLERANCES - DENSITY:10**- 6; POTENTIAL:10**- 9; GRID WGT:10**-14
+
+ RADIAL INTEGRATION  - INTERVALS (POINTS,UPPER LIMIT):            1( 75,  4.0*R)
+
+ ANGULAR INTEGRATION - INTERVALS (ACCURACY LEVEL [N. POINTS] UPPER LIMIT):
+  1(  4[  86]   0.2)  2(  8[ 194]   0.5)  3( 12[ 350]   0.9)  4( 16[ 974]   3.5)
+  5( 12[ 350]9999.0)
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_CALC    TELAPSE        1.57 TCPU        1.44
+ MMMMM INT_CALC    USED MEM(MB)     11.93 MAX MEM     12.46 TOT MEM       117.90
+
+ *******************************************************************************
+ ice Ih config_00118 H-bond topology, Pna2_1 (No. 33), multiplicity 4 - frequenci
+ CRYSTAL - SCF - TYPE OF CALCULATION :  RESTRICTED CLOSED SHELL
+ *******************************************************************************
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SDIK        TELAPSE        1.62 TCPU        1.48
+ MMMMM SDIK        USED MEM(MB)     14.84 MAX MEM     15.11 TOT MEM       142.91
+
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+         ATOMIC WAVEFUNCTION(S)
+
+
+ NUCLEAR CHARGE  8.0  SYMMETRY SPECIES            S    P
+ N. ELECTRONS    8.0  NUMBER OF PRIMITIVE GTOS   10    6
+                      NUMBER OF CONTRACTED GTOS   4    3
+                      NUMBER OF CLOSED SHELLS     2    0
+                      OPEN SHELL OCCUPATION       0    4
+
+  ZNUC SCFIT  TOTAL HF ENERGY   KINETIC ENERGY   VIRIAL THEOREM ACCURACY
+   8.0  13   -7.480300557E+01  7.484348361E+01 -1.999459164E+00  4.9E-06
+
+ NUCLEAR CHARGE  1.0  SYMMETRY SPECIES            S
+ N. ELECTRONS    1.0  NUMBER OF PRIMITIVE GTOS    5
+                      NUMBER OF CONTRACTED GTOS   3
+                      NUMBER OF CLOSED SHELLS     0
+                      OPEN SHELL OCCUPATION       1
+
+  ZNUC SCFIT  TOTAL HF ENERGY   KINETIC ENERGY   VIRIAL THEOREM ACCURACY
+   1.0   1   -4.972863497E-01  5.223199932E-01 -1.952072209E+00  6.6E-16
+
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE        1.63 TCPU        1.49
+ MMMMM MOQGAD      USED MEM(MB)     12.69 MAX MEM     14.84 TOT MEM       125.49
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE       57.99 TCPU       57.85
+ MMMMM SHELLXN     USED MEM(MB)     12.87 MAX MEM     35.95 TOT MEM       127.27
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE       66.23 TCPU       66.10
+ MMMMM MONMO3      USED MEM(MB)     13.02 MAX MEM     13.02 TOT MEM       128.80
+ NUMERICALLY INTEGRATED DENSITY     80.0000143739
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE       66.67 TCPU       66.53
+ MMMMM NUMDFT      USED MEM(MB)     16.31 MAX MEM     21.60 TOT MEM       161.64
+ CYC   0 ETOT(AU) -6.097393835206E+02 DETOT -6.10E+02 tst  0.00E+00 PX  1.00E+00
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE       66.68 TCPU       66.55
+ MMMMM DIIS        USED MEM(MB)     22.04 MAX MEM     25.83 TOT MEM       214.97
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE       66.99 TCPU       66.86
+ MMMMM FDIK        USED MEM(MB)     18.33 MAX MEM     22.04 TOT MEM       181.86
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.9510247E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.9578766E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -5.6429139E-02 AU
+ INDIRECT ENERGY BAND GAP:   9.2158 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE       67.01 TCPU       66.88
+ MMMMM PDIG        USED MEM(MB)     16.13 MAX MEM     18.91 TOT MEM       159.82
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE       67.03 TCPU       66.89
+ MMMMM MOQGAD      USED MEM(MB)     16.15 MAX MEM     16.40 TOT MEM       160.11
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      122.27 TCPU      122.14
+ MMMMM SHELLXN     USED MEM(MB)     16.33 MAX MEM     39.42 TOT MEM       161.89
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      130.16 TCPU      130.03
+ MMMMM MONMO3      USED MEM(MB)     16.49 MAX MEM     16.49 TOT MEM       163.42
+ NUMERICALLY INTEGRATED DENSITY     80.0000141929
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      131.38 TCPU      131.25
+ MMMMM NUMDFT      USED MEM(MB)     16.49 MAX MEM     21.78 TOT MEM       163.42
+ CYC   1 ETOT(AU) -6.094970004647E+02 DETOT  2.42E-01 tst  0.00E+00 PX  1.00E+00
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      131.39 TCPU      131.26
+ MMMMM DIIS        USED MEM(MB)     22.22 MAX MEM     26.01 TOT MEM       216.75
+ DIIS TEST: 0.20725E+01 AT SCF   CYCLE   1 - MIX   70 %
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      131.52 TCPU      131.38
+ MMMMM FDIK        USED MEM(MB)     18.51 MAX MEM     22.22 TOT MEM       183.64
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4763179E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4839010E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -3.6071154E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.4780 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      131.54 TCPU      131.40
+ MMMMM PDIG        USED MEM(MB)     16.30 MAX MEM     19.09 TOT MEM       161.60
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      131.55 TCPU      131.42
+ MMMMM MOQGAD      USED MEM(MB)     16.33 MAX MEM     16.57 TOT MEM       161.89
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      189.03 TCPU      188.90
+ MMMMM SHELLXN     USED MEM(MB)     16.51 MAX MEM     39.59 TOT MEM       163.67
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      197.66 TCPU      197.53
+ MMMMM MONMO3      USED MEM(MB)     16.66 MAX MEM     16.66 TOT MEM       165.21
+ NUMERICALLY INTEGRATED DENSITY     80.0000141178
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      198.94 TCPU      198.80
+ MMMMM NUMDFT      USED MEM(MB)     16.66 MAX MEM     21.95 TOT MEM       165.21
+ CYC   2 ETOT(AU) -6.097156634860E+02 DETOT -2.19E-01 tst  5.82E-04 PX  3.58E-02
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      198.95 TCPU      198.81
+ MMMMM DIIS        USED MEM(MB)     22.40 MAX MEM     26.19 TOT MEM       218.53
+ DIIS TEST: 0.17691E+00 AT SCF   CYCLE   2 - DIIS ACTIVE - HISTORY:     2 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      199.08 TCPU      198.95
+ MMMMM FDIK        USED MEM(MB)     18.69 MAX MEM     22.40 TOT MEM       185.42
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4149810E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4217677E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.4484895E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6264 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      199.10 TCPU      198.97
+ MMMMM PDIG        USED MEM(MB)     16.48 MAX MEM     19.27 TOT MEM       163.38
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      199.12 TCPU      198.98
+ MMMMM MOQGAD      USED MEM(MB)     16.51 MAX MEM     16.75 TOT MEM       163.67
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      254.48 TCPU      254.34
+ MMMMM SHELLXN     USED MEM(MB)     16.69 MAX MEM     39.77 TOT MEM       165.45
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      262.82 TCPU      262.68
+ MMMMM MONMO3      USED MEM(MB)     16.84 MAX MEM     16.84 TOT MEM       166.99
+ NUMERICALLY INTEGRATED DENSITY     80.0000140784
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      264.03 TCPU      263.90
+ MMMMM NUMDFT      USED MEM(MB)     16.84 MAX MEM     22.13 TOT MEM       166.99
+ CYC   3 ETOT(AU) -6.097389927783E+02 DETOT -2.33E-02 tst  1.16E-04 PX  2.63E-02
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      264.04 TCPU      263.91
+ MMMMM DIIS        USED MEM(MB)     22.58 MAX MEM     26.37 TOT MEM       220.31
+ DIIS TEST: 0.89066E-03 AT SCF   CYCLE   3 - DIIS ACTIVE - HISTORY:     3 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      264.16 TCPU      264.03
+ MMMMM FDIK        USED MEM(MB)     18.86 MAX MEM     22.58 TOT MEM       187.20
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4316492E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4385762E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5109553E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6547 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      264.18 TCPU      264.05
+ MMMMM PDIG        USED MEM(MB)     16.66 MAX MEM     19.45 TOT MEM       165.16
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      264.20 TCPU      264.06
+ MMMMM MOQGAD      USED MEM(MB)     16.69 MAX MEM     16.93 TOT MEM       165.45
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      321.43 TCPU      321.29
+ MMMMM SHELLXN     USED MEM(MB)     16.87 MAX MEM     39.95 TOT MEM       167.23
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      330.16 TCPU      330.02
+ MMMMM MONMO3      USED MEM(MB)     17.02 MAX MEM     17.02 TOT MEM       168.77
+ NUMERICALLY INTEGRATED DENSITY     80.0000141050
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      331.44 TCPU      331.30
+ MMMMM NUMDFT      USED MEM(MB)     17.02 MAX MEM     22.31 TOT MEM       168.77
+ CYC   4 ETOT(AU) -6.097391153703E+02 DETOT -1.23E-04 tst  6.80E-07 PX  2.14E-03
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      331.45 TCPU      331.31
+ MMMMM DIIS        USED MEM(MB)     22.76 MAX MEM     26.55 TOT MEM       222.09
+ DIIS TEST: 0.13664E-04 AT SCF   CYCLE   4 - DIIS ACTIVE - HISTORY:     4 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      331.58 TCPU      331.44
+ MMMMM FDIK        USED MEM(MB)     19.04 MAX MEM     22.76 TOT MEM       188.98
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4353543E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4422445E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5272386E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6604 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      331.60 TCPU      331.46
+ MMMMM PDIG        USED MEM(MB)     16.84 MAX MEM     19.62 TOT MEM       166.94
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      331.61 TCPU      331.47
+ MMMMM MOQGAD      USED MEM(MB)     16.87 MAX MEM     17.11 TOT MEM       167.23
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      386.64 TCPU      386.50
+ MMMMM SHELLXN     USED MEM(MB)     17.04 MAX MEM     40.13 TOT MEM       169.01
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      395.00 TCPU      394.87
+ MMMMM MONMO3      USED MEM(MB)     17.20 MAX MEM     17.20 TOT MEM       170.55
+ NUMERICALLY INTEGRATED DENSITY     80.0000141034
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      396.21 TCPU      396.07
+ MMMMM NUMDFT      USED MEM(MB)     17.20 MAX MEM     22.49 TOT MEM       170.55
+ CYC   5 ETOT(AU) -6.097391167914E+02 DETOT -1.42E-06 tst  1.89E-08 PX  3.08E-04
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      396.22 TCPU      396.08
+ MMMMM DIIS        USED MEM(MB)     22.93 MAX MEM     26.73 TOT MEM       223.87
+ DIIS TEST: 0.27827E-05 AT SCF   CYCLE   5 - DIIS ACTIVE - HISTORY:     5 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      396.33 TCPU      396.19
+ MMMMM FDIK        USED MEM(MB)     19.22 MAX MEM     22.93 TOT MEM       190.76
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4353315E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4422360E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5280636E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6601 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      396.35 TCPU      396.21
+ MMMMM PDIG        USED MEM(MB)     17.02 MAX MEM     19.80 TOT MEM       168.72
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      396.36 TCPU      396.23
+ MMMMM MOQGAD      USED MEM(MB)     17.04 MAX MEM     17.29 TOT MEM       169.01
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      453.52 TCPU      453.38
+ MMMMM SHELLXN     USED MEM(MB)     17.22 MAX MEM     40.31 TOT MEM       170.79
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      462.13 TCPU      461.99
+ MMMMM MONMO3      USED MEM(MB)     17.38 MAX MEM     17.38 TOT MEM       172.33
+ NUMERICALLY INTEGRATED DENSITY     80.0000141045
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      463.41 TCPU      463.28
+ MMMMM NUMDFT      USED MEM(MB)     17.38 MAX MEM     22.67 TOT MEM       172.33
+ CYC   6 ETOT(AU) -6.097391169934E+02 DETOT -2.02E-07 tst  3.82E-09 PX  8.20E-05
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      463.42 TCPU      463.29
+ MMMMM DIIS        USED MEM(MB)     23.11 MAX MEM     26.90 TOT MEM       225.65
+ DIIS TEST: 0.89937E-06 AT SCF   CYCLE   6 - DIIS ACTIVE - HISTORY:     6 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      463.55 TCPU      463.41
+ MMMMM FDIK        USED MEM(MB)     19.40 MAX MEM     23.11 TOT MEM       192.54
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4354439E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4423437E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5285118E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6603 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      463.57 TCPU      463.43
+ MMMMM PDIG        USED MEM(MB)     17.19 MAX MEM     19.98 TOT MEM       170.50
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      463.58 TCPU      463.44
+ MMMMM MOQGAD      USED MEM(MB)     17.22 MAX MEM     17.46 TOT MEM       170.79
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      519.80 TCPU      519.67
+ MMMMM SHELLXN     USED MEM(MB)     17.40 MAX MEM     40.48 TOT MEM       172.57
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      528.02 TCPU      527.88
+ MMMMM MONMO3      USED MEM(MB)     17.55 MAX MEM     17.55 TOT MEM       174.11
+ NUMERICALLY INTEGRATED DENSITY     80.0000141042
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      529.23 TCPU      529.09
+ MMMMM NUMDFT      USED MEM(MB)     17.55 MAX MEM     22.84 TOT MEM       174.11
+ CYC   7 ETOT(AU) -6.097391170928E+02 DETOT -9.94E-08 tst  5.15E-10 PX  3.10E-05
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      529.24 TCPU      529.10
+ MMMMM DIIS        USED MEM(MB)     23.29 MAX MEM     27.08 TOT MEM       227.43
+ DIIS TEST: 0.47574E-08 AT SCF   CYCLE   7 - DIIS ACTIVE - HISTORY:     7 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      529.36 TCPU      529.22
+ MMMMM FDIK        USED MEM(MB)     19.58 MAX MEM     23.29 TOT MEM       194.32
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4354427E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4423425E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5285299E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6603 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      529.38 TCPU      529.24
+ MMMMM PDIG        USED MEM(MB)     17.37 MAX MEM     20.16 TOT MEM       172.28
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      529.39 TCPU      529.25
+ MMMMM MOQGAD      USED MEM(MB)     17.40 MAX MEM     17.64 TOT MEM       172.57
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      586.29 TCPU      586.15
+ MMMMM SHELLXN     USED MEM(MB)     17.58 MAX MEM     40.66 TOT MEM       174.35
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      594.98 TCPU      594.85
+ MMMMM MONMO3      USED MEM(MB)     17.73 MAX MEM     17.73 TOT MEM       175.89
+ NUMERICALLY INTEGRATED DENSITY     80.0000141042
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      596.27 TCPU      596.13
+ MMMMM NUMDFT      USED MEM(MB)     17.73 MAX MEM     23.02 TOT MEM       175.89
+ CYC   8 ETOT(AU) -6.097391170928E+02 DETOT  1.40E-11 tst  3.05E-12 PX  2.01E-06
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      596.28 TCPU      596.15
+ MMMMM DIIS        USED MEM(MB)     23.47 MAX MEM     27.26 TOT MEM       229.21
+ DIIS TEST: 0.16515E-10 AT SCF   CYCLE   8 - DIIS ACTIVE - HISTORY:     8 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      596.38 TCPU      596.25
+ MMMMM FDIK        USED MEM(MB)     19.75 MAX MEM     23.47 TOT MEM       196.11
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4354414E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4423412E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5285234E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6603 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      596.41 TCPU      596.27
+ MMMMM PDIG        USED MEM(MB)     17.55 MAX MEM     20.34 TOT MEM       174.06
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      596.42 TCPU      596.28
+ MMMMM MOQGAD      USED MEM(MB)     17.58 MAX MEM     17.82 TOT MEM       174.35
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      651.91 TCPU      651.77
