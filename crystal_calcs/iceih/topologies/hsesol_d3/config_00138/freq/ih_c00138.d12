@@ -2,9 +2,6 @@ ice Ih config_00138 H-bond topology, Pca2_1 (No. 29), multiplicity 4 - frequenci
 EXTERNAL
 FREQCALC
 INTENS
-INTRAMAN
-INTCPHF
-END
 ENDFREQ
 BASISSET
 POB-TZVP 

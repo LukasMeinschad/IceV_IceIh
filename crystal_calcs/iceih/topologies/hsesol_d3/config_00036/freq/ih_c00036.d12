@@ -2,9 +2,6 @@ ice Ih config_00036 H-bond topology, Pmc2_1 (No. 26), multiplicity 8 - frequenci
 EXTERNAL
 FREQCALC
 INTENS
-INTRAMAN
-INTCPHF
-END
 ENDFREQ
 BASISSET
 POB-TZVP 

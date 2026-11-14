@@ -143,6 +143,29 @@ def main():
     open(sp, "w").write("\n".join(sub))
     os.chmod(sp, 0o755)
 
+    # frequency jobs only, for topologies whose optimisation already converged
+    frq = ["#!/bin/bash",
+           "# Submit only the frequency jobs (optimisations already finished).",
+           "# A freq job is submitted only if opt/<name>.out reports a converged",
+           "# optimisation and opt/<name>.gui exists.",
+           "# Usage:  ./submit_freq.sh            (all)",
+           "#         ./submit_freq.sh 122 3      (selected ids)",
+           'cd "$(dirname "$0")"',
+           'ids=("$@")',
+           'if [ ${#ids[@]} -eq 0 ]; then ids=(' + " ".join(str(c) for c, _, _ in done) + '); fi',
+           'for id in "${ids[@]}"; do',
+           '  tag=$(printf "config_%05d" "$id")',
+           f'  name=$(printf "{a.prefix}_c%05d" "$id")',
+           '  if ! grep -q "OPT END - CONVERGED" "$tag/opt/$name.out" 2>/dev/null || [ ! -f "$tag/opt/$name.gui" ]; then',
+           '    echo "$tag: optimisation not converged / no .gui - skipped"; continue',
+           '  fi',
+           '  fid=$(cd "$tag/freq" && sbatch --parsable "$name.sjob")',
+           '  echo "$tag  freq job $fid"',
+           "done", ""]
+    fp = os.path.join(a.out, "submit_freq.sh")
+    open(fp, "w").write("\n".join(frq))
+    os.chmod(fp, 0o755)
+
     with open(os.path.join(a.out, "jobs.csv"), "w", newline="") as fh:
         cols = ["id", "directory", "input", "space_group", "sg_number", "n_symops",
                 "atoms_asym_unit", "multiplicity", "weight", "|P|"]

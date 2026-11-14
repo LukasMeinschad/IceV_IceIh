@@ -29,8 +29,8 @@ hsesol_d3/
   config_XXXXX/
     opt/ih_cXXXXX.d12   space group + asymmetric unit, OPTGEOM ATOMONLY (literature cell kept)
     opt/ih_cXXXXX.sjob
-    freq/ih_cXXXXX.d12  EXTERNAL (optimised geometry incl. symmetry) + FREQCALC with
-                        IR and Raman intensities (INTENS, INTRAMAN, INTCPHF ... END)
+    freq/ih_cXXXXX.d12  EXTERNAL (optimised geometry incl. symmetry) + FREQCALC INTENS
+                        (IR intensities, Berry phase)
     freq/ih_cXXXXX.sjob copies ../opt/ih_cXXXXX.gui (fort.34) and runs CRYSTAL
     ih_cXXXXX_P1_geometry.d12   same structure in P1 (reference only)
     ih_cXXXXX_sym.cif / _P1.cif  CIF of the starting structure (symmetry-adapted / P1)
@@ -42,31 +42,18 @@ The ATOMONLY optimisation uses TOLDEG 1e-5, TOLDEX 4e-5, TOLDEE 10 and
 MAXCYCLE 200. The SLURM settings are copied from the same sjob (CPU_rune, CRYSTAL 17,
 scratch /scratch/lme), but each job uses **10 cores**.
 
-### IR and Raman intensities
+### Intensities: IR only (no Raman with HSEsol in CRYSTAL 17)
 
-The frequency runs compute IR **and** Raman intensities with the analytical
-CPHF/CPKS scheme:
-
-```
-FREQCALC
-INTENS
-INTRAMAN
-INTCPHF
-END
-ENDFREQ
-```
-
-With INTCPHF the IR intensities also come from CPHF (analytical Born charges),
-not from the Berry phase. The CPHF/CPKS step makes the frequency run noticeably
-more expensive. Two things to check:
-
-* Test one job first (e.g. id 122, ice XI). Some CRYSTAL versions do not
-  support CPKS with screened hybrids such as HSEsol. If the job stops in the
-  CPHF step for that reason, keep only `INTENS` (IR, Berry phase) or use a
-  global hybrid for the Raman part.
-* The intensities are printed in the `.out` file. For spectra with
-  experimental conditions you can add `RAMANEXP` (temperature in K, laser
-  wavelength in nm) and the `IRSPEC` / `RAMSPEC` blocks inside FREQCALC.
+A first attempt with Raman intensities (`INTRAMAN` + `INTCPHF`) failed in all
+24 frequency runs:
+`ERROR **** CPHF/KS **** EXCHANGE (CORRELATION) FUNCTIONAL NOT SUPPORTED BY CPHF/KS`.
+The CPHF/CPKS code of CRYSTAL 17 supports LDA/GGA functionals and the hybrids
+B3PW, B3LYP, PBE0, PBESOL0, WC1LYP, B97H and range-separated ones (wB97, wB97X,
+LC-BLYP, CAM-B3LYP, ...), but not HSE06/HSEsol. The frequency inputs therefore
+compute **IR intensities only** (`INTENS`, Berry phase), like `iceih/disp_cor/freq`.
+Frequencies must be computed with the functional of the optimisation, so
+Raman spectra need a separate opt + freq set with a supported functional
+(e.g. PBESOL0-D3 or PBE0-D3).
 
 ## Running on the cluster
 
@@ -74,6 +61,7 @@ more expensive. Two things to check:
 cd crystal_calcs/iceih/topologies/hsesol_d3
 ./submit_all.sh             # all 24 orthorhombic topologies (48 jobs)
 ./submit_all.sh 122 3 73    # or selected ids (see jobs.csv; 122 = ice XI)
+./submit_freq.sh            # only the freq jobs, for converged optimisations
 ```
 
 Each freq job waits for its opt job (`--dependency=afterok`). It then takes the
