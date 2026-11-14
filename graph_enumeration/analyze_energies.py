@@ -53,6 +53,7 @@ def main():
     p.add_argument("--temps", type=float, nargs="*", default=[72.0, 108.0],
                    help="temperatures [K] for Boltzmann populations (multiplicity-weighted)")
     p.add_argument("--no-plot", action="store_true")
+    p.add_argument("--unit", choices=("kJmol", "meV"), default="kJmol", help="energy unit of the plot")
     a = p.parse_args()
 
     jobs = list(csv.DictReader(open(os.path.join(a.jobs, "jobs.csv"))))
@@ -111,54 +112,61 @@ def main():
               + "".join(f" {r[f'population_{T:g}K']:9.3f}" for T in a.temps))
 
     if not a.no_plot:
-        plot(rows, os.path.join(out, "energies.png"))
+        plot(rows, os.path.join(out, "energies.png"), a.unit)
     print(f"written to {out}/")
 
 
-def plot(rows, path):
+def _sg_label(sg):
+    """Hermann-Mauguin symbol in mathtext, e.g. P2_12_12_1 -> $P2_12_12_1$."""
+    return f"${sg}$" if "_" in sg else sg
+
+
+def plot(rows, path, unit="kJmol"):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
+    key, ylab = (("dE_kJmol_per_H2O", r"$\Delta E$ (kJ mol$^{-1}$ per H$_2$O)") if unit == "kJmol"
+                 else ("dE_meV_per_H2O", r"$\Delta E$ (meV per H$_2$O)"))
     groups = []
     for r in rows:
         if r["space_group"] not in groups:
             groups.append(r["space_group"])
-    # fixed order: by first appearance in energy order
     style = {sg: (COLORS[i % 8], MARKERS[i % 8]) for i, sg in enumerate(groups)}
 
-    ink, muted, grid = "#2b2b2a", "#6b6a64", "#e4e3de"
+    plt.rcParams.update({"font.size": 10, "axes.linewidth": 1.0,
+                         "xtick.direction": "in", "ytick.direction": "in",
+                         "xtick.top": True, "ytick.right": True})
     fig, ax = plt.subplots(figsize=(9, 4.6), dpi=200)
-    fig.patch.set_facecolor("#fcfcfb")
-    ax.set_facecolor("#fcfcfb")
     x = np.arange(1, len(rows) + 1)
+    y = np.array([r[key] for r in rows])
     for sg in groups:
         idx = [i for i, r in enumerate(rows) if r["space_group"] == sg]
         c, m = style[sg]
-        ax.scatter(x[idx], [rows[i]["dE_meV_per_H2O"] for i in idx], s=46, color=c, marker=m,
-                   edgecolors="#fcfcfb", linewidths=1.5, zorder=3, label=sg)
+        ax.scatter(x[idx], y[idx], s=50, color=c, marker=m, edgecolors="black",
+                   linewidths=0.6, zorder=3, label=_sg_label(sg))
     for i, r in enumerate(rows):
-        if i < 3 or r["space_group"] == "Cmc2_1":
-            ax.annotate(f"#{r['id']}", (x[i], r["dE_meV_per_H2O"]), textcoords="offset points",
-                        xytext=(0, 8), ha="center", fontsize=8, color=ink)
-    ax.set_xlabel("topology, ranked by energy", color=muted, fontsize=9)
-    ax.set_ylabel("ΔE (meV / H$_2$O)", color=muted, fontsize=9)
-    ax.set_title("Ice Ih H-bond topologies: HSEsol-D3 relative energies (literature cell, ATOMONLY)",
-                 color=ink, fontsize=10, loc="left")
+        if r["space_group"] == "Cmc2_1":
+            ax.annotate("ice XI", (x[i], y[i]), textcoords="offset points",
+                        xytext=(8, 2), ha="left", va="bottom", fontsize=9)
+    ax.set_xlabel("topology id (ranked by energy)")
+    ax.set_ylabel(ylab)
+    ax.set_title("Ice Ih H-bond topologies, HSEsol-D3/POB-TZVP (literature cell, ATOMONLY)", fontsize=10)
     ax.set_xticks(x)
-    ax.set_xticklabels([str(r["id"]) for r in rows], fontsize=7, color=muted, rotation=90)
-    ax.tick_params(axis="y", labelsize=8, colors=muted)
-    ax.tick_params(axis="both", length=0)
-    ax.grid(axis="y", color=grid, linewidth=0.8, zorder=0)
-    for s in ax.spines.values():
-        s.set_visible(False)
-    ax.legend(frameon=False, fontsize=8, ncol=len(groups), loc="upper left", labelcolor=ink,
-              handletextpad=0.3, columnspacing=1.2)
+    ax.set_xticklabels([str(r["id"]) for r in rows], fontsize=8, rotation=90)
+    ax.minorticks_on()
+    ax.tick_params(axis="x", which="minor", bottom=False, top=False)
+    ax.tick_params(which="major", length=5)
+    ax.tick_params(which="minor", length=2.5)
     ax.set_xlim(0.3, len(rows) + 0.7)
-    ax.set_ylim(bottom=min(-0.05 * max(r["dE_meV_per_H2O"] for r in rows), -0.1))
+    pad = 0.06 * y.max()
+    ax.set_ylim(-pad, y.max() + pad)
+    ax.legend(title="space group", loc="upper left", bbox_to_anchor=(1.02, 1.0), borderaxespad=0.0,
+              frameon=True, edgecolor="black", fancybox=False, fontsize=9, title_fontsize=9)
     fig.tight_layout()
-    fig.savefig(path, facecolor=fig.get_facecolor())
+    fig.savefig(path, bbox_inches="tight")
     plt.close(fig)
+    plt.rcdefaults()
 
 
 if __name__ == "__main__":
