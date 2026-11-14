@@ -73,6 +73,7 @@ xyz/  config_XXXXX.xyz
 |---|---|---|---|---|
 | ice Ih | P6₃/mmc (194) | a = 4.4973, c = 7.3240 | 4f (1/3, 2/3, 0.0625) | Röttger et al., Acta Cryst. B50, 644 (1994), H₂O 10 K |
 | ice V | A2/a (15, `A 1 2/a 1`) | a = 9.22, b = 7.54, c = 10.35, β = 109.2 | 4e + 3 × 8f | Kamb, Prakash, Knobler, Acta Cryst. 22, 706 (1967) |
+| ice VI | P4₂/nmc (137, origin 1) | a = 6.27, c = 5.79 | 8g (0, 0.276, 0.382) + 2a | Kamb, Science 150, 205 (1965), AMCSD 0015417 |
 
 * **Ice V oxygen coordinates.** I took them from the oxygen positions of the P1
   input in `crystal_calcs/iceV` (the Kamb cell scaled by 0.9978),
@@ -133,6 +134,7 @@ Results for the cells used in this project:
 |---|---|---|---|
 | Ih 16 H₂O (`ortho2x1x1`) | 139 (141 under cell group) | 2970 | P1 65, P2₁ 30, Pc 19, Pca2₁ 10, P2₁2₁2₁ 6, Pna2₁ 6, Pmc2₁ 1, Cc 1, **Cmc2₁ 1 (ice XI)** |
 | Ih 8 H₂O (`ortho`) | 16 | 114 | P2₁ 4, Pc 3, Pna2₁ 3, P2₁2₁2₁ 2, Cc 1, P1 1, Pca2₁ 1, Cmc2₁ 1 |
+| VI 10 H₂O (unit cell) | 45 | 576 | P1 27, P2₁ 6, Cc 6, Pc 3, **P-1 3 (ice XV type)** |
 | V 28 H₂O (A2/a cell) | 69 380 | 547 612 | P1 67 873, Pc 813, P2₁ 315, P-1 309, **P2₁/c 35 (ice XIII type)**, Cc 35 |
 
 The 28-molecule ice V run takes about 5 s to enumerate and about 2 min for the

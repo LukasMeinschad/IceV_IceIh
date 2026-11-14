@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --partition=CPU_rune
+#SBATCH --nodelist=
+#SBATCH -J VITop12_freq
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=10
+#SBATCH --cpus-per-task=1
+
+source /usr/local/_tci_software_environment_.sh
+module purge
+module load rune/crystal/17_v1.0.2
+
+#set some necessary environment before running
+export CRY17_SCRDIR="/scratch/lme"
+
+#run your job
+# optimised geometry (with symmetry) from the opt run -> fort.34
+cp ../opt/vi_c00012.gui ./vi_c00012.gui || { echo 'opt geometry missing'; exit 1; }
+runmpi17 10 vi_c00012

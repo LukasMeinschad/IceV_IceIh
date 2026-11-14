@@ -80,6 +80,28 @@ STRUCTURES = {
             "primitive": [[1, 0, 0], [0, 0.5, 0.5], [0, -0.5, 0.5]],
         },
     ),
+    # ------------------------------------------------------------------ VI
+    "VI": IceStructure(
+        name="ice VI",
+        space_group="P4_2/nmc (origin choice 1)",
+        sg_number=137,
+        hall_number=420,
+        # B. Kamb, Science 150, 205 (1965); CIF: AMCSD 0015417
+        # (crystal_calcs/iceVI/ice_vi.cif)
+        cell=(6.27, 6.27, 5.79, 90.0, 90.0, 90.0),
+        # 10 H2O per cell, two interpenetrating, mutually non-bonded networks
+        oxygens=[
+            (0.0, 0.276, 0.382),        # O1 8g
+            (0.0, 0.0, 0.0),            # O2 2a
+        ],
+        reference="B. Kamb, Science 150, 205 (1965); AMCSD 0015417",
+        notes="10 H2O per cell; the ordered counterpart is ice XV (P-1).",
+        presets={
+            "unit": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],              # 10 H2O
+            "1x1x2": [[1, 0, 0], [0, 1, 0], [0, 0, 2]],             # 20 H2O
+            "sqrt2": [[1, 1, 0], [-1, 1, 0], [0, 0, 1]],            # 20 H2O
+        },
+    ),
     # ---------------------------------------- validation against GrEnum runs
     "III": IceStructure(
         name="ice III (GrEnum test case)",

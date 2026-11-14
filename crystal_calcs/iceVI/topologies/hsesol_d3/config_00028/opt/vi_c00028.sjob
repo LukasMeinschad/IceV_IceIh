@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --partition=CPU_rune
+#SBATCH --nodelist=
+#SBATCH -J VITop28_opt
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=10
+#SBATCH --cpus-per-task=1
+
+source /usr/local/_tci_software_environment_.sh
+module purge
+module load rune/crystal/17_v1.0.2
+
+#set some necessary environment before running
+export CRY17_SCRDIR="/scratch/lme"
+
+#run your job
+runmpi17 10 vi_c00028
