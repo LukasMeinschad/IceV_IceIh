@@ -86,6 +86,49 @@ def read_atr(path):
     return x[o], y[o]
 
 
+def read_ref(path):
+    rows = []
+    for line in open(path):
+        if line.startswith("#") or line.startswith("wavenumber") or not line.strip():
+            continue
+        w, lo, hi, inten, assign, label = [x.strip() for x in line.split(",", 5)]
+        rows.append({"wavenumber": float(w), "low": float(lo), "high": float(hi),
+                     "intensity": inten, "assignment": assign, "label": label})
+    return rows
+
+
+def compare_ref(summ, done, grid, avg, ref, a, path):
+    """Nearest calculated feature for every reference band (weighted average spectrum)."""
+    def local_maxima(y, lo, hi):
+        s = (grid >= lo) & (grid <= hi)
+        xs, ys = grid[s], y[s]
+        if len(ys) < 3 or ys.max() <= 0:
+            return []
+        return [(xs[i], ys[i] / ys.max()) for i in range(1, len(ys) - 1)
+                if ys[i] > ys[i - 1] and ys[i] >= ys[i + 1] and ys[i] > 0.03 * ys.max()]
+    regions = [(2900, 3700), (2000, 2500), (1500, 1800), (400, 1300)]
+    print(f"\n  comparison with {a.ref_name} (calculated: weighted average, FWHM {a.fwhm:g})")
+    print(f"  {'reference':>22} {'assignment':>18} {'nearest calc. max':>18} {'rel. int.':>9} {'diff':>7}")
+    rows = []
+    for r in ref:
+        reg = next(((lo, hi) for lo, hi in regions if lo <= r["wavenumber"] <= hi), None)
+        mx = local_maxima(avg, *reg) if reg else []
+        if mx:
+            x, rel = min(mx, key=lambda t: abs(t[0] - r["wavenumber"]))
+            d = x - r["wavenumber"]
+        else:
+            x = rel = d = None
+        rows.append({"reference_cm-1": r["wavenumber"], "label": r["label"], "assignment": r["assignment"],
+                     "calc_cm-1": x, "calc_rel_intensity": round(rel, 2) if rel is not None else "",
+                     "diff_cm-1": d})
+        print(f"  {r['label']:>22} {r['assignment']:>18} {('%.0f' % x) if x is not None else 'none':>18} "
+              f"{('%.2f' % rel) if rel is not None else '':>9} {('%+.0f' % d) if d is not None else '':>7}")
+    with open(path, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("jobs")
@@ -98,6 +141,9 @@ def main():
     p.add_argument("--xmin", type=float, default=400.0)
     p.add_argument("--xmax", type=float, default=4000.0)
     p.add_argument("--title", default=None)
+    p.add_argument("--ref", help="reference band list (csv: wavenumber,low,high,intensity,assignment,label), "
+                                 "e.g. reference/bertie_whalley_1964_iceIh_H2O.csv")
+    p.add_argument("--ref-name", default="Bertie & Whalley 1964")
     a = p.parse_args()
 
     jobs = list(csv.DictReader(open(os.path.join(a.jobs, "jobs.csv"))))
@@ -175,11 +221,14 @@ def main():
                                ("combination", (2100, 2350)), ("OH_stretch", (2900, 3700))]:
             sel = (x >= lo) & (x <= hi)
             print(f"  ATR {name:12s} maximum at {x[sel][np.argmax(y[sel])]:7.1f} cm-1")
-    plot(done, grid, avg, atr, a, os.path.join(out, "ir_spectra.png"))
+    ref = read_ref(a.ref) if a.ref else None
+    if ref:
+        compare_ref(summ, done, grid, avg, ref, a, os.path.join(out, "comparison_reference.csv"))
+    plot(done, grid, avg, atr, a, os.path.join(out, "ir_spectra.png"), ref)
     print(f"written to {out}/")
 
 
-def plot(done, grid, avg, atr, a, path):
+def plot(done, grid, avg, atr, a, path, ref=None):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -194,7 +243,8 @@ def plot(done, grid, avg, atr, a, path):
         sel = (x >= a.xmin) & (x <= a.xmax)
         axes[0].plot(x[sel], y[sel], color="black", linewidth=1.2)
         axes[0].set_ylabel("ATR absorbance")
-        axes[0].set_title(a.title or "Ice Ih: measured ATR vs. calculated IR (HSEsol-D3, harmonic)", fontsize=10)
+        axes[0].set_title(a.title or "Ice Ih: measured ATR vs. calculated IR (HSEsol-D3, harmonic)",
+                          fontsize=10, pad=22 if ref else 6)
         axes[0].text(0.01, 0.92, "measured, " + os.path.basename(a.atr), transform=axes[0].transAxes,
                      fontsize=8, va="top")
     ax = axes[-1]
@@ -216,6 +266,20 @@ def plot(done, grid, avg, atr, a, path):
             transform=ax.transAxes, fontsize=8, va="top")
     ax.legend(title="space group", loc="upper left", bbox_to_anchor=(1.02, 1.0), borderaxespad=0.0,
               frameon=True, edgecolor="black", fancybox=False, fontsize=9, title_fontsize=9)
+    if ref:
+        for axx in axes:
+            for r in ref:
+                if r["high"] > r["low"]:
+                    axx.axvspan(r["low"], r["high"], color="#9a9a94", alpha=0.18, linewidth=0, zorder=0)
+                axx.axvline(r["wavenumber"], color="#6b6a64", linestyle=":", linewidth=0.9, zorder=0)
+        top = axes[0]
+        for r in ref:
+            if r["intensity"].strip() in ("s", "sh s", "vb w"):
+                top.text(r["wavenumber"], 1.01, f"{r['wavenumber']:.0f}", transform=top.get_xaxis_transform(),
+                         rotation=90, ha="center", va="bottom", fontsize=7, color="#3d3d3a")
+        axes[-1].plot([], [], color="#6b6a64", linestyle=":", linewidth=0.9, label=a.ref_name)
+        axes[-1].legend(title="space group", loc="upper left", bbox_to_anchor=(1.02, 1.0), borderaxespad=0.0,
+                        frameon=True, edgecolor="black", fancybox=False, fontsize=9, title_fontsize=9)
     for axx in axes:
         axx.set_xlim(a.xmax, a.xmin)
         axx.minorticks_on()

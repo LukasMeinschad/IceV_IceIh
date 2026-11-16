@@ -1,0 +1,13 @@
+# J.E. Bertie, E. Whalley, J. Chem. Phys. 40, 1637 (1964), Table I: IR frequencies of H2O ice Ih at ~100 K
+# (mulls, transmission). Ranges are given as low/high; label = intensity class + assignment from the paper.
+wavenumber,low,high,intensity,assignment,label
+3405,3380,3430,sh s,nu_OH,3380-3430 sh
+3220,3215,3225,s,nu_OH,3220 s
+3130,3110,3150,sh s,nu_OH,3110-3150 sh
+2266,2246,2286,vb w,3nu_R / nu_2+nu_R,2266 comb.
+1650,1620,1680,vb w,nu_2 / 2nu_R,1650 bend
+900,900,900,sh,nu_R,900 sh
+840,840,840,s,nu_R,840 s
+770,770,770,sh,nu_R,770 sh
+660,660,660,sh,nu_R,660 sh
+555,555,555,sh,nu_R,555 sh
