@@ -1,0 +1,76 @@
+date Mon Nov 16 11:31:37 CET 2026
+master hostname rune05
+master system Linux rune05 6.6.32 #1 SMP PREEMPT_DYNAMIC Tue May 6 15:02:32 CEST 2025 x86_64 GNU/Linux
+user lme
+output data in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceVI/topologies/hsesol_d3/config_00004/opt/vi_c00004.out
+mpirun executable in /usr/local/openmpi-2.1.0/bin/
+Pcrystal executable in /usr/local/Crystal-17_v1.0.2/bin/Linux-ifort_openmpi-2.1_i64/v1.0.2
+input data in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceVI/topologies/hsesol_d3/config_00004/opt/vi_c00004.d12
+file machines.LINUX in /usr/local/Crystal-17_v1.0.2/utils17
+list of nodes in /usr/local/Crystal-17_v1.0.2/utils17/nodes.par
+creating temporary directories /scratch/lme/tmp_p649930_lme on each node
+copying Pcrystal executable on each node
+copying input file on each node
+ice VI config_00004 H-bond topology, Pc (No. 7), multiplicity 8
+CRYSTAL
+0 0 0
+7
+6.270000  5.790000  8.867119  135.000000
+15
+8       0.7240000000    0.1320000000    0.7240000000
+8       0.7240000000    0.6320000000    0.5000000000
+8       0.2760000000    0.1320000000    0.2760000000
+8       0.2760000000    0.6320000000    0.5000000000
+8       0.0000000000    0.7500000000    0.0000000000
+1       0.4354896332    0.1320000000    0.4354896332
+1       0.7240000000    0.2838031461    0.9015324928
+1       0.9209350143    0.2161968539    0.8224675072
+1       0.8222793422    0.9959756931    0.8222793422
+1       0.9209350143    0.2838031461    0.0984675072
+1       0.2760000000    0.2838031461    0.0984675072
+1       0.1777206578    0.9959756931    0.1777206578
+1       0.4354896332    0.3680000000    0.0000000000
+1       0.9017206578    0.6139756931    0.0000000000
+1       0.0982793422    0.6139756931    0.0000000000
+OPTGEOM
+ATOMONLY
+TOLDEG
+0.00001
+TOLDEX
+0.00004
+TOLDEE
+10
+MAXCYCLE
+200
+ENDOPT
+BASISSET
+POB-TZVP
+DFT
+HSEsol-D3
+ENDDFT
+SHRINK
+4 4    
+TOLINTEG
+10 10 10 10 18 
+FMIXING
+70
+MEMOPRT
+DIIS
+ENDSCF
+Mon Nov 16 11:31:37 CET 2026
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: /scratch/lme/tmp_p649930_lme/Pcrystal
+Node: rune05
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+10 total processes failed to start
+Mon Nov 16 11:31:39 CET 2026
+Contents of temporary directory in master node rune05:
+total 4
+-rw-r--r-- 1 lme users 1106 Nov 16 11:31 INPUT
+SCF abnormal end - no wf written in fort.9
+removing temporary directories /scratch/lme/tmp_p649930_lme from each node
