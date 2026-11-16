@@ -90,6 +90,30 @@ def test_against_brute_force():
         assert np.all(net == 0)
 
 
+def test_ice_Ih_16_merged_count_independent():
+    """16-H2O cell: brute force gives 2970 configurations / 141 cell-group orbits;
+    the merged count (139) is checked independently by tiling every configuration
+    into a covering cell preserved by all of P6_3/mmc and comparing canonical forms."""
+    g, B, m, B2, m2 = run("Ih", "ortho2x1x1")
+    allc = brute_force(g)
+    assert len(allc) == m.sum() == 2970
+    assert n_orbits(g, allc) == len(B) == 141
+    big = IceGraph(STRUCTURES["Ih"], g.covering_cell())
+    kmap, smap = g.map_bonds_from(big)
+    Bb = allc[:, kmap] * smap
+
+    def keys(M):
+        p = np.ascontiguousarray(np.packbits(M > 0, axis=1))
+        return p.view(f"S{p.shape[1]}").ravel()
+    best = keys(Bb)
+    for p, s in zip(big.perms, big.signs):
+        T = np.empty_like(Bb)
+        T[:, p] = Bb * s
+        k = keys(T)
+        best = np.where(k < best, k, best)
+    assert len(set(best)) == len(B2) == 139
+
+
 def _default_halls():
     d = {}
     for h in range(1, 531):
