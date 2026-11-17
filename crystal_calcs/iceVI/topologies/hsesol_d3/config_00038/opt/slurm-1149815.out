@@ -24,3 +24,4 @@ temporary dir created on 127.0.0.1
 copying Pcrystal executable on each node
 copying input file on each node
 Pcrystal job running in /scratch/lme/tmp_p672214_lme on each node ...
+slurmstepd-rune05: error: *** JOB 1149815 ON rune05 CANCELLED AT 2026-11-17T09:05:42 ***
