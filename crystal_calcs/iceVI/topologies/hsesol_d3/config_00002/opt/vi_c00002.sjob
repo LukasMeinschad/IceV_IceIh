@@ -15,3 +15,4 @@ export CRY17_SCRDIR="/scratch/lme"
 
 #run your job
 runmpi17 10 vi_c00002
+grep -q "OPT END - CONVERGED" vi_c00002.out || { echo "optimisation not converged / CRYSTAL failed"; exit 1; }

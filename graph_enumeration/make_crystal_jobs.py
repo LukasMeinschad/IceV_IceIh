@@ -112,8 +112,12 @@ def main():
         os.makedirs(dopt, exist_ok=True)
         os.makedirs(dfrq, exist_ok=True)
         open(os.path.join(dopt, name + ".d12"), "w").write("\n".join(geo) + "\n" + opt_tail)
+        # runmpi17 exits 0 even if CRYSTAL failed: report failure to SLURM so that the
+        # dependent freq job (--dependency=afterok) is not started
+        post = (f'grep -q "OPT END - CONVERGED" {name}.out || '
+                f'{{ echo "optimisation not converged / CRYSTAL failed"; exit 1; }}')
         open(os.path.join(dopt, name + ".sjob"), "w").write(
-            make_sjob(a.sjob_template, f"{jn}{cid}_opt", name, ncores))
+            make_sjob(a.sjob_template, f"{jn}{cid}_opt", name, ncores).rstrip("\n") + "\n" + post + "\n")
         open(os.path.join(dfrq, name + ".d12"), "w").write(f"{geo[0]} - frequencies\nEXTERNAL\n" + freq_tail)
         pre = (f"# optimised geometry (with symmetry) from the opt run -> fort.34\n"
                f"cp ../opt/{name}.gui ./{name}.gui || {{ echo 'opt geometry missing'; exit 1; }}")
