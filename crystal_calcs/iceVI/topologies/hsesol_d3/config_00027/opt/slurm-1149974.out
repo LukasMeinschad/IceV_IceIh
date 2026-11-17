@@ -1,0 +1,26 @@
+output data in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceVI/topologies/hsesol_d3/config_00027/opt/vi_c00027.out
+mpirun executable in /usr/local/openmpi-2.1.0/bin/
+Pcrystal executable in /usr/local/Crystal-17_v1.0.2/bin/Linux-ifort_openmpi-2.1_i64/v1.0.2
+input data in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceVI/topologies/hsesol_d3/config_00027/opt/vi_c00027.d12
+file machines.LINUX in /usr/local/Crystal-17_v1.0.2/utils17
+list of nodes in /usr/local/Crystal-17_v1.0.2/utils17/nodes.par
+creating temporary directories /scratch/lme/tmp_p680014_lme on each node
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:i/XXj2jG8TweLRpa01BLITih8ER7mDABzh5tl+XiQS0.
+Please contact your system administrator.
+Add correct host key in /home/lme/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/lme/.ssh/known_hosts:1
+  remove with:
+  ssh-keygen -f "/home/lme/.ssh/known_hosts" -R 127.0.0.1
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+temporary dir created on 127.0.0.1
+copying Pcrystal executable on each node
+copying input file on each node
+Pcrystal job running in /scratch/lme/tmp_p680014_lme on each node ...
