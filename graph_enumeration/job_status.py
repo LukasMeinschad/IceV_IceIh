@@ -162,8 +162,9 @@ def main():
                 run = (now - o["start"]).total_seconds() if o["start"] else oi["elapsed"]
                 os_ = f"running  {oi['steps']:3d} st  {fmt(run)}"
                 state = "opt running"
-                left = max(nsteps - oi["steps"], 3) * ts - max(run - oi["elapsed"], 0)
-                rem += max(left, 0.5 * ts) + (ndisp_tot + 1) * disp
+                if ts:
+                    left = max(nsteps - oi["steps"], 3) * ts - max(run - oi["elapsed"], 0)
+                    rem += max(left, 0.5 * ts) + (ndisp_tot + 1) * disp
             else:
                 os_ = f"done     {oi['steps']:3d} st  {fmt(oi['elapsed'])}"
                 state = "opt done"
