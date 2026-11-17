@@ -3,7 +3,7 @@
 #SBATCH --nodelist=
 #SBATCH -J VITop39_freq
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=10
+#SBATCH --ntasks-per-node=30
 #SBATCH --cpus-per-task=1
 
 source /usr/local/_tci_software_environment_.sh
@@ -14,6 +14,7 @@ module load rune/crystal/17_v1.0.2
 export CRY17_SCRDIR="/scratch/lme"
 
 #run your job
-# optimised geometry (with symmetry) from the opt run -> fort.34
+# run only if the optimisation converged; its geometry (with symmetry) -> fort.34
+grep -q "OPT END - CONVERGED" ../opt/vi_c00039.out 2>/dev/null || { echo 'optimisation not converged - frequencies skipped'; exit 1; }
 cp ../opt/vi_c00039.gui ./vi_c00039.gui || { echo 'opt geometry missing'; exit 1; }
-runmpi17 10 vi_c00039
+runmpi17 30 vi_c00039

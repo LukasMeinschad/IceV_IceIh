@@ -6,7 +6,7 @@
 #         ./submit_freq.sh 122 3      (selected ids)
 cd "$(dirname "$0")"
 ids=("$@")
-if [ ${#ids[@]} -eq 0 ]; then ids=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45); fi
+if [ ${#ids[@]} -eq 0 ]; then ids=(1 4 7 10 13 19 20 22 24 27 33 35 36 39 40 41 44 45); fi
 for id in "${ids[@]}"; do
   tag=$(printf "config_%05d" "$id")
   name=$(printf "vi_c%05d" "$id")

@@ -24,6 +24,30 @@ I generated them with `graph_enumeration/enumerate_ice.py VI` and
 The ordered phase of ice VI, ice XV, is P-1 with 10 H2O per cell
 (Salzmann et al., PRL 103, 105701 (2009)).
 
+## Current run (round 2): 18 symmetric topologies, 30 cores, 10 lanes
+
+The first round (all 45 topologies, 10 cores each) was cancelled on 17.11.2026 because it was too
+expensive: the 27 P1 topologies alone would have needed about 135,000 CPU-hours (about 3 weeks of
+wall time). Round 2 calculates only the **18 symmetric topologies** (P2_1 1 10 13 20 39 41;
+Pc 4 19 24; Cc 22 27 33 35 44 45; P-1 7 36 40 = ice XV candidates). The P1 directories are kept
+unchanged for later.
+
+* 30 cores per job. `submit_lanes.sh` runs them in 10 chains (opt -> freq -> next topology), so at
+  most 300 cores are in use. The ice XV candidates go first.
+* Optimisations that had made progress in round 1 restart from their last geometry (written into
+  the .d12 by `graph_enumeration/restart_from_partial.py`; space group and cell checked). The old
+  outputs are in `config_XXXXX/opt/cancelled_run1/`. Restarted: 1 (point 12), 10 (20), 13 (18),
+  19 (13), 20 (12), 22 (13), 24 (18), 27 (14), 33 (5), 35 (6), 36 (6). Fresh: 4 7 39 40 41 44 45.
+* opt jobs exit with an error if the optimisation did not converge, and freq jobs skip themselves
+  in that case (runmpi17 always reports success to SLURM).
+
+```bash
+cd crystal_calcs/iceVI/topologies/hsesol_d3
+./submit_lanes.sh          # do NOT use submit_all.sh: it would start all 18 at once (540 cores)
+```
+
+Progress and estimated end: `python graph_enumeration/job_status.py crystal_calcs/iceVI/topologies/hsesol_d3`
+
 ## Layout
 
 The layout is the same as for ice Ih:

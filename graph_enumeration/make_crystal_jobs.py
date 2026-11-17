@@ -119,7 +119,9 @@ def main():
         open(os.path.join(dopt, name + ".sjob"), "w").write(
             make_sjob(a.sjob_template, f"{jn}{cid}_opt", name, ncores).rstrip("\n") + "\n" + post + "\n")
         open(os.path.join(dfrq, name + ".d12"), "w").write(f"{geo[0]} - frequencies\nEXTERNAL\n" + freq_tail)
-        pre = (f"# optimised geometry (with symmetry) from the opt run -> fort.34\n"
+        pre = (f"# run only if the optimisation converged; its geometry (with symmetry) -> fort.34\n"
+               f'grep -q "OPT END - CONVERGED" ../opt/{name}.out 2>/dev/null || '
+               f"{{ echo 'optimisation not converged - frequencies skipped'; exit 1; }}\n"
                f"cp ../opt/{name}.gui ./{name}.gui || {{ echo 'opt geometry missing'; exit 1; }}")
         open(os.path.join(dfrq, name + ".sjob"), "w").write(
             make_sjob(a.sjob_template, f"{jn}{cid}_freq", name, ncores, pre))
