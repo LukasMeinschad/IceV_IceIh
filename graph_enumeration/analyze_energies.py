@@ -54,6 +54,7 @@ def main():
                    help="temperatures [K] for Boltzmann populations (multiplicity-weighted)")
     p.add_argument("--no-plot", action="store_true")
     p.add_argument("--unit", choices=("kJmol", "meV"), default="kJmol", help="energy unit of the plot")
+    p.add_argument("--title", default="Ice Ih", help="phase name for the plot title")
     a = p.parse_args()
 
     jobs = list(csv.DictReader(open(os.path.join(a.jobs, "jobs.csv"))))
@@ -77,6 +78,12 @@ def main():
     if not rows:
         raise SystemExit("no converged optimisations found")
 
+    ncell = 16
+    st = os.path.join(a.jobs, "..", "enumeration", "structure.txt")
+    if os.path.exists(st):
+        m = re.search(r"^(\d+) oxygen sites", open(st).read(), re.M)
+        if m:
+            ncell = int(m.group(1))
     E = np.array([r["E_au_per_H2O"] for r in rows])
     dE = (E - E.min())
     g = np.array([r["multiplicity"] for r in rows], float)
@@ -84,8 +91,8 @@ def main():
         r["dE_meV_per_H2O"] = de * HARTREE_MEV
         r["dE_kJmol_per_H2O"] = de * HARTREE_KJMOL
     for T in a.temps:
-        # energy of a whole 16-H2O cell configuration enters the Boltzmann factor
-        x = -(dE * HARTREE_MEV * 16) / (KB_MEV * T)
+        # energy of a whole cell configuration (enumeration cell) enters the Boltzmann factor
+        x = -(dE * HARTREE_MEV * ncell) / (KB_MEV * T)
         w = g * np.exp(x - x.max())
         w /= w.sum()
         for r, wi in zip(rows, w):
@@ -112,7 +119,7 @@ def main():
               + "".join(f" {r[f'population_{T:g}K']:9.3f}" for T in a.temps))
 
     if not a.no_plot:
-        plot(rows, os.path.join(out, "energies.png"), a.unit)
+        plot(rows, os.path.join(out, "energies.png"), a.unit, a.title)
     print(f"written to {out}/")
 
 
@@ -121,7 +128,7 @@ def _sg_label(sg):
     return f"${sg}$" if "_" in sg else sg
 
 
-def plot(rows, path, unit="kJmol"):
+def plot(rows, path, unit="kJmol", title="Ice Ih"):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -146,12 +153,12 @@ def plot(rows, path, unit="kJmol"):
         ax.scatter(x[idx], y[idx], s=50, color=c, marker=m, edgecolors="black",
                    linewidths=0.6, zorder=3, label=_sg_label(sg))
     for i, r in enumerate(rows):
-        if r["space_group"] == "Cmc2_1":
+        if r["space_group"] == "Cmc2_1" and title == "Ice Ih":
             ax.annotate("ice XI", (x[i], y[i]), textcoords="offset points",
                         xytext=(8, 2), ha="left", va="bottom", fontsize=9)
     ax.set_xlabel("topology id (ranked by energy)")
     ax.set_ylabel(ylab)
-    ax.set_title("Ice Ih H-bond topologies, HSEsol-D3/POB-TZVP (literature cell, ATOMONLY)", fontsize=10)
+    ax.set_title(f"{title} H-bond topologies, HSEsol-D3/POB-TZVP (literature cell, ATOMONLY)", fontsize=10)
     ax.set_xticks(x)
     ax.set_xticklabels([str(r["id"]) for r in rows], fontsize=8, rotation=90)
     ax.minorticks_on()
