@@ -163,3 +163,26 @@ python make_crystal_jobs.py ../crystal_calcs/iceih/topologies/enumeration \
     --sjob-template ../crystal_calcs/iceih/disp_cor/opt/iceih.sjob \
     --prefix ih --jobname IhTop --out ../crystal_calcs/iceih/topologies/hsesol_d3
 ```
+
+## GenIce structures
+
+[GenIce](https://github.com/vitroid/GenIce) (`genice2`, core library `genice-core`) produces *one random*
+ice-rule configuration per call. `identify_topology.py` tells which enumerated topology such a snapshot
+(or any P1 input) is:
+
+```
+genice2 1h --depol none --seed 1 -f cif > ih_s1.cif
+python identify_topology.py Ih ih_s1.cif --jobs ../crystal_calcs/iceih/topologies/hsesol_d3
+python identify_topology.py VI --cell unit ice6.cif
+```
+
+* GenIce's ice Ih cell (7.82 x 7.35 x 9.04 A, 16 H2O) is our `ortho2x1x1` cell; its ice VI cell is the
+  10-H2O unit cell (Kuhs lattice constants). Every GenIce structure in these cells is one of our 139 (Ih)
+  or 45 (VI) topologies; the symmetry-adapted input is `enumeration/d12/config_XXXXX_sym.d12`.
+* The earlier P1 inputs of this project are topology 29 (Ih), 35 (VI) and 11094 (V, 28 H2O cell).
+* Sampling test (3000 genice-core samples, 16-H2O Ih cell): without depolarisation GenIce draws the
+  topologies in proportion to their multiplicity (chi2/dof = 0.98), i.e. it is a Monte-Carlo version
+  of the multiplicity-weighted average. With depolarisation (genice2 default `--depol strict`) only 79
+  of 139 topologies occur, 8 % instead of 87 % polar, never ice XI.
+* GenIce is useful for cells too large to enumerate (`--rep`): use `--depol none` for unbiased samples
+  and average them with equal weights.
