@@ -24,6 +24,8 @@ def main():
     p.add_argument("--fwhm-broad", type=float, default=100.0, help="Gaussian FWHM of the 'disorder' average")
     p.add_argument("--scale", type=float, default=1.0, help="scale factor for calculated wavenumbers")
     p.add_argument("-o", "--out", default=None)
+    p.add_argument("--single", action="store_true",
+                   help="only one panel: Bertie & Whalley vs. the weighted average with --fwhm")
     a = p.parse_args()
     out = a.out or os.path.join(a.jobs, "analysis", "overview_bertie_individual.png")
     an = os.path.join(a.jobs, "analysis")
@@ -57,6 +59,9 @@ def main():
     import matplotlib.pyplot as plt
     plt.rcParams.update({"font.size": 11, "axes.linewidth": 1.0, "xtick.direction": "in",
                          "ytick.direction": "in", "xtick.top": True, "ytick.right": True})
+    if a.single:
+        single(a, grid, avg, ids, plt, out if a.out else os.path.join(an, f"bertie_vs_calc_fwhm{a.fwhm:g}.png"))
+        return
     fig = plt.figure(figsize=(18, 11), dpi=200)
     gs = fig.add_gridspec(2, 2, width_ratios=[1.15, 1.0], height_ratios=[1, 1], wspace=0.12, hspace=0.08)
     axL1 = fig.add_subplot(gs[0, 0])
@@ -143,6 +148,46 @@ def main():
     fig.text(0.01, 0.005, "dotted: band positions from Bertie & Whalley Table I; dashed orange: region marked "
              "uncertain in the paper. g = multiplicity (number of ice-rule configurations of the 16-H$_2$O cell).",
              fontsize=8.5, color="#3d3d3a")
+    fig.savefig(out, bbox_inches="tight")
+    print("written", out)
+
+
+def single(a, grid, avg, ids, plt, out):
+    segs = read_bertie(BERTIE)
+    bx = np.concatenate([[q[0] for q in s] for s in segs])
+    by = np.concatenate([[q[1] for q in s] for s in segs])
+    bmin, bmax = by.min(), by[(bx > 2900) & (bx < 3700)].max()
+    table = [l.split(",") for l in open(TABLE) if l[0].isdigit()]
+    fig, ax = plt.subplots(figsize=(11, 5.2), dpi=200)
+    first = True
+    for s in segs:
+        x = np.array([q[0] for q in s])
+        y = (np.array([q[1] for q in s]) - bmin) / (bmax - bmin)
+        unc = np.array([q[2] != "" for q in s])
+        ax.plot(np.where(~unc, x, np.nan), np.where(~unc, y, np.nan), color="#eb6834", lw=2.0,
+                label="Bertie & Whalley 1964, H$_2$O ice Ih, ~110 K (digitised)" if first else None)
+        ax.plot(np.where(unc, x, np.nan), np.where(unc, y, np.nan), color="#eb6834", lw=1.6, ls="--")
+        first = False
+    sc = f" (×{a.scale:g})" if a.scale != 1 else ""
+    ax.plot(grid, avg / avg[(grid > 2900) & (grid < 3700)].max(), color="#2a78d6", lw=1.7,
+            label=f"calculated{sc}, HSEsol-D3 harmonic, {len(ids)} topologies,\n"
+                  f"multiplicity-weighted, Lorentzian FWHM {a.fwhm:g} cm$^{{-1}}$")
+    for t in table:
+        ax.axvline(float(t[0]), color="#9a9a94", ls=":", lw=0.8, zorder=0)
+        if t[3].strip() in ("s", "sh s", "vb w"):
+            ax.text(float(t[0]), 1.01, f"{float(t[0]):.0f}", transform=ax.get_xaxis_transform(),
+                    rotation=90, ha="center", va="bottom", fontsize=8, color="#3d3d3a")
+    ax.set_xlim(4000, 400)
+    ax.set_ylim(-0.04, 1.15)
+    ax.minorticks_on()
+    ax.set_xlabel(r"wavenumber (cm$^{-1}$)")
+    ax.set_ylabel("normalised absorbance")
+    ax.set_title("Ice Ih: Bertie & Whalley (1964) vs. calculated IR", fontsize=12, pad=34)
+    ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0), borderaxespad=0, frameon=True,
+              edgecolor="black", fancybox=False, fontsize=9)
+    fig.text(0.01, -0.02, "dotted: band positions from Bertie & Whalley Table I; dashed orange: region marked "
+             "uncertain in the paper (mulling agent). Both spectra normalised to their O-H stretch maximum.",
+             fontsize=8, color="#3d3d3a")
     fig.savefig(out, bbox_inches="tight")
     print("written", out)
 
