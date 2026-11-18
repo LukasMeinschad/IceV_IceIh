@@ -1,0 +1,30 @@
+data_config_00001
+_symmetry_space_group_name_H-M 'P2_12_12_1'
+_space_group_IT_number 19
+_cell_length_a 4.082500
+_cell_length_b 8.139100
+_cell_length_c 8.349900
+_cell_angle_alpha 90.000000
+_cell_angle_beta 90.000000
+_cell_angle_gamma 90.000000
+loop_
+_space_group_symop_operation_xyz
+'x,y,z'
+'-x+1/2,-y,z+1/2'
+'x+1/2,-y+1/2,-z'
+'-x,y+1/2,-z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+O1 O 0.61930000 0.49320000 0.74410000
+O2 O 0.50100000 0.75780000 0.11920000
+O3 O 0.74400000 0.86420000 0.49750000
+H1 H 0.78160000 0.59100000 0.77750000
+H2 H 0.88750000 0.32900000 0.66110000
+H3 H 0.48290000 0.54440000 0.65800000
+H4 H 0.34900000 0.42520000 0.90280000
+H5 H 0.85460000 0.78210000 0.96050000
+H6 H 0.07250000 0.71300000 0.51600000

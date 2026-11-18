@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --partition=CPU_rune
+#SBATCH --nodelist=
+#SBATCH -J iceXIV
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=40
+#SBATCH --cpus-per-task=1
+
+source /usr/local/_tci_software_environment_.sh
+module purge
+# CHECK the exact CRYSTAL23 module name on rune:  module avail crystal
+module load rune/crystal/23
+
+#set some necessary environment before running
+export CRY23_SCRDIR="/scratch/lme"
+export CRY17_SCRDIR="/scratch/lme"
+
+#run your job
+runmpi23 40 iceXIV

@@ -1,0 +1,4 @@
+id,directory,input,space_group,sg_number,n_symops,atoms_asym_unit,multiplicity,weight,|P|
+1,config_00001,xiv_c00001,P2_12_12_1,19,4,9,1,0.25,0.0
+2,config_00002,xiv_c00002,P2_1,4,2,18,2,0.5,5.8473
+3,config_00003,xiv_c00003,P2_12_12_1,19,4,9,1,0.25,0.0

@@ -1,0 +1,44 @@
+
+#======================================================================
+# CRYSTAL DATA
+#----------------------------------------------------------------------
+data_VESTA_phase_1
+
+_chemical_name_common                  'XIV'
+_cell_length_a                         8.3499(2)
+_cell_length_b                         8.1391(2)
+_cell_length_c                         4.08250(10)
+_cell_angle_alpha                      90.000000
+_cell_angle_beta                       90.000000
+_cell_angle_gamma                      90.000000
+_cell_volume                           277.449449
+_space_group_name_H-M_alt              'P 21 21 21'
+_space_group_IT_number                 19
+
+loop_
+_space_group_symop_operation_xyz
+   'x, y, z'
+   '-x+1/2, -y, z+1/2'
+   '-x, y+1/2, -z+1/2'
+   'x+1/2, -y+1/2, -z'
+
+loop_
+   _atom_site_label
+   _atom_site_occupancy
+   _atom_site_fract_x
+   _atom_site_fract_y
+   _atom_site_fract_z
+   _atom_site_adp_type
+   _atom_site_U_iso_or_equiv
+   _atom_site_type_symbol
+   O1         1.0     0.0059(4)    0.2568(5)    0.1307(7)   Uiso  0.015300 O
+   O2         1.0     0.6308(4)   -0.0078(4)    0.249(7)    Uiso  0.015300 O
+   O3         1.0     0.2525(4)    0.8858(4)    0.006(6)    Uiso  0.015300 O
+   D4         0.4070  0.0557(4)    0.3284(7)    0.98450(10) Uiso  0.020300 H
+   D5         0.6200  0.5275(5)    0.8410(4)    0.46840(10) Uiso  0.020300 H
+   D6         1.0     0.0920(2)    0.2056(4)    0.2671(7)   Uiso  0.020300 H
+   D9         1.0     0.7895(4)    0.9679(4)    0.8954(7)   Uiso  0.020300 H
+   D11        1.0     0.7340(4)    0.4630(4)    0.3225(7)   Uiso  0.020300 H
+   D12        0.5930  0.4111(4)    0.5790(5)    0.3625(2)   Uiso  0.020300 H
+   D13        0.3800  0.9018(8)    0.1018(7)    0.8552(2)   Uiso  0.020300 H
+   D15        1.0     0.8472(4)    0.3248(4)    0.4010(7)   Uiso  0.020300 H
