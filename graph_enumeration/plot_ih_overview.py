@@ -24,6 +24,9 @@ def main():
     p.add_argument("--fwhm-broad", type=float, default=100.0, help="Gaussian FWHM of the 'disorder' average")
     p.add_argument("--scale", type=float, default=1.0, help="scale factor for calculated wavenumbers")
     p.add_argument("-o", "--out", default=None)
+    p.add_argument("--extra", action="append", default=[], metavar="OUT[:LABEL]",
+                   help="(with --single) additional CRYSTAL frequency output to overlay, e.g. a GenIce structure")
+    p.add_argument("--title-single", default=None)
     p.add_argument("--single", action="store_true",
                    help="only one panel: Bertie & Whalley vs. the weighted average with --fwhm")
     a = p.parse_args()
@@ -172,6 +175,37 @@ def single(a, grid, avg, ids, plt, out):
     ax.plot(grid, avg / avg[(grid > 2900) & (grid < 3700)].max(), color="#2a78d6", lw=1.7,
             label=f"calculated{sc}, HSEsol-D3 harmonic, {len(ids)} topologies,\n"
                   f"multiplicity-weighted, Lorentzian FWHM {a.fwhm:g} cm$^{{-1}}$")
+    from analyze_spectra import parse_freq
+    xcol = ["#1baf7a", "#6250d6", "#e87ba4", "#008300"]
+    sel = (grid > 2900) & (grid < 3700)
+
+    def centres(y):
+        out = {}
+        for nm, lo, hi in (("stretch", 2800, 3800), ("bend", 1500, 1800), ("libration", 400, 1300)):
+            ss = (grid >= lo) & (grid <= hi)
+            out[nm] = ((grid[ss] * y[ss]).sum() / y[ss].sum(), grid[ss][np.argmax(y[ss])])
+        return out
+    print(f"{'spectrum':42s} {'stretch centre/max':>20} {'bend centre/max':>18} {'libration centre/max':>22}")
+    c = centres(avg)
+    print(f"{'weighted average (%d topologies)' % len(ids):42s} {c['stretch'][0]:9.0f} /{c['stretch'][1]:6.0f}   "
+          f"{c['bend'][0]:7.0f} /{c['bend'][1]:6.0f}   {c['libration'][0]:9.0f} /{c['libration'][1]:6.0f}")
+    for k, ex in enumerate(a.extra):
+        path, _, lab = ex.partition(":")
+        r = parse_freq(path)
+        if r is None:
+            print(f"{path}: not finished")
+            continue
+        fr = np.array([mm["freq"] for mm in r["modes"]]) * a.scale
+        ii = np.array([mm["intensity"] for mm in r["modes"]]) / r["n_H2O"]
+        nim = int((fr < -1).sum())
+        ok = fr > 1
+        y = broaden(fr[ok], ii[ok], grid, a.fwhm)
+        ax.plot(grid, y / y[sel].max(), color=xcol[k % 4], lw=1.4, ls="-",
+                label=(lab or os.path.basename(path)) + f", FWHM {a.fwhm:g} cm$^{{-1}}$")
+        c = centres(y)
+        print(f"{(lab or os.path.basename(path))[:42]:42s} {c['stretch'][0]:9.0f} /{c['stretch'][1]:6.0f}   "
+              f"{c['bend'][0]:7.0f} /{c['bend'][1]:6.0f}   {c['libration'][0]:9.0f} /{c['libration'][1]:6.0f}"
+              f"   ({r['n_H2O']} H2O, {nim} imaginary modes, lowest {fr[np.abs(fr) > 1].min():.0f} cm-1)")
     for t in table:
         ax.axvline(float(t[0]), color="#9a9a94", ls=":", lw=0.8, zorder=0)
         if t[3].strip() in ("s", "sh s", "vb w"):
@@ -182,11 +216,11 @@ def single(a, grid, avg, ids, plt, out):
     ax.minorticks_on()
     ax.set_xlabel(r"wavenumber (cm$^{-1}$)")
     ax.set_ylabel("normalised absorbance")
-    ax.set_title("Ice Ih: Bertie & Whalley (1964) vs. calculated IR", fontsize=12, pad=34)
+    ax.set_title(a.title_single or "Ice Ih: Bertie & Whalley (1964) vs. calculated IR", fontsize=12, pad=34)
     ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0), borderaxespad=0, frameon=True,
               edgecolor="black", fancybox=False, fontsize=9)
     fig.text(0.01, -0.02, "dotted: band positions from Bertie & Whalley Table I; dashed orange: region marked "
-             "uncertain in the paper (mulling agent). Both spectra normalised to their O-H stretch maximum.",
+             "uncertain in the paper (mulling agent). All spectra normalised to their O-H stretch maximum.",
              fontsize=8, color="#3d3d3a")
     fig.savefig(out, bbox_inches="tight")
     print("written", out)
