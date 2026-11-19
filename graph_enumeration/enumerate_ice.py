@@ -33,7 +33,7 @@ from iceenum.enumerate import enumerate_configurations, merge_crystal_equivalent
 from iceenum import invariants as inv                               # noqa: E402
 from iceenum import writers as W                                    # noqa: E402
 
-DEFAULT_CELL = {"Ih": "ortho2x1x1", "V": "conventional", "VI": "unit", "III": "unit"}
+DEFAULT_CELL = {"Ih": "ortho2x1x1", "V": "conventional", "VI": "unit", "XIV": "unit", "III": "unit"}
 
 
 def parse_args(argv=None):

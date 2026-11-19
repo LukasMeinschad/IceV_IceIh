@@ -102,6 +102,24 @@ STRUCTURES = {
             "sqrt2": [[1, 1, 0], [-1, 1, 0], [0, 0, 1]],            # 20 H2O
         },
     ),
+    # ---------------------------------------------------------------- XIV
+    "XIV": IceStructure(
+        name="ice XIV",
+        space_group="P2_12_12_1",
+        sg_number=19,
+        hall_number=115,
+        # D2O ice XIV, partially proton-ordered (Salzmann et al., Science 311, 1758 (2006));
+        # cell and O positions from 14_XIV_P212121_1.cif (Ice_Raman_Spectra repository)
+        cell=(8.3499, 8.1391, 4.0825, 90.0, 90.0, 90.0),
+        oxygens=[(0.0059, 0.2568, 0.1307), (0.6308, -0.0078, 0.249), (0.2525, 0.8858, 0.006)],
+        reference="Salzmann et al., Science 311, 1758 (2006); 14_XIV_P212121_1.cif",
+        notes="12 H2O per cell; GenIce's ice 14 cell is 1x1x2 (24 H2O). The space group is that "
+              "of the partially ordered crystal; enumerate_partial_order.py handles the occupancies.",
+        presets={
+            "unit": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],      # 12 H2O
+            "1x1x2": [[1, 0, 0], [0, 1, 0], [0, 0, 2]],     # 24 H2O (GenIce cell)
+        },
+    ),
     # ---------------------------------------- validation against GrEnum runs
     "III": IceStructure(
         name="ice III (GrEnum test case)",
