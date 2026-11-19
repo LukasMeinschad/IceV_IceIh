@@ -1,0 +1,4 @@
+id,space_group,multiplicity,n_H2O,n_imaginary,lowest_cm-1,total_IR_km/mol_H2O,translations_centre,translations_IR_km/mol_H2O,librations_centre,librations_IR_km/mol_H2O,bend_centre,bend_IR_km/mol_H2O,OH_stretch_centre,OH_stretch_IR_km/mol_H2O,strongest_stretch_cm-1
+10,P2_1,8,10,0,61.4,2546.0,181.7,45.8,833.9,455.1,1651.4,170.3,3412.6,1874.8,3318.2
+22,Cc,8,10,0,58.9,2597.0,170.7,59.8,801.5,515.9,1638.4,109.0,3407.9,1912.3,3404.1
+24,Pc,8,10,0,66.1,2606.2,170.2,59.0,797.2,524.3,1642.9,107.7,3410.1,1915.2,3402.8
