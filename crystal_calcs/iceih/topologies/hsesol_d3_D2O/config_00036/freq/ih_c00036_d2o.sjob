@@ -3,7 +3,7 @@
 #SBATCH --nodelist=
 #SBATCH -J Ih36_d2o
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=10
+#SBATCH --ntasks-per-node=20
 #SBATCH --cpus-per-task=1
 
 source /usr/local/_tci_software_environment_.sh
