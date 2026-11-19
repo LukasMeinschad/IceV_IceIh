@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --partition=CPU_rune
+#SBATCH --nodelist=
+#SBATCH -J Ih100_d2o
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=10
+#SBATCH --cpus-per-task=1
+
+source /usr/local/_tci_software_environment_.sh
+module purge
+module load rune/crystal/17_v1.0.2
+
+#set some necessary environment before running
+export CRY17_SCRDIR="/scratch/lme"
+
+#run your job
+# geometry: converged optimisation of the original (H mass 1.008) run -> fort.34
+grep -q "OPT END - CONVERGED" ../../../hsesol_d3/config_00100/opt/ih_c00100.out 2>/dev/null || { echo 'original optimisation not converged'; exit 1; }
+cp ../../../hsesol_d3/config_00100/opt/ih_c00100.gui ./ih_c00100_d2o.gui || { echo 'opt geometry missing'; exit 1; }
+runmpi17 10 ih_c00100_d2o
