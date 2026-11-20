@@ -42,7 +42,7 @@ def main():
     p.add_argument("--element", default="H")
     p.add_argument("--mass", type=float, default=2.0141, help="new mass in amu (D: 2.0141)")
     p.add_argument("--suffix", default="d2o")
-    p.add_argument("--ncores", type=int, default=10)
+    p.add_argument("--ncores", type=int, default=20)
     p.add_argument("--lanes", type=int, default=6, help="jobs running at the same time in submit_lanes.sh")
     p.add_argument("--ids", type=int, nargs="+")
     a = p.parse_args()

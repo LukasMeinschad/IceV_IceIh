@@ -20,7 +20,7 @@ Generated with `graph_enumeration/make_isotope_jobs.py`.
 
 ```bash
 cd crystal_calcs/iceih/topologies/hsesol_d3_D2O
-./submit_lanes.sh        # 24 jobs, 10 cores each, 6 at a time (60 cores); ./submit_lanes.sh 4 for 40 cores
+./submit_lanes.sh        # remaining 21 jobs (3, 36, 122 submitted by hand), 20 cores each, all at once; ./submit_lanes.sh 5 -> at most 5 at a time (100 cores)
 ```
 
 The jobs are ordered by size: ice XI (#122) first, then the 8-molecule cells, then the 16-molecule

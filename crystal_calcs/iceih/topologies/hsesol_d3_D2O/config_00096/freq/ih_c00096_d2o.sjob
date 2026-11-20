@@ -3,7 +3,7 @@
 #SBATCH --nodelist=
 #SBATCH -J Ih96_d2o
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=10
+#SBATCH --ntasks-per-node=20
 #SBATCH --cpus-per-task=1
 
 source /usr/local/_tci_software_environment_.sh
@@ -17,4 +17,4 @@ export CRY17_SCRDIR="/scratch/lme"
 # geometry: converged optimisation of the original (H mass 1.008) run -> fort.34
 grep -q "OPT END - CONVERGED" ../../../hsesol_d3/config_00096/opt/ih_c00096.out 2>/dev/null || { echo 'original optimisation not converged'; exit 1; }
 cp ../../../hsesol_d3/config_00096/opt/ih_c00096.gui ./ih_c00096_d2o.gui || { echo 'opt geometry missing'; exit 1; }
-runmpi17 10 ih_c00096_d2o
+runmpi17 20 ih_c00096_d2o

@@ -1,19 +1,23 @@
 #!/bin/bash
-# Frequency jobs with H mass 2.0141 (D2O), 10 cores each, at most NLANES at a time.
-# Usage: ./submit_lanes.sh [NLANES]     (default 6 -> 60 cores)
+# Frequency jobs with H mass 2.0141 (D2O), 20 cores each.
+# config_00003, 00036 and 00122 were already submitted by hand and are skipped.
+#   ./submit_lanes.sh        submit all remaining jobs at once (SLURM queues them)
+#   ./submit_lanes.sh N      at most N jobs at a time (N chains linked with --dependency=afterany)
 cd "$(dirname "$0")"
-NL=${1:-6}
-ids=(122 106 114 118 130 135 138 36 40 72 73 78 83 93 96 100 108 117 128 132 133 137 139)
+NL=${1:-0}
+ids=(106 114 118 130 135 138 40 72 73 78 83 93 96 100 108 117 128 132 133 137 139)
 declare -a last
 for k in "${!ids[@]}"; do
   id=${ids[$k]}
-  lane=$((k % NL))
   tag=$(printf "config_%05d" "$id")
-  name=$(ls "$tag/freq"/*.sjob | head -1)
-  name=$(basename "$name" .sjob)
+  name=$(basename "$(ls "$tag/freq"/*.sjob | head -1)" .sjob)
+  if [ -e "$tag/freq/$name.out" ]; then echo "$tag: output exists - skipped"; continue; fi
   dep=""
-  [ -n "${last[$lane]}" ] && dep="--dependency=afterany:${last[$lane]}"
+  if [ "$NL" -gt 0 ]; then
+    lane=$((k % NL))
+    [ -n "${last[$lane]}" ] && dep="--dependency=afterany:${last[$lane]}"
+  fi
   jid=$(cd "$tag/freq" && sbatch --parsable $dep "$name.sjob") || { echo "submit failed: $tag"; exit 1; }
-  last[$lane]=$jid
-  echo "lane $((lane+1)): $tag  job $jid"
+  [ "$NL" -gt 0 ] && last[$lane]=$jid
+  echo "$tag  job $jid ${dep}"
 done
