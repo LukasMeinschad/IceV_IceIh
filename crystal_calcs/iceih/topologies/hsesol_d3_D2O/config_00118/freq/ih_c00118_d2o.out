@@ -1,0 +1,3100 @@
+date Fri Nov 20 10:23:00 CET 2026
+master hostname rune05
+master system Linux rune05 6.6.32 #1 SMP PREEMPT_DYNAMIC Tue May 6 15:02:32 CEST 2025 x86_64 GNU/Linux
+user lme
+output data in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.out
+mpirun executable in /usr/local/openmpi-2.1.0/bin/
+Pcrystal executable in /usr/local/Crystal-17_v1.0.2/bin/Linux-ifort_openmpi-2.1_i64/v1.0.2
+input data in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.d12
+file machines.LINUX in /usr/local/Crystal-17_v1.0.2/utils17
+list of nodes in /usr/local/Crystal-17_v1.0.2/utils17/nodes.par
+creating temporary directories /scratch/lme/tmp_p10143_lme on each node
+copying Pcrystal executable on each node
+copying input file on each node
+external geometry input from /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.gui
+external geometry input saved in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o_inp.gui
+ice Ih config_00118 H-bond topology, Pna2_1 (No. 33), multiplicity 4 - frequencies, H mass 2.0141 (D2O)
+EXTERNAL
+FREQCALC
+ISOTOPES
+16
+9 2.0141
+10 2.0141
+11 2.0141
+12 2.0141
+13 2.0141
+14 2.0141
+15 2.0141
+16 2.0141
+17 2.0141
+18 2.0141
+19 2.0141
+20 2.0141
+21 2.0141
+22 2.0141
+23 2.0141
+24 2.0141
+INTENS
+ENDFREQ
+BASISSET
+POB-TZVP 
+DFT
+HSEsol-D3
+ENDDFT
+SHRINK
+4 4    
+TOLINTEG
+10 10 10 10 18 
+FMIXING
+70
+MEMOPRT
+DIIS
+ENDSCF
+Fri Nov 20 10:23:01 CET 2026
+ PROCESS            9  OF           20  WORKING
+ PROCESS           11  OF           20  WORKING
+ PROCESS           13  OF           20  WORKING
+ PROCESS            8  OF           20  WORKING
+ PROCESS            0  OF           20  WORKING
+ PROCESS            2  OF           20  WORKING
+ PROCESS            4  OF           20  WORKING
+ PROCESS           10  OF           20  WORKING
+ PROCESS           12  OF           20  WORKING
+ PROCESS           15  OF           20  WORKING
+ PROCESS           18  OF           20  WORKING
+ PROCESS           19  OF           20  WORKING
+ PROCESS            1  OF           20  WORKING
+ PROCESS            3  OF           20  WORKING
+ PROCESS            5  OF           20  WORKING
+ PROCESS            6  OF           20  WORKING
+ PROCESS            7  OF           20  WORKING
+ PROCESS           14  OF           20  WORKING
+ PROCESS           16  OF           20  WORKING
+ PROCESS           17  OF           20  WORKING
+
+         
+ *******************************************************************************
+ *                                                                             *
+ *                               CRYSTAL17                                     *
+ *                      public : 1.0.2 - March 1st, 2018                       *
+ *                       HTTP://WWW.CRYSTAL.UNITO.IT                           *
+ *                                                                             *
+ *                              MAIN AUTHORS                                   *
+ *                                                                             *
+ *  R. DOVESI(1,11), V.R. SAUNDERS(2), C. ROETTI(1,11), R. ORLANDO(1,11),      *
+ *  C.M. ZICOVICH-WILSON(1,3), F. PASCALE(4), B. CIVALLERI(1,11),              *
+ *  K. DOLL(5), N.M. HARRISON(2,6), I.J. BUSH(7), Ph. D'ARCO(8),               *
+ *  M. LLUNELL(9), M. CAUSA'(10), Y. NOEL(8), L. MASCHIO(1,11), A. ERBA(1,11)  *
+ *  M. RE'RAT(14), S. CASASSA(1,11)                                            *
+ *                                                                             *
+ *        CONTRIBUTIONS TO THE CODE HAVE ALSO BEEN GIVEN BY                    *
+ *                                                                             *
+ *  M. FERRABONE(1,11), M. DE LA PIERRE(1,11), M. FERRERO(1,11),               *
+ *  J. BAIMA(1,11), E. ALBANESE(1,11), M.F. PEINTINGER(12), R. BAST(13),       *
+ *  B. KIRTMAN(15), V. LACIVITA(1,11), R. DEMICHELIS(1,16)                     *
+ *  G. BRANDEBURG(17), S. SALUSTRO(1,11), G. SANSONE(1,11)                     *
+ *  M.T. RUGGIERO(18)                                                          *
+ *                                                                             *
+ * (1) THEORETICAL CHEMISTRY GROUP - UNIVERSITA' DI TORINO - TORINO (ITALY)    *
+ * (2) COMPUTATIONAL SCIENCE & ENGINEERING DEPARTMENT - STFC DARESBURY (UK)    *
+ * (3) UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS - CUERNAVACA (MEXICO)        *
+ * (4) UNIVERSITE' DE LORRAINE - NANCY (FRANCE)                                *
+ * (5) UNIVERSITAET STUTTGART- STUTTGART (GERMANY)                             *
+ * (6) IMPERIAL COLLEGE - LONDON (UK)                                          *
+ * (7) OXFORD E-RESEARCH CENTRE - OXFORD (UK)                                  *
+ * (8) UPMC - SORBONNE UNIVERSITES - PARIS (FRANCE)                            *
+ * (9) UNIVERSIDAD DE BARCELONA - BARCELONA (SPAIN)                            *
+ *(10) UNIVERSITA' DI NAPOLI "FEDERICO II" - NAPOLI (ITALY)                    *
+ *(11) NIS - NANOSTRUCTURED INTERFACES AND SURFACES - TORINO (ITALY)           *
+ *(12) MPI FUER CHEMISCHE ENERGIEKONVERSION - MUELHEIM AN DER RUHR (GERMANY)   *
+ *(13) UNIVERSITY OF TROMSO - TROMSO (NORWAY)                                  *
+ *(14) UNIVERSITE' DE PAU ET DES PAYS DE L'ADOUR - PAU (FRANCE)                *
+ *(15) UNIVERSITY OF CALIFORNIA SANTA BARBARA - SANTA BARBARA (USA)            *
+ *(16) CURTIN UNIVERSITY - PERTH (AUSTRALIA)                                   *
+ *(17) UNIVERSITY COLLEGE LONDON - LONDON (UK)                                 *
+ *(18) CAMBRIDGE UNIVERSITY - CAMBRIDGE (UK)                                   *
+ *                                                                             *
+ *******************************************************************************
+ EEEEEEEEEE STARTING  DATE 20 11 2026 TIME 10:23:03.0
+ ice Ih config_00118 H-bond topology, Pna2_1 (No. 33), multiplicity 4 - frequenci
+
+ GEOMETRY INPUT FROM EXTERNAL FILE (FORTRAN UNIT 34)
+ 3D - CRYSTAL 
+
+ *******************************************************************************
+ LATTICE PARAMETERS  (ANGSTROMS AND DEGREES) - PRIMITIVE CELL
+       A          B          C        ALPHA      BETA     GAMMA        VOLUME
+    7.78955    4.49730    7.32400    90.00000  90.00000  90.00000    256.574018
+ INFORMATION **** CHKGRP **** SPGR WITH NO INVERSION
+
+ NUMBER OF IRREDUCIBLE ATOMS IN THE CELL:    6
+
+ CARTESIAN COORDINATES (ANGSTROM) - IRREDUCIBLE ATOMS AND SYMMETRY RELATED
+
+ AT.IRR.  AT  AT.N.          X                   Y                   Z
+     1     1     8   -2.601659545356E+00  1.579288948100E-02 -4.580949089380E-01
+     1     2     8    2.601659545356E+00 -1.579288948100E-02  3.203905091062E+00
+     1     3     8   -1.293116454644E+00  2.264442889481E+00  3.203905091062E+00
+     1     4     8    1.293116454644E+00  2.232857110519E+00 -4.580949089380E-01
+     5     5     8   -1.315119806161E+00  2.257132769615E+00  4.519912315210E-01
+     5     6     8    1.315119806161E+00  2.240167230385E+00 -3.210008768479E+00
+     5     7     8   -2.579656193839E+00  8.482769615000E-03 -3.210008768479E+00
+     5     8     8    2.579656193839E+00 -8.482769615000E-03  4.519912315210E-01
+     9     9     1   -1.777044552062E+00 -1.418910533027E+00  1.375103524400E-01
+     9    10     1    1.777044552062E+00  1.418910533027E+00 -3.524489647560E+00
+     9    11     1   -2.117731447938E+00  8.297394669730E-01 -3.524489647560E+00
+     9    12     1    2.117731447938E+00 -8.297394669730E-01  1.375103524400E-01
+    13    13     1   -2.578857681024E+00  2.861685898500E-02 -2.217053257430E+00
+    13    14     1    2.578857681024E+00 -2.861685898500E-02  1.444946742570E+00
+    13    15     1   -1.315918318976E+00  2.277266858985E+00  1.444946742570E+00
+    13    16     1    1.315918318976E+00  2.220033141015E+00 -2.217053257430E+00
+    17    17     1   -3.537165291968E+00  2.516120754800E-02 -1.270976958050E-01
+    17    18     1    3.537165291968E+00 -2.516120754800E-02  3.534902304195E+00
+    17    19     1   -3.576107080320E-01  2.273811207548E+00  3.534902304195E+00
+    17    20     1    3.576107080320E-01  2.223488792452E+00 -1.270976958050E-01
+    21    21     1   -2.154219299818E+00  8.353394034160E-01 -1.167320835160E-01
+    21    22     1    2.154219299818E+00 -8.353394034160E-01  3.545267916484E+00
+    21    23     1   -1.740556700182E+00 -1.413310596584E+00  3.545267916484E+00
+    21    24     1    1.740556700182E+00  1.413310596584E+00 -1.167320835160E-01
+
+ SPACE  GROUP  N.                     :   33
+ NUMBER OF SYMMETRY OPERATORS         :    4
+ *******************************************************************************
+ LATTICE PARAMETERS (ANGSTROMS AND DEGREES) - BOHR = 0.5291772083 ANGSTROM
+ PRIMITIVE CELL - CENTRING CODE 1/0 VOLUME=   256.574018 - DENSITY  0.933 g/cm^3
+         A              B              C           ALPHA      BETA       GAMMA 
+     7.78955200     4.49730000     7.32400000    90.000000  90.000000  90.000000
+ *******************************************************************************
+ ATOMS IN THE ASYMMETRIC UNIT    6 - ATOMS IN THE UNIT CELL:   24
+     ATOM                 X/A                 Y/B                 Z/C    
+ *******************************************************************************
+      1 T   8 O    -3.339934755370E-01  3.511637978565E-03 -6.254709297351E-02
+      2 F   8 O     3.339934755370E-01 -3.511637978565E-03  4.374529070265E-01
+      3 F   8 O    -1.660065244630E-01 -4.964883620214E-01  4.374529070265E-01
+      4 F   8 O     1.660065244630E-01  4.964883620214E-01 -6.254709297351E-02
+      5 T   8 O    -1.688312506497E-01 -4.981138083706E-01  6.171371265989E-02
+      6 F   8 O     1.688312506497E-01  4.981138083706E-01 -4.382862873401E-01
+      7 F   8 O    -3.311687493503E-01  1.886191629422E-03 -4.382862873401E-01
+      8 F   8 O     3.311687493503E-01 -1.886191629422E-03  6.171371265989E-02
+      9 T   1 H    -2.281318042504E-01 -3.155027534358E-01  1.877530754233E-02
+     10 F   1 H     2.281318042504E-01  3.155027534358E-01 -4.812246924577E-01
+     11 F   1 H    -2.718681957496E-01  1.844972465642E-01 -4.812246924577E-01
+     12 F   1 H     2.718681957496E-01 -1.844972465642E-01  1.877530754233E-02
+     13 T   1 H    -3.310662386006E-01  6.363119868588E-03 -3.027107123744E-01
+     14 F   1 H     3.310662386006E-01 -6.363119868588E-03  1.972892876256E-01
+     15 F   1 H    -1.689337613994E-01 -4.936368801314E-01  1.972892876256E-01
+     16 F   1 H     1.689337613994E-01  4.936368801314E-01 -3.027107123744E-01
+     17 T   1 H    -4.540909787839E-01  5.594736296889E-03 -1.735359036114E-02
+     18 F   1 H     4.540909787839E-01 -5.594736296889E-03  4.826464096389E-01
+     19 F   1 H    -4.590902121611E-02 -4.944052637031E-01  4.826464096389E-01
+     20 F   1 H     4.590902121611E-02  4.944052637031E-01 -1.735359036114E-02
+     21 T   1 H    -2.765523999093E-01  1.857424239913E-01 -1.593829649317E-02
+     22 F   1 H     2.765523999093E-01 -1.857424239913E-01  4.840617035068E-01
+     23 F   1 H    -2.234476000907E-01 -3.142575760087E-01  4.840617035068E-01
+     24 F   1 H     2.234476000907E-01  3.142575760087E-01 -1.593829649317E-02
+
+ T = ATOM BELONGING TO THE ASYMMETRIC UNIT
+ *******************************************************************************
+ * GEOMETRY EDITING - INPUT COORDINATES ARE GIVEN IN ANGSTROM         
+ *******************************************************************************
+
+ GEOMETRY NOW FULLY CONSISTENT WITH THE GROUP
+
+ FRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQFRQ
+
+                       FREQUENCY CALCULATION
+
+
+ ATOMIC MASS MODIFICATION
+
+ ATOM    9 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   10 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   11 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   12 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   13 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   14 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   15 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   16 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   17 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   18 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   19 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   20 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   21 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   22 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   23 H  OLD MASS     1.007825 NEW MASS     2.014100
+ ATOM   24 H  OLD MASS     1.007825 NEW MASS     2.014100
+ INFORMATION **** INPFREQ **** NEW DEFAULT - IMPOSING ECKART CONDITIONS TO THE HESSIAN
+
+ GCALCO - MAX INDICES DIRECT LATTICE VECTOR    12    21    12
+ NO.OF VECTORS CREATED 6999 STARS 1045 RMAX   142.45188 BOHR
+
+ GEOMETRY FOR WAVE FUNCTION - DIMENSIONALITY OF THE SYSTEM    3
+ (NON PERIODIC DIRECTION: LATTICE PARAMETER FORMALLY SET TO 500)
+ *******************************************************************************
+ LATTICE PARAMETERS (ANGSTROMS AND DEGREES) - BOHR = 0.5291772083 ANGSTROM
+ PRIMITIVE CELL - CENTRING CODE 1/0 VOLUME=   256.574018 - DENSITY  0.933 g/cm^3
+         A              B              C           ALPHA      BETA       GAMMA 
+     7.78955200     4.49730000     7.32400000    90.000000  90.000000  90.000000
+ *******************************************************************************
+ ATOMS IN THE ASYMMETRIC UNIT    6 - ATOMS IN THE UNIT CELL:   24
+     ATOM                 X/A                 Y/B                 Z/C    
+ *******************************************************************************
+      1 T   8 O    -3.339934755370E-01  3.511637978565E-03 -6.254709297351E-02
+      2 F   8 O     3.339934755370E-01 -3.511637978565E-03  4.374529070265E-01
+      3 F   8 O    -1.660065244630E-01 -4.964883620214E-01  4.374529070265E-01
+      4 F   8 O     1.660065244630E-01  4.964883620214E-01 -6.254709297351E-02
+      5 T   8 O    -1.688312506497E-01 -4.981138083706E-01  6.171371265989E-02
+      6 F   8 O     1.688312506497E-01  4.981138083706E-01 -4.382862873401E-01
+      7 F   8 O    -3.311687493503E-01  1.886191629422E-03 -4.382862873401E-01
+      8 F   8 O     3.311687493503E-01 -1.886191629422E-03  6.171371265989E-02
+      9 T   1 H    -2.281318042504E-01 -3.155027534358E-01  1.877530754233E-02
+     10 F   1 H     2.281318042504E-01  3.155027534358E-01 -4.812246924577E-01
+     11 F   1 H    -2.718681957496E-01  1.844972465642E-01 -4.812246924577E-01
+     12 F   1 H     2.718681957496E-01 -1.844972465642E-01  1.877530754233E-02
+     13 T   1 H    -3.310662386006E-01  6.363119868588E-03 -3.027107123744E-01
+     14 F   1 H     3.310662386006E-01 -6.363119868588E-03  1.972892876256E-01
+     15 F   1 H    -1.689337613994E-01 -4.936368801314E-01  1.972892876256E-01
+     16 F   1 H     1.689337613994E-01  4.936368801314E-01 -3.027107123744E-01
+     17 T   1 H    -4.540909787839E-01  5.594736296889E-03 -1.735359036114E-02
+     18 F   1 H     4.540909787839E-01 -5.594736296889E-03  4.826464096389E-01
+     19 F   1 H    -4.590902121611E-02 -4.944052637031E-01  4.826464096389E-01
+     20 F   1 H     4.590902121611E-02  4.944052637031E-01 -1.735359036114E-02
+     21 T   1 H    -2.765523999093E-01  1.857424239913E-01 -1.593829649317E-02
+     22 F   1 H     2.765523999093E-01 -1.857424239913E-01  4.840617035068E-01
+     23 F   1 H    -2.234476000907E-01 -3.142575760087E-01  4.840617035068E-01
+     24 F   1 H     2.234476000907E-01  3.142575760087E-01 -1.593829649317E-02
+
+ T = ATOM BELONGING TO THE ASYMMETRIC UNIT
+
+ ****    4 SYMMOPS - TRANSLATORS IN FRACTIONAL UNITS
+ **** MATRICES AND TRANSLATORS IN THE CRYSTALLOGRAPHIC REFERENCE FRAME
+   V INV                    ROTATION MATRICES                   TRANSLATORS
+   1   1  1.00  0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00  0.00  0.00
+   2   2 -1.00  0.00  0.00  0.00 -1.00  0.00  0.00  0.00  1.00  0.00  0.00  0.50
+   3   3 -1.00  0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.50  0.50  0.50
+   4   4  1.00  0.00  0.00  0.00 -1.00  0.00  0.00  0.00  1.00  0.50  0.50  0.00
+
+ DIRECT LATTICE VECTORS CARTESIAN COMPONENTS (ANGSTROM)
+          X                    Y                    Z
+   0.778955200000E+01   0.000000000000E+00   0.000000000000E+00
+   0.000000000000E+00   0.449730000000E+01   0.000000000000E+00
+   0.000000000000E+00   0.000000000000E+00   0.732400000000E+01
+
+
+ CARTESIAN COORDINATES - PRIMITIVE CELL
+ *******************************************************************************
+ *      ATOM          X(ANGSTROM)         Y(ANGSTROM)         Z(ANGSTROM)
+ *******************************************************************************
+    1     8 O    -2.601659545356E+00  1.579288948100E-02 -4.580949089380E-01
+    2     8 O     2.601659545356E+00 -1.579288948100E-02  3.203905091062E+00
+    3     8 O    -1.293116454644E+00  2.264442889481E+00  3.203905091062E+00
+    4     8 O     1.293116454644E+00  2.232857110519E+00 -4.580949089380E-01
+    5     8 O    -1.315119806161E+00  2.257132769615E+00  4.519912315210E-01
+    6     8 O     1.315119806161E+00  2.240167230385E+00 -3.210008768479E+00
+    7     8 O    -2.579656193839E+00  8.482769615000E-03 -3.210008768479E+00
+    8     8 O     2.579656193839E+00 -8.482769615000E-03  4.519912315210E-01
+    9     1 H    -1.777044552062E+00 -1.418910533027E+00  1.375103524400E-01
+   10     1 H     1.777044552062E+00  1.418910533027E+00 -3.524489647560E+00
+   11     1 H    -2.117731447938E+00  8.297394669730E-01 -3.524489647560E+00
+   12     1 H     2.117731447938E+00 -8.297394669730E-01  1.375103524400E-01
+   13     1 H    -2.578857681024E+00  2.861685898500E-02 -2.217053257430E+00
+   14     1 H     2.578857681024E+00 -2.861685898500E-02  1.444946742570E+00
+   15     1 H    -1.315918318976E+00  2.277266858985E+00  1.444946742570E+00
+   16     1 H     1.315918318976E+00  2.220033141015E+00 -2.217053257430E+00
+   17     1 H    -3.537165291968E+00  2.516120754800E-02 -1.270976958050E-01
+   18     1 H     3.537165291968E+00 -2.516120754800E-02  3.534902304195E+00
+   19     1 H    -3.576107080320E-01  2.273811207548E+00  3.534902304195E+00
+   20     1 H     3.576107080320E-01  2.223488792452E+00 -1.270976958050E-01
+   21     1 H    -2.154219299818E+00  8.353394034160E-01 -1.167320835160E-01
+   22     1 H     2.154219299818E+00 -8.353394034160E-01  3.545267916484E+00
+   23     1 H    -1.740556700182E+00 -1.413310596584E+00  3.545267916484E+00
+   24     1 H     1.740556700182E+00  1.413310596584E+00 -1.167320835160E-01
+
+ *******************************************************************************
+ STARTING BASIS SET HANDLING 
+ *******************************************************************************
+
+ Loading internal basis set: POB-TZVP            
+
+ Please cite in your publication:
+ Peintinger, M. F., Oliveira, D. V. and Bredow, T. (2013), Consistent Gaussian b
+ asis sets of triple-zeta valence with polarization quality for solid-state calc
+ ulations. J. Comput. Chem., 34: 451-459. doi: 10.1002/jcc.23153                
+                    
+
+ *******************************************************************************
+ LOCAL ATOMIC FUNCTIONS BASIS SET
+ *******************************************************************************
+   ATOM   X(AU)   Y(AU)   Z(AU)  N. TYPE  EXPONENT  S COEF   P COEF   D/F/G COEF
+ *******************************************************************************
+   1 O   -4.916   0.030  -0.866
+                                  1 S  
+                                         2.703E+04 2.173E-04 0.000E+00 0.000E+00
+                                         4.052E+03 1.684E-03 0.000E+00 0.000E+00
+                                         9.223E+02 8.740E-03 0.000E+00 0.000E+00
+                                         2.612E+02 3.524E-02 0.000E+00 0.000E+00
+                                         8.535E+01 1.115E-01 0.000E+00 0.000E+00
+                                         3.104E+01 2.559E-01 0.000E+00 0.000E+00
+                                  2 S  
+                                         1.226E+01 3.977E-01 0.000E+00 0.000E+00
+                                         4.999E+00 2.463E-01 0.000E+00 0.000E+00
+                                  3 S  
+                                         1.099E+00 1.000E+00 0.000E+00 0.000E+00
+                                  4 S  
+                                         3.566E-01 1.000E+00 0.000E+00 0.000E+00
+                           5-     7 P  
+                                         6.327E+01 0.000E+00 6.069E-03 0.000E+00
+                                         1.463E+01 0.000E+00 4.191E-02 0.000E+00
+                                         4.450E+00 0.000E+00 1.615E-01 0.000E+00
+                                         1.528E+00 0.000E+00 3.571E-01 0.000E+00
+                           8-    10 P  
+                                         5.490E-01 0.000E+00 1.000E+00 0.000E+00
+                          11-    13 P  
+                                         1.859E-01 0.000E+00 1.000E+00 0.000E+00
+                          14-    18 D  
+                                         2.535E-01 0.000E+00 0.000E+00 1.000E+00
+   2 O    4.916  -0.030   6.055
+   3 O   -2.444   4.279   6.055
+   4 O    2.444   4.219  -0.866
+   5 O   -2.485   4.265   0.854
+   6 O    2.485   4.233  -6.066
+   7 O   -4.875   0.016  -6.066
+   8 O    4.875  -0.016   0.854
+   9 H   -3.358  -2.681   0.260
+                                145 S  
+                                         3.406E+01 6.025E-03 0.000E+00 0.000E+00
+                                         5.124E+00 4.502E-02 0.000E+00 0.000E+00
+                                         1.165E+00 2.019E-01 0.000E+00 0.000E+00
+                                146 S  
+                                         4.157E-01 1.000E+00 0.000E+00 0.000E+00
+                                147 S  
+                                         1.795E-01 1.000E+00 0.000E+00 0.000E+00
+                         148-   150 P  
+                                         8.000E-01 0.000E+00 1.000E+00 0.000E+00
+  10 H    3.358   2.681  -6.660
+  11 H   -4.002   1.568  -6.660
+  12 H    4.002  -1.568   0.260
+  13 H   -4.873   0.054  -4.190
+  14 H    4.873  -0.054   2.731
+  15 H   -2.487   4.303   2.731
+  16 H    2.487   4.195  -4.190
+  17 H   -6.684   0.048  -0.240
+  18 H    6.684  -0.048   6.680
+  19 H   -0.676   4.297   6.680
+  20 H    0.676   4.202  -0.240
+  21 H   -4.071   1.579  -0.221
+  22 H    4.071  -1.579   6.700
+  23 H   -3.289  -2.671   6.700
+  24 H    3.289   2.671  -0.221
+
+ *******************************************************************************
+ FINISHED BASIS SET HANDLING 
+ *******************************************************************************
+
+ INFORMATION **** SET_MPP **** PCRYSTAL CALCULATION
+ INFORMATION **** READM2 **** NEW DEFAULT: FOCK/KS MATRIX MIXING SET TO 30 %
+ INFORMATION **** READM2 **** NEW DEFAULT: FULL DIRECT SCF MODE
+ INFORMATION **** READM2 **** NEW DEFAULT: COULOMB BIPOLAR BUFFER SET TO 32 Mb
+ INFORMATION **** READM2 **** NEW DEFAULT: EXCHANGE BIPOLAR BUFFER SET TO 32 Mb
+
+ *******************************************************************************
+ NEW DEFAULT: DFT INTEGRATION GRID INCREASED TO XLGRID
+ NEW DEFAULT: DIIS ACCELERATOR ACTIVE
+ USE KEYWORD NODIIS TO TURN IT OFF
+ *******************************************************************************
+
+ WARNING **** RDDFTP **** HSEsol-HJS ACTIVE
+ RANGE SEPARATION - OMEGA:   0.110000000000000     
+ INFORMATION **** DFTD3_INPUT **** PERFORM LATEST DISPERSION CORRECTION DFT-D3(BJ) WITH AUTOMATIC PARAMETER SETUP
+ PLEASE CITE:
+ (1) DFT-D3 Reference
+  S. Grimme, J. Antony, S. Ehrlich, and H. Krieg, J. Chem. Phys. 132 (2010), 154104
+ (2) BJ-Damping Reference
+  S. Grimme, S. Ehrlich, and L. Goerigk, J. Comput. Chem. 32 (2011), 1456-1465
+ (3) General DFT-D Review
+  S. Grimme, A. Hansen, J. G. Brandenburg, and C. Bannwarth,
+  Chem. Rev. 116 (2016), 5105-5154
+
+ INFORMATION **** TOLINTEG **** COULOMB AND EXCHANGE SERIES TOLERANCES MODIFIED
+ INFORMATION **** DIIS **** DIIS FOR SCF ACTIVE
+ INFORMATION **** DIIS **** LEVEL SHIFTER DISABLED
+ *******************************************************************************
+ N. OF ATOMS PER CELL        24  COULOMB OVERLAP TOL         (T1) 10**  -10
+ NUMBER OF SHELLS           128  COULOMB PENETRATION TOL     (T2) 10**  -10
+ NUMBER OF AO               240  EXCHANGE OVERLAP TOL        (T3) 10**  -10
+ N. OF ELECTRONS PER CELL    80  EXCHANGE PSEUDO OVP (F(G))  (T4) 10**  -10
+ CORE ELECTRONS PER CELL     16  EXCHANGE PSEUDO OVP (P(G))  (T5) 10**  -18
+ N. OF SYMMETRY OPERATORS     4  POLE ORDER IN MONO ZONE                  4
+ *******************************************************************************
+ TYPE OF CALCULATION :  RESTRICTED CLOSED SHELL
+ KOHN-SHAM HAMILTONIAN
+
+ (EXCHANGE)[CORRELATION] FUNCTIONAL:(HSEsol GGA)[PBEsol]
+
+ RANGE-SEPARATED HYBRID FUNCTIONAL 
+ OMEGA (SHORT-RANGE)[LONG-RANGE]:(    0.1100)[    0.0000]
+
+ HYBRID EXCHANGE - PERCENTAGE OF FOCK EXCHANGE    25.0000
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ *******************************************************************************
+ MAX NUMBER OF SCF CYCLES      50  CONVERGENCE ON DELTAP        10**-16
+ WEIGHT OF F(I) IN F(I+1)      70% CONVERGENCE ON ENERGY        10**-10
+ SHRINK. FACT.(MONKH.)    4  4  4  NUMBER OF K POINTS IN THE IBZ     27
+ SHRINKING FACTOR(GILAT NET)    4  NUMBER OF K POINTS(GILAT NET)     27
+ *******************************************************************************
+ *** K POINTS COORDINATES (OBLIQUE COORDINATES IN UNITS OF IS =  4)
+   1-R(  0  0  0)   2-C(  1  0  0)   3-R(  2  0  0)   4-C(  0  1  0)
+   5-C(  1  1  0)   6-C(  2  1  0)   7-R(  0  2  0)   8-C(  1  2  0)
+   9-R(  2  2  0)  10-C(  0  0  1)  11-C(  1  0  1)  12-C(  2  0  1)
+  13-C(  0  1  1)  14-C(  1  1  1)  15-C(  2  1  1)  16-C(  0  2  1)
+  17-C(  1  2  1)  18-C(  2  2  1)  19-R(  0  0  2)  20-C(  1  0  2)
+  21-R(  2  0  2)  22-C(  0  1  2)  23-C(  1  1  2)  24-C(  2  1  2)
+  25-R(  0  2  2)  26-C(  1  2  2)  27-R(  2  2  2)
+
+ DIRECT LATTICE VECTORS COMPON. (A.U.)     RECIP. LATTICE VECTORS COMPON. (A.U.) 
+        X            Y            Z              X            Y            Z
+   14.7201200    0.0000000    0.0000000      0.4268433    0.0000000    0.0000000
+    0.0000000    8.4986653    0.0000000      0.0000000    0.7393144    0.0000000
+    0.0000000    0.0000000   13.8403542      0.0000000    0.0000000    0.4539758
+
+ DISK SPACE FOR EIGENVECTORS (FTN 10)     2649600 REALS
+
+ SYMMETRY ADAPTION OF THE BLOCH FUNCTIONS ENABLED
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT gordsh1     TELAPSE        0.20 TCPU        0.03
+ MMMMM gordsh1     USED MEM(MB)      2.01 MAX MEM      2.07 TOT MEM        40.19
+
+ MATRIX SIZE: P(G)  430416, F(G)   88092, P(G) IRR   56690, F(G) IRR   23056
+ MAX G-VECTOR INDEX FOR 1- AND 2-ELECTRON INTEGRALS 115
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INPUT       TELAPSE        0.20 TCPU        0.04
+ MMMMM INPUT       USED MEM(MB)      2.62 MAX MEM      2.69 TOT MEM        52.42
+
+ NEIGHBORS OF THE NON-EQUIVALENT ATOMS
+
+ N = NUMBER OF NEIGHBORS AT DISTANCE R
+    ATOM  N     R/ANG      R/AU   NEIGHBORS (ATOM LABELS AND CELL INDICES)
+   1 O    1     0.9924     1.8753   17 H    0 0 0
+   1 O    1     0.9942     1.8787   21 H    0 0 0
+   1 O    1     1.7587     3.3235    9 H    0 0 0
+   1 O    1     1.7592     3.3243   13 H    0 0 0
+   1 O    1     2.7399     5.1777    5 O    0 0 0
+   1 O    1     2.7519     5.2003    5 O    0-1 0
+
+   5 O    1     0.9932     1.8768   15 H    0 0 0
+   5 O    1     0.9933     1.8772    9 H    0 1 0
+   5 O    1     1.7461     3.2997   21 H    0 0 0
+   5 O    1     1.7705     3.3457   20 H    0 0 0
+   5 O    1     2.7399     5.1777    1 O    0 0 0
+   5 O    1     2.7519     5.2003    1 O    0 1 0
+
+   9 H    1     0.9933     1.8772    5 O    0-1 0
+   9 H    1     1.6012     3.0258   15 H    0-1 0
+   9 H    1     1.7587     3.3235    1 O    0 0 0
+   9 H    1     2.2887     4.3250   21 H    0-1 0
+   9 H    1     2.2920     4.3313   17 H    0 0 0
+   9 H    1     2.2997     4.3458   21 H    0 0 0
+
+  13 H    1     0.9932     1.8768    7 O    0 0 0
+  13 H    1     1.6012     3.0258   11 H    0 0 0
+  13 H    1     1.7592     3.3243    1 O    0 0 0
+  13 H    1     2.2849     4.3178   23 H    0 0-1
+  13 H    1     2.2896     4.3268   21 H    0 0 0
+  13 H    1     2.2967     4.3402   18 H   -1 0-1
+
+  17 H    1     0.9924     1.8753    1 O    0 0 0
+  17 H    1     1.6028     3.0289   21 H    0 0 0
+  17 H    1     1.7705     3.3457    8 O   -1 0 0
+  17 H    1     2.2920     4.3313    9 H    0 0 0
+  17 H    1     2.2967     4.3402   14 H   -1 0 0
+  17 H    1     2.2992     4.3448   13 H    0 0 0
+
+  21 H    1     0.9942     1.8787    1 O    0 0 0
+  21 H    1     1.6028     3.0289   17 H    0 0 0
+  21 H    1     1.7461     3.2997    5 O    0 0 0
+  21 H    1     2.2849     4.3178   15 H    0 0 0
+  21 H    1     2.2887     4.3250    9 H    0 1 0
+  21 H    1     2.2896     4.3268   13 H    0 0 0
+
+
+ SYMMETRY ALLOWED INTERNAL DEGREE(S) OF FREEDOM:  17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SYMM        TELAPSE        0.21 TCPU        0.04
+ MMMMM SYMM        USED MEM(MB)      2.63 MAX MEM      2.85 TOT MEM        52.69
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_SCREEN  TELAPSE        0.21 TCPU        0.05
+ MMMMM INT_SCREEN  USED MEM(MB)      4.29 MAX MEM      4.31 TOT MEM        85.80
+
+ *******************************************************************************
+ *                                                                             *
+ *                                                                             *
+ *         FFFFF  RRRR   EEEE   QQQ   U   U  EEEE  N   N   CCC  Y   Y          *
+ *         F      R   R  E     Q   Q  U   U  E     NN  N  C      Y Y           *
+ *         FFF    RRRR   EEEE  Q   Q  U   U  EEEE  N N N  C       Y            *
+ *         F      R   R  E     Q  QQ  U   U  E     N  NN  C       Y            *
+ *         F      R   R  EEEE   QQ Q   UUU   EEEE  N   N   CCC    Y            *
+ *                                                                             *
+ *                                                                             *
+ * CALCULATION OF PHONON FREQUENCIES AT THE GAMMA POINT.                       *
+ *                                                                             *
+ * SYMMETRY IS EXPLOITED TO BUILD THE TOTAL HESSIAN MATRIX.                    *
+ * (F. PASCALE PHD THESIS TURIN-PARIS 2002)                                    *
+ *                                                                             *
+ *******************************************************************************
+
+
+ * INTENSITIES COMPUTED VIA THE BERRY PHASE APPROACH                           *
+ *                                                                             *
+ * REFERENCES TO BE QUOTED WHEN USING THIS MODULE:                             *
+ *                                                                             *
+ * F. Pascale, C.M. Zicovich-Wilson, F. Lopez, B. Civalleri                    *
+ * R. Orlando, R. Dovesi                                                       *
+ * The calculation of the vibration frequencies of crystalline                 *
+ * compounds and its implementation in the CRYSTAL code                        *
+ * J. Comput. Chem. 25 (2004) 888-897                                          *
+ *                                                                             *
+ * C.M. Zicovich-Wilson, F. Pascale, C. Roetti, V.R. Saunders,                 *
+ * R. Orlando, R. Dovesi                                                       *
+ * The calculation of the vibration frequencies of alpha-quartz:               *
+ * the effect of hamiltonian and basis set                                     *
+ * J. Comput. Chem. 25 (2004) 1873-1881                                        *
+ *******************************************************************************
+
+
+
+ ATOMS ISOTOPIC MASS (AMU) FOR FREQUENCY CALCULATION 
+
+    1 O      15.9949    2 O      15.9949    3 O      15.9949    4 O      15.9949
+    5 O      15.9949    6 O      15.9949    7 O      15.9949    8 O      15.9949
+    9 H       2.0141   10 H       2.0141   11 H       2.0141   12 H       2.0141
+   13 H       2.0141   14 H       2.0141   15 H       2.0141   16 H       2.0141
+   17 H       2.0141   18 H       2.0141   19 H       2.0141   20 H       2.0141
+   21 H       2.0141   22 H       2.0141   23 H       2.0141   24 H       2.0141
+
+ INFORMATION CONCERNING THE SCF+GRADIENT CALCULATIONS REQUIRED FOR
+ GENERATING FREQUENCIES. IN PRINCIPLE 3N+1 SCF + GRADIENT
+ CALCULATIONS  ARE REQUIRED;
+ FOR EACH OF THEM THE REMAINING POINT SYMMETRY IS INDICATED.
+ POINT SYMMETRY PERMITS TO GENERATE GRADIENTS FOR DISPLACEMENT B 
+ STARTING FROM THE GRADIENT GENERATED BY DISPLACEMENT A.
+
+   N   LABEL SYMBOL DISPLACEMENT     SYM. 
+
+   1     EQUILIBRIUM GEOMETRY            4
+
+   2      1   O            DX           1
+   3      1   O            DY           1
+   4      1   O            DZ           1
+   5      5   O            DX           1
+   6      5   O            DY           1
+   7      5   O            DZ           1
+   8      9   H            DX           1
+   9      9   H            DY           1
+  10      9   H            DZ           1
+  11     13   H            DX           1
+  12     13   H            DY           1
+  13     13   H            DZ           1
+  14     17   H            DX           1
+  15     17   H            DY           1
+  16     17   H            DZ           1
+  17     21   H            DX           1
+  18     21   H            DY           1
+  19     21   H            DZ           1
+ USE OF RESIDUAL SYMMETRY AFTER DISPLACEMENT
+
+ NUMERICAL GRADIENT COMPUTED WITH A SINGLE DISPLACEMENT (+DX) FOR EACH
+ CARTESIAN COORDINATE WITH RESPECT TO THE EQUILIBRIUM CONFIGURATION
+ DX=  0.003 ANGSTROM
+ NUMBER OF IRREDUCIBLE ATOMS                     6
+ NUMBER OF SCF+GRADIENT CALCULATIONS            19
+
+  ATOM  SYMOP  ORDER
+    1      1      1
+    5      1      1
+    9      1      1
+   13      1      1
+   17      1      1
+   21      1      1
+
+ ATOM  : IRREDUCIBLE ATOM
+ SYMOP : NUMBER OF SYMMETRY OPERATORS THAT DOESN'T MOVE THE IRREDUCIBLE ATOM
+ ORDER : MAXIMUM ORDER AMONG THE OPERATORS OF THE IRREDUCIBLE ATOM
+
+ *******************************************************************************
+
+
+ GCALCO - MAX INDICES DIRECT LATTICE VECTOR    12    21    12
+ NO.OF VECTORS CREATED 6999 STARS 1045 RMAX   142.45188 BOHR
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT gordsh1     TELAPSE        0.22 TCPU        0.05
+ MMMMM gordsh1     USED MEM(MB)      3.88 MAX MEM      5.69 TOT MEM        74.47
+
+ MATRIX SIZE: P(G)  430416, F(G)   88092, P(G) IRR   56690, F(G) IRR   23056
+ MAX G-VECTOR INDEX FOR 1- AND 2-ELECTRON INTEGRALS 115
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INPUT       TELAPSE        0.22 TCPU        0.05
+ MMMMM INPUT       USED MEM(MB)      4.31 MAX MEM      4.55 TOT MEM        83.26
+
+ SYMMETRY ALLOWED INTERNAL DEGREE(S) OF FREEDOM:  17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SYMM        TELAPSE        0.22 TCPU        0.06
+ MMMMM SYMM        USED MEM(MB)      4.31 MAX MEM      4.54 TOT MEM        83.26
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_SCREEN  TELAPSE        0.22 TCPU        0.06
+ MMMMM INT_SCREEN  USED MEM(MB)      4.31 MAX MEM      4.34 TOT MEM        83.26
+
+ DFT PARAMETERS
+
+     ATOM       ELECTRONS   NET CHARGE   R(ANGSTROM)
+   1   8  O       8.0000      0.0000     0.74000000
+   9   1  H       1.0000      0.0000     1.11000000
+
+ SIZE OF GRID=     146002
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MAKE_GRID2  TELAPSE        1.48 TCPU        1.32
+ MMMMM MAKE_GRID2  USED MEM(MB)     12.46 MAX MEM     21.27 TOT MEM       246.21
+ BECKE WEIGHT FUNCTION
+ RADSAFE =     2.00
+ TOLERANCES - DENSITY:10**- 6; POTENTIAL:10**- 9; GRID WGT:10**-14
+
+ RADIAL INTEGRATION  - INTERVALS (POINTS,UPPER LIMIT):            1( 75,  4.0*R)
+
+ ANGULAR INTEGRATION - INTERVALS (ACCURACY LEVEL [N. POINTS] UPPER LIMIT):
+  1(  4[  86]   0.2)  2(  8[ 194]   0.5)  3( 12[ 350]   0.9)  4( 16[ 974]   3.5)
+  5( 12[ 350]9999.0)
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_CALC    TELAPSE        1.50 TCPU        1.34
+ MMMMM INT_CALC    USED MEM(MB)     11.93 MAX MEM     12.46 TOT MEM       235.63
+
+ *******************************************************************************
+ ice Ih config_00118 H-bond topology, Pna2_1 (No. 33), multiplicity 4 - frequenci
+ CRYSTAL - SCF - TYPE OF CALCULATION :  RESTRICTED CLOSED SHELL
+ *******************************************************************************
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SDIK        TELAPSE        1.53 TCPU        1.37
+ MMMMM SDIK        USED MEM(MB)     14.68 MAX MEM     14.95 TOT MEM       282.97
+
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+         ATOMIC WAVEFUNCTION(S)
+
+
+ NUCLEAR CHARGE  8.0  SYMMETRY SPECIES            S    P
+ N. ELECTRONS    8.0  NUMBER OF PRIMITIVE GTOS   10    6
+                      NUMBER OF CONTRACTED GTOS   4    3
+                      NUMBER OF CLOSED SHELLS     2    0
+                      OPEN SHELL OCCUPATION       0    4
+
+  ZNUC SCFIT  TOTAL HF ENERGY   KINETIC ENERGY   VIRIAL THEOREM ACCURACY
+   8.0  13   -7.480300557E+01  7.484348361E+01 -1.999459164E+00  4.9E-06
+
+ NUCLEAR CHARGE  1.0  SYMMETRY SPECIES            S
+ N. ELECTRONS    1.0  NUMBER OF PRIMITIVE GTOS    5
+                      NUMBER OF CONTRACTED GTOS   3
+                      NUMBER OF CLOSED SHELLS     0
+                      OPEN SHELL OCCUPATION       1
+
+  ZNUC SCFIT  TOTAL HF ENERGY   KINETIC ENERGY   VIRIAL THEOREM ACCURACY
+   1.0   1   -4.972863497E-01  5.223199932E-01 -1.952072209E+00  6.6E-16
+
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE        1.54 TCPU        1.38
+ MMMMM MOQGAD      USED MEM(MB)     12.69 MAX MEM     14.68 TOT MEM       250.81
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE       14.96 TCPU       14.79
+ MMMMM SHELLXN     USED MEM(MB)     12.87 MAX MEM     35.95 TOT MEM       254.37
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE       25.78 TCPU       25.61
+ MMMMM MONMO3      USED MEM(MB)     13.02 MAX MEM     13.02 TOT MEM       257.44
+ NUMERICALLY INTEGRATED DENSITY     80.0000143739
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE       25.94 TCPU       25.78
+ MMMMM NUMDFT      USED MEM(MB)     16.31 MAX MEM     21.60 TOT MEM       323.12
+ CYC   0 ETOT(AU) -6.097393835206E+02 DETOT -6.10E+02 tst  0.00E+00 PX  1.00E+00
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE       25.95 TCPU       25.78
+ MMMMM DIIS        USED MEM(MB)     21.88 MAX MEM     25.67 TOT MEM       427.08
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE       26.10 TCPU       25.94
+ MMMMM FDIK        USED MEM(MB)     18.33 MAX MEM     21.88 TOT MEM       363.55
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.9510247E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.9578766E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -5.6429139E-02 AU
+ INDIRECT ENERGY BAND GAP:   9.2158 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE       26.11 TCPU       25.95
+ MMMMM PDIG        USED MEM(MB)     16.13 MAX MEM     18.89 TOT MEM       319.46
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE       26.12 TCPU       25.95
+ MMMMM MOQGAD      USED MEM(MB)     16.15 MAX MEM     16.40 TOT MEM       320.04
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE       39.77 TCPU       39.60
+ MMMMM SHELLXN     USED MEM(MB)     16.33 MAX MEM     39.42 TOT MEM       323.61
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE       50.64 TCPU       50.48
+ MMMMM MONMO3      USED MEM(MB)     16.49 MAX MEM     16.49 TOT MEM       326.68
+ NUMERICALLY INTEGRATED DENSITY     80.0000141929
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE       51.13 TCPU       50.96
+ MMMMM NUMDFT      USED MEM(MB)     16.49 MAX MEM     21.78 TOT MEM       326.68
+ CYC   1 ETOT(AU) -6.094970004647E+02 DETOT  2.42E-01 tst  0.00E+00 PX  1.00E+00
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE       51.13 TCPU       50.97
+ MMMMM DIIS        USED MEM(MB)     22.06 MAX MEM     25.85 TOT MEM       430.64
+ DIIS TEST: 0.20725E+01 AT SCF   CYCLE   1 - MIX   70 %
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE       51.20 TCPU       51.03
+ MMMMM FDIK        USED MEM(MB)     18.51 MAX MEM     22.06 TOT MEM       367.11
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4763179E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4839010E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -3.6071154E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.4780 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE       51.21 TCPU       51.04
+ MMMMM PDIG        USED MEM(MB)     16.30 MAX MEM     19.06 TOT MEM       323.03
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE       51.22 TCPU       51.05
+ MMMMM MOQGAD      USED MEM(MB)     16.33 MAX MEM     16.57 TOT MEM       323.61
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE       64.63 TCPU       64.46
+ MMMMM SHELLXN     USED MEM(MB)     16.51 MAX MEM     39.59 TOT MEM       327.17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE       75.87 TCPU       75.70
+ MMMMM MONMO3      USED MEM(MB)     16.66 MAX MEM     16.66 TOT MEM       330.24
+ NUMERICALLY INTEGRATED DENSITY     80.0000141178
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE       76.38 TCPU       76.22
+ MMMMM NUMDFT      USED MEM(MB)     16.66 MAX MEM     21.95 TOT MEM       330.24
+ CYC   2 ETOT(AU) -6.097156634860E+02 DETOT -2.19E-01 tst  5.82E-04 PX  3.58E-02
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE       76.39 TCPU       76.22
+ MMMMM DIIS        USED MEM(MB)     22.24 MAX MEM     26.03 TOT MEM       434.20
+ DIIS TEST: 0.17691E+00 AT SCF   CYCLE   2 - DIIS ACTIVE - HISTORY:     2 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE       76.45 TCPU       76.29
+ MMMMM FDIK        USED MEM(MB)     18.69 MAX MEM     22.24 TOT MEM       370.67
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4149810E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4217677E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.4484895E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6264 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE       76.46 TCPU       76.30
+ MMMMM PDIG        USED MEM(MB)     16.48 MAX MEM     19.24 TOT MEM       326.59
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE       76.47 TCPU       76.30
+ MMMMM MOQGAD      USED MEM(MB)     16.51 MAX MEM     16.75 TOT MEM       327.17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE       90.09 TCPU       89.92
+ MMMMM SHELLXN     USED MEM(MB)     16.69 MAX MEM     39.77 TOT MEM       330.73
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      101.34 TCPU      101.18
+ MMMMM MONMO3      USED MEM(MB)     16.84 MAX MEM     16.84 TOT MEM       333.81
+ NUMERICALLY INTEGRATED DENSITY     80.0000140784
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      101.86 TCPU      101.69
+ MMMMM NUMDFT      USED MEM(MB)     16.84 MAX MEM     22.13 TOT MEM       333.81
+ CYC   3 ETOT(AU) -6.097389927783E+02 DETOT -2.33E-02 tst  1.16E-04 PX  2.63E-02
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      101.86 TCPU      101.70
+ MMMMM DIIS        USED MEM(MB)     22.42 MAX MEM     26.21 TOT MEM       437.76
+ DIIS TEST: 0.89066E-03 AT SCF   CYCLE   3 - DIIS ACTIVE - HISTORY:     3 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      101.93 TCPU      101.76
+ MMMMM FDIK        USED MEM(MB)     18.86 MAX MEM     22.42 TOT MEM       374.23
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4316492E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4385762E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5109553E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6547 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      101.94 TCPU      101.77
+ MMMMM PDIG        USED MEM(MB)     16.66 MAX MEM     19.42 TOT MEM       330.15
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      101.94 TCPU      101.78
+ MMMMM MOQGAD      USED MEM(MB)     16.69 MAX MEM     16.93 TOT MEM       330.73
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      115.61 TCPU      115.44
+ MMMMM SHELLXN     USED MEM(MB)     16.87 MAX MEM     39.95 TOT MEM       334.29
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      126.72 TCPU      126.55
+ MMMMM MONMO3      USED MEM(MB)     17.02 MAX MEM     17.02 TOT MEM       337.37
+ NUMERICALLY INTEGRATED DENSITY     80.0000141050
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      127.24 TCPU      127.07
+ MMMMM NUMDFT      USED MEM(MB)     17.02 MAX MEM     22.31 TOT MEM       337.37
+ CYC   4 ETOT(AU) -6.097391153703E+02 DETOT -1.23E-04 tst  6.80E-07 PX  2.14E-03
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      127.24 TCPU      127.07
+ MMMMM DIIS        USED MEM(MB)     22.60 MAX MEM     26.39 TOT MEM       441.32
+ DIIS TEST: 0.13664E-04 AT SCF   CYCLE   4 - DIIS ACTIVE - HISTORY:     4 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      127.31 TCPU      127.14
+ MMMMM FDIK        USED MEM(MB)     19.04 MAX MEM     22.60 TOT MEM       377.80
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4353543E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4422445E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5272386E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6604 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      127.32 TCPU      127.15
+ MMMMM PDIG        USED MEM(MB)     16.84 MAX MEM     19.60 TOT MEM       333.71
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      127.32 TCPU      127.15
+ MMMMM MOQGAD      USED MEM(MB)     16.87 MAX MEM     17.11 TOT MEM       334.29
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      140.82 TCPU      140.65
+ MMMMM SHELLXN     USED MEM(MB)     17.04 MAX MEM     40.13 TOT MEM       337.85
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      151.83 TCPU      151.66
+ MMMMM MONMO3      USED MEM(MB)     17.20 MAX MEM     17.20 TOT MEM       340.93
+ NUMERICALLY INTEGRATED DENSITY     80.0000141034
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      152.34 TCPU      152.17
+ MMMMM NUMDFT      USED MEM(MB)     17.20 MAX MEM     22.49 TOT MEM       340.93
+ CYC   5 ETOT(AU) -6.097391167914E+02 DETOT -1.42E-06 tst  1.89E-08 PX  3.08E-04
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      152.34 TCPU      152.18
+ MMMMM DIIS        USED MEM(MB)     22.77 MAX MEM     26.57 TOT MEM       444.89
+ DIIS TEST: 0.27827E-05 AT SCF   CYCLE   5 - DIIS ACTIVE - HISTORY:     5 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      152.40 TCPU      152.23
+ MMMMM FDIK        USED MEM(MB)     19.22 MAX MEM     22.77 TOT MEM       381.36
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4353315E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4422360E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5280636E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6601 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      152.41 TCPU      152.25
+ MMMMM PDIG        USED MEM(MB)     17.02 MAX MEM     19.78 TOT MEM       337.27
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      152.42 TCPU      152.25
+ MMMMM MOQGAD      USED MEM(MB)     17.04 MAX MEM     17.29 TOT MEM       337.85
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      166.13 TCPU      165.97
+ MMMMM SHELLXN     USED MEM(MB)     17.22 MAX MEM     40.31 TOT MEM       341.42
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      177.36 TCPU      177.19
+ MMMMM MONMO3      USED MEM(MB)     17.38 MAX MEM     17.38 TOT MEM       344.49
+ NUMERICALLY INTEGRATED DENSITY     80.0000141045
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      177.87 TCPU      177.71
+ MMMMM NUMDFT      USED MEM(MB)     17.38 MAX MEM     22.67 TOT MEM       344.49
+ CYC   6 ETOT(AU) -6.097391169934E+02 DETOT -2.02E-07 tst  3.82E-09 PX  8.20E-05
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      177.88 TCPU      177.71
+ MMMMM DIIS        USED MEM(MB)     22.95 MAX MEM     26.74 TOT MEM       448.45
+ DIIS TEST: 0.89937E-06 AT SCF   CYCLE   6 - DIIS ACTIVE - HISTORY:     6 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      177.94 TCPU      177.77
+ MMMMM FDIK        USED MEM(MB)     19.40 MAX MEM     22.95 TOT MEM       384.92
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4354439E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4423437E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5285118E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6603 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      177.95 TCPU      177.78
+ MMMMM PDIG        USED MEM(MB)     17.19 MAX MEM     19.95 TOT MEM       340.84
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      177.96 TCPU      177.79
+ MMMMM MOQGAD      USED MEM(MB)     17.22 MAX MEM     17.46 TOT MEM       341.42
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      191.61 TCPU      191.44
+ MMMMM SHELLXN     USED MEM(MB)     17.40 MAX MEM     40.48 TOT MEM       344.98
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      202.77 TCPU      202.60
+ MMMMM MONMO3      USED MEM(MB)     17.55 MAX MEM     17.55 TOT MEM       348.05
+ NUMERICALLY INTEGRATED DENSITY     80.0000141042
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      203.28 TCPU      203.11
+ MMMMM NUMDFT      USED MEM(MB)     17.55 MAX MEM     22.84 TOT MEM       348.05
+ CYC   7 ETOT(AU) -6.097391170928E+02 DETOT -9.94E-08 tst  5.15E-10 PX  3.10E-05
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      203.29 TCPU      203.12
+ MMMMM DIIS        USED MEM(MB)     23.13 MAX MEM     26.92 TOT MEM       452.01
+ DIIS TEST: 0.47574E-08 AT SCF   CYCLE   7 - DIIS ACTIVE - HISTORY:     7 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      203.35 TCPU      203.18
+ MMMMM FDIK        USED MEM(MB)     19.58 MAX MEM     23.13 TOT MEM       388.48
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4354427E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4423425E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5285299E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6603 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      203.36 TCPU      203.19
+ MMMMM PDIG        USED MEM(MB)     17.37 MAX MEM     20.13 TOT MEM       344.40
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      203.36 TCPU      203.20
+ MMMMM MOQGAD      USED MEM(MB)     17.40 MAX MEM     17.64 TOT MEM       344.98
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      216.76 TCPU      216.59
+ MMMMM SHELLXN     USED MEM(MB)     17.58 MAX MEM     40.66 TOT MEM       348.54
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      227.70 TCPU      227.54
+ MMMMM MONMO3      USED MEM(MB)     17.73 MAX MEM     17.73 TOT MEM       351.62
+ NUMERICALLY INTEGRATED DENSITY     80.0000141042
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      228.22 TCPU      228.05
+ MMMMM NUMDFT      USED MEM(MB)     17.73 MAX MEM     23.02 TOT MEM       351.62
+ CYC   8 ETOT(AU) -6.097391170928E+02 DETOT  1.47E-11 tst  3.05E-12 PX  2.01E-06
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT DIIS        TELAPSE      228.23 TCPU      228.06
+ MMMMM DIIS        USED MEM(MB)     23.31 MAX MEM     27.10 TOT MEM       455.57
+ DIIS TEST: 0.16515E-10 AT SCF   CYCLE   8 - DIIS ACTIVE - HISTORY:     8 CYCLES
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT FDIK        TELAPSE      228.28 TCPU      228.11
+ MMMMM FDIK        USED MEM(MB)     19.75 MAX MEM     23.31 TOT MEM       392.05
+ INSULATING STATE
+ TOP OF VALENCE BANDS -    BAND     40; K    4; EIG -3.4354414E-01 AU
+ TOP OF VALENCE BANDS -    BAND     40; K    1; EIG -3.4423412E-01 AU
+ BOTTOM OF VIRTUAL BANDS - BAND     41; K    1; EIG -2.5285234E-02 AU
+ INDIRECT ENERGY BAND GAP:   8.6603 eV
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT PDIG        TELAPSE      228.29 TCPU      228.12
+ MMMMM PDIG        USED MEM(MB)     17.55 MAX MEM     20.31 TOT MEM       347.96
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MOQGAD      TELAPSE      228.29 TCPU      228.12
+ MMMMM MOQGAD      USED MEM(MB)     17.58 MAX MEM     17.82 TOT MEM       348.54
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELLXN     TELAPSE      241.91 TCPU      241.75
+ MMMMM SHELLXN     USED MEM(MB)     17.76 MAX MEM     40.84 TOT MEM       352.10
+ ::: PSEUDO TOTAL   ENERGY                        -5.5376564344521E+02
+ ::: VIRIAL COEFFICIENT                            1.0457255843042E+00
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT MONMO3      TELAPSE      253.11 TCPU      252.94
+ MMMMM MONMO3      USED MEM(MB)     17.91 MAX MEM     17.91 TOT MEM       355.18
+ NUMERICALLY INTEGRATED DENSITY     80.0000141042
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFT      TELAPSE      253.62 TCPU      253.45
+ MMMMM NUMDFT      USED MEM(MB)     17.91 MAX MEM     23.20 TOT MEM       355.18
+ CYC   9 ETOT(AU) -6.097391170928E+02 DETOT  2.39E-12 tst  2.01E-14 PX  2.01E-06
+
+ == SCF ENDED - CONVERGENCE ON ENERGY      E(AU) -6.0973911709281E+02 CYCLES   9
+
+
+ ENERGY EXPRESSION=HARTREE+FOCK EXCH*0.00000+(HSESOL     EXCH)*1.00000+PBESOL     CORR
+
+
+ TOTAL ENERGY(DFT)(AU)(  9) -6.0973911709281E+02 DE 2.4E-12 tester 2.0E-14
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT EDFT        TELAPSE      253.62 TCPU      253.45
+ MMMMM EDFT        USED MEM(MB)     17.36 MAX MEM     17.91 TOT MEM       344.08
+
+ *******************************************************************************
+ *                             FORCE CALCULATION                               *
+ *******************************************************************************
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT NUMDFG      TELAPSE      255.57 TCPU      255.40
+ MMMMM NUMDFG      USED MEM(MB)     13.90 MAX MEM     22.24 TOT MEM       275.02
+ INFORMATION **** GENPOG **** BIPO BUFFER LENGTH (WORDS) =     2299600
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SHELXG      TELAPSE      319.09 TCPU      318.92
+ MMMMM SHELXG      USED MEM(MB)     14.17 MAX MEM     55.32 TOT MEM       280.41
+
+
+ D3 DISPERSION ENERGY (AU)       -1.5755723681273E-02
+ TOTAL ENERGY + DISP (AU)        -6.0975487281649E+02
+
+ CARTESIAN FORCES IN HARTREE/BOHR (ANALYTICAL)
+   ATOM                     X                   Y                   Z
+   1   8            -2.572036367776E-06  1.745601871050E-06  1.432154697278E-06
+   2   8             2.572036366444E-06 -1.745601875047E-06  1.432154693282E-06
+   3   8             2.572036369886E-06  1.745601876380E-06  1.432154697056E-06
+   4   8            -2.572036371440E-06 -1.745601867720E-06  1.432154696390E-06
+   5   8            -2.049522243031E-07 -3.234507538252E-06 -6.149257520960E-07
+   6   8             2.049522227487E-07  3.234507543359E-06 -6.149257580912E-07
+   7   8             2.049522285219E-07 -3.234507538030E-06 -6.149257618659E-07
+   8   8            -2.049522261904E-07  3.234507536920E-06 -6.149257520960E-07
+   9   1             1.883507417810E-07  7.785573972185E-07  8.486766024385E-07
+  10   1            -1.883507386724E-07 -7.785573992170E-07  8.486765983307E-07
+  11   1            -1.883507394496E-07  7.785573932217E-07  8.486766015503E-07
+  12   1             1.883507383393E-07 -7.785573965524E-07  8.486766018834E-07
+  13   1             1.913247422272E-06  1.170587525755E-06 -7.886323079020E-07
+  14   1            -1.913247421308E-06 -1.170587526344E-06 -7.886323105666E-07
+  15   1            -1.913247419537E-06  1.170587526014E-06 -7.886323112327E-07
+  16   1             1.913247418864E-06 -1.170587523884E-06 -7.886323079020E-07
+  17   1             3.615572794491E-07 -2.287335107595E-06  3.876998647678E-07
+  18   1            -3.615572783389E-07  2.287335107326E-06  3.876998644348E-07
+  19   1            -3.615572767846E-07 -2.287335107845E-06  3.876998652119E-07
+  20   1             3.615572758964E-07  2.287335108262E-06  3.876998661001E-07
+  21   1             2.634537140556E-06  1.010703511550E-06 -1.264972946502E-06
+  22   1            -2.634537141555E-06 -1.010703512883E-06 -1.264972947279E-06
+  23   1            -2.634537139667E-06  1.010703510440E-06 -1.264972948500E-06
+  24   1             2.634537141999E-06 -1.010703513549E-06 -1.264972945059E-06
+
+ RESULTANT FORCE     1.733856114239E-15  5.802650027142E-16  5.996314556000E-13
+
+ SYMMETRY ALLOWED FORCES (ANALYTICAL) (DIRECTION, FORCE)
+
+    1 -5.1440727E-06    2  3.4912037E-06    3  3.1376937E-06    4 -4.0990445E-07
+    5 -6.4690151E-06    6 -7.3453681E-07    7  3.7670148E-07    8  1.5571148E-06
+    9  2.4317619E-06   10  3.8264948E-06   11  2.3411751E-06   12 -5.7154070E-07
+   13  7.2311456E-07   14 -4.5746702E-06   15  2.3372323E-06   16  5.2690743E-06
+   17  2.0214070E-06
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT TOTGRA      TELAPSE      381.80 TCPU      381.63
+ MMMMM TOTGRA      USED MEM(MB)     13.89 MAX MEM     20.32 TOT MEM       274.75
+
+ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+                   FORCE CONSTANT MATRIX - NUMERICAL ESTIMATE
+ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+ MAX ABS(DGRAD): MAXIMUM ABSOLUTE GRADIENT DIFFERENCE WITH RESPECT TO
+                 THE CENTRAL POINT
+ DE:             ENERGY DIFFERENCE WITH RESPECT TO THE CENTRAL POINT
+                 (DE IS EXPECTED TO BE POSITIVE FOR ALL DISPLACEMENTS)
+
+   ATOM      MAX ABS(DGRAD)       TOTAL ENERGY (AU)  N.CYC      DE       SYM
+    CENTRAL POINT             -6.097548728165E+02     9     0.0000E+00     4
+    1 O  DX   2.9135E-03      -6.097548642912E+02     9     8.5253E-06     1
+    1 O  DY   1.9826E-03      -6.097548671196E+02     9     5.6969E-06     1
+    1 O  DZ   9.2070E-04      -6.097548698638E+02     7     2.9527E-06     1
+    5 O  DX   9.5360E-04      -6.097548701538E+02     7     2.6627E-06     1
+    5 O  DY   2.0090E-03      -6.097548669136E+02     9     5.9029E-06     1
+    5 O  DZ   3.0031E-03      -6.097548641354E+02     9     8.6811E-06     1
+    9 H  DX   8.1412E-04      -6.097548708814E+02     7     1.9351E-06     1
+    9 H  DY   1.5524E-03      -6.097548681988E+02     7     4.6177E-06     1
+    9 H  DZ   5.7351E-04      -6.097548709671E+02     7     1.8494E-06     1
+   13 H  DX   2.4074E-04      -6.097548719717E+02     7     8.4475E-07     1
+   13 H  DY   3.1966E-04      -6.097548717666E+02     7     1.0498E-06     1
+   13 H  DZ   2.2109E-03      -6.097548664167E+02    10     6.3998E-06     1
+   17 H  DX   2.0725E-03      -6.097548668410E+02     8     5.9755E-06     1
+   17 H  DY   3.1417E-04      -6.097548716828E+02     7     1.1337E-06     1
+   17 H  DZ   7.2255E-04      -6.097548714264E+02     7     1.3901E-06     1
+   21 H  DX   7.5486E-04      -6.097548704889E+02     7     2.3276E-06     1
+   21 H  DY   1.5309E-03      -6.097548682543E+02     7     4.5622E-06     1
+   21 H  DZ   6.4888E-04      -6.097548713859E+02     7     1.4306E-06     1
+
+ GCALCO - MAX INDICES DIRECT LATTICE VECTOR    12    21    12
+ NO.OF VECTORS CREATED 6999 STARS 1045 RMAX   142.45188 BOHR
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT gordsh1     TELAPSE    27046.63 TCPU    27046.24
+ MMMMM gordsh1     USED MEM(MB)    121.43 MAX MEM    146.73 TOT MEM      2425.71
+
+ MATRIX SIZE: P(G)  430416, F(G)   88092, P(G) IRR   56690, F(G) IRR   23056
+ MAX G-VECTOR INDEX FOR 1- AND 2-ELECTRON INTEGRALS 115
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INPUT       TELAPSE    27046.63 TCPU    27046.24
+ MMMMM INPUT       USED MEM(MB)    121.87 MAX MEM    122.11 TOT MEM      2434.49
+
+ SYMMETRY ALLOWED INTERNAL DEGREE(S) OF FREEDOM:  17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SYMM        TELAPSE    27046.63 TCPU    27046.25
+ MMMMM SYMM        USED MEM(MB)    121.87 MAX MEM    122.10 TOT MEM      2434.46
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_SCREEN  TELAPSE    27046.63 TCPU    27046.25
+ MMMMM INT_SCREEN  USED MEM(MB)    121.83 MAX MEM    121.88 TOT MEM      2433.66
+ ERROR ON BORN TENSORS:  3.807190346865727E-002
+ -1.281931722064844E-002  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  2.151550722317630E-002  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  2.867434199162366E-002
+ WARNING **** HRED **** SUM RULE OF THE BORN CHARGE TENSOR NOT FULFILLED
+
+ NORM OF THE RESULTING NON-NULL MATRIX      0.381E-01
+ TO BETTER OBEY THE SUM RULE, INCREASE THE SHRINKING FACTOR OR IMPROVE
+ THE DIPOLE MOMENT CALCULATION WITH THE CORRESPONDING KEYWORDS (SEE THE MANUAL)
+
+ ATOMIC BORN CHARGE TENSOR (UNITS OF e, ELECTRON CHARGE).
+ DYNAMIC CHARGE = 1/3 * TRACE .
+
+ ATOM   1 O  DYNAMIC CHARGE    -1.147068
+
+              1           2           3
+   1    -1.1565E+00 -6.6674E-02 -3.1596E-02
+   2    -5.9159E-02 -1.1359E+00  5.1386E-02
+   3    -2.2623E-02  5.6555E-02 -1.1488E+00
+
+ ATOM   2 O  DYNAMIC CHARGE    -1.147068
+
+              1           2           3
+   1    -1.1565E+00 -6.6674E-02  3.1596E-02
+   2    -5.9159E-02 -1.1359E+00 -5.1386E-02
+   3     2.2623E-02 -5.6555E-02 -1.1488E+00
+
+ ATOM   3 O  DYNAMIC CHARGE    -1.147068
+
+              1           2           3
+   1    -1.1565E+00  6.6674E-02  3.1596E-02
+   2     5.9159E-02 -1.1359E+00  5.1386E-02
+   3     2.2623E-02  5.6555E-02 -1.1488E+00
+
+ ATOM   4 O  DYNAMIC CHARGE    -1.147068
+
+              1           2           3
+   1    -1.1565E+00  6.6674E-02 -3.1596E-02
+   2     5.9159E-02 -1.1359E+00 -5.1386E-02
+   3    -2.2623E-02 -5.6555E-02 -1.1488E+00
+
+ ATOM   5 O  DYNAMIC CHARGE    -1.146323
+
+              1           2           3
+   1    -1.1595E+00 -1.7085E-02 -4.6024E-02
+   2    -2.8243E-02 -1.1337E+00  5.3270E-02
+   3    -4.6862E-02  5.0343E-02 -1.1458E+00
+
+ ATOM   6 O  DYNAMIC CHARGE    -1.146323
+
+              1           2           3
+   1    -1.1595E+00 -1.7085E-02  4.6024E-02
+   2    -2.8243E-02 -1.1337E+00 -5.3270E-02
+   3     4.6862E-02 -5.0343E-02 -1.1458E+00
+
+ ATOM   7 O  DYNAMIC CHARGE    -1.146323
+
+              1           2           3
+   1    -1.1595E+00  1.7085E-02  4.6024E-02
+   2     2.8243E-02 -1.1337E+00  5.3270E-02
+   3     4.6862E-02  5.0343E-02 -1.1458E+00
+
+ ATOM   8 O  DYNAMIC CHARGE    -1.146323
+
+              1           2           3
+   1    -1.1595E+00  1.7085E-02 -4.6024E-02
+   2     2.8243E-02 -1.1337E+00 -5.3270E-02
+   3    -4.6862E-02 -5.0343E-02 -1.1458E+00
+
+ ATOM   9 H  DYNAMIC CHARGE     0.573280
+
+              1           2           3
+   1     4.7640E-01 -3.3077E-01  1.5703E-01
+   2    -3.2632E-01  8.7245E-01 -2.7541E-01
+   3     1.5052E-01 -2.6481E-01  3.7098E-01
+
+ ATOM  10 H  DYNAMIC CHARGE     0.573280
+
+              1           2           3
+   1     4.7640E-01 -3.3077E-01 -1.5703E-01
+   2    -3.2632E-01  8.7245E-01  2.7541E-01
+   3    -1.5052E-01  2.6481E-01  3.7098E-01
+
+ ATOM  11 H  DYNAMIC CHARGE     0.573280
+
+              1           2           3
+   1     4.7640E-01  3.3077E-01 -1.5703E-01
+   2     3.2632E-01  8.7245E-01 -2.7541E-01
+   3    -1.5052E-01 -2.6481E-01  3.7098E-01
+
+ ATOM  12 H  DYNAMIC CHARGE     0.573280
+
+              1           2           3
+   1     4.7640E-01  3.3077E-01  1.5703E-01
+   2     3.2632E-01  8.7245E-01  2.7541E-01
+   3     1.5052E-01  2.6481E-01  3.7098E-01
+
+ ATOM  13 H  DYNAMIC CHARGE     0.576278
+
+              1           2           3
+   1     2.8684E-01 -2.2022E-02 -3.0512E-02
+   2    -2.1911E-02  2.6020E-01 -1.8200E-02
+   3    -4.6037E-02 -3.2351E-02  1.1818E+00
+
+ ATOM  14 H  DYNAMIC CHARGE     0.576278
+
+              1           2           3
+   1     2.8684E-01 -2.2022E-02  3.0512E-02
+   2    -2.1911E-02  2.6020E-01  1.8200E-02
+   3     4.6037E-02  3.2351E-02  1.1818E+00
+
+ ATOM  15 H  DYNAMIC CHARGE     0.576278
+
+              1           2           3
+   1     2.8684E-01  2.2022E-02  3.0512E-02
+   2     2.1911E-02  2.6020E-01 -1.8200E-02
+   3     4.6037E-02 -3.2351E-02  1.1818E+00
+
+ ATOM  16 H  DYNAMIC CHARGE     0.576278
+
+              1           2           3
+   1     2.8684E-01  2.2022E-02 -3.0512E-02
+   2     2.1911E-02  2.6020E-01  1.8200E-02
+   3    -4.6037E-02  3.2351E-02  1.1818E+00
+
+ ATOM  17 H  DYNAMIC CHARGE     0.566744
+
+              1           2           3
+   1     1.0713E+00  6.3620E-02 -2.4940E-01
+   2     3.9010E-02  2.5930E-01 -3.7342E-02
+   3    -2.5584E-01 -4.6324E-02  3.6965E-01
+
+ ATOM  18 H  DYNAMIC CHARGE     0.566744
+
+              1           2           3
+   1     1.0713E+00  6.3620E-02  2.4940E-01
+   2     3.9010E-02  2.5930E-01  3.7342E-02
+   3     2.5584E-01  4.6324E-02  3.6965E-01
+
+ ATOM  19 H  DYNAMIC CHARGE     0.566744
+
+              1           2           3
+   1     1.0713E+00 -6.3620E-02  2.4940E-01
+   2    -3.9010E-02  2.5930E-01 -3.7342E-02
+   3     2.5584E-01 -4.6324E-02  3.6965E-01
+
+ ATOM  20 H  DYNAMIC CHARGE     0.566744
+
+              1           2           3
+   1     1.0713E+00 -6.3620E-02 -2.4940E-01
+   2    -3.9010E-02  2.5930E-01  3.7342E-02
+   3    -2.5584E-01  4.6324E-02  3.6965E-01
+
+ ATOM  21 H  DYNAMIC CHARGE     0.580203
+
+              1           2           3
+   1     4.7833E-01  3.7245E-01  1.5656E-01
+   2     3.7991E-01  8.8299E-01  2.1756E-01
+   3     1.6447E-01  2.2456E-01  3.7929E-01
+
+ ATOM  22 H  DYNAMIC CHARGE     0.580203
+
+              1           2           3
+   1     4.7833E-01  3.7245E-01 -1.5656E-01
+   2     3.7991E-01  8.8299E-01 -2.1756E-01
+   3    -1.6447E-01 -2.2456E-01  3.7929E-01
+
+ ATOM  23 H  DYNAMIC CHARGE     0.580203
+
+              1           2           3
+   1     4.7833E-01 -3.7245E-01 -1.5656E-01
+   2    -3.7991E-01  8.8299E-01  2.1756E-01
+   3    -1.6447E-01  2.2456E-01  3.7929E-01
+
+ ATOM  24 H  DYNAMIC CHARGE     0.580203
+
+              1           2           3
+   1     4.7833E-01 -3.7245E-01  1.5656E-01
+   2    -3.7991E-01  8.8299E-01 -2.1756E-01
+   3     1.6447E-01 -2.2456E-01  3.7929E-01
+
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+ CHECK OF SYMMETRY AFTER ISOTOPIC SUBSTITUTION
+
+
+ GCALCO - MAX INDICES DIRECT LATTICE VECTOR    12    21    12
+ NO.OF VECTORS CREATED 6999 STARS 1045 RMAX   142.45188 BOHR
+
+ CAPPA:IS1  4;IS2  4;IS3  4; K PTS MONK NET  27; SYMMOPS:K SPACE   8;G SPACE   4
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT gordsh1     TELAPSE    27046.69 TCPU    27046.31
+ MMMMM gordsh1     USED MEM(MB)    121.37 MAX MEM    123.18 TOT MEM      2422.11
+
+ MATRIX SIZE: P(G)  430416, F(G)   88092, P(G) IRR   56690, F(G) IRR   23056
+ MAX G-VECTOR INDEX FOR 1- AND 2-ELECTRON INTEGRALS 115
+
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INPUT       TELAPSE    27046.69 TCPU    27046.31
+ MMMMM INPUT       USED MEM(MB)    121.81 MAX MEM    122.05 TOT MEM      2430.89
+
+ SYMMETRY ALLOWED INTERNAL DEGREE(S) OF FREEDOM:  17
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT SYMM        TELAPSE    27046.70 TCPU    27046.31
+ MMMMM SYMM        USED MEM(MB)    121.81 MAX MEM    122.03 TOT MEM      2430.89
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT INT_SCREEN  TELAPSE    27046.70 TCPU    27046.31
+ MMMMM INT_SCREEN  USED MEM(MB)    121.81 MAX MEM    121.83 TOT MEM      2430.89
+
+ +++ SYMMETRY ADAPTION OF VIBRATIONAL MODES +++
+
+ SYMMETRY INFORMATION:
+ K-LITTLE GROUP: CLASS TABLE, CHARACTER TABLE.
+ IRREP-(DIMENSION, NO. IRREDUCIBLE SETS)
+ [WARNINGS: (1) ONLY ACTIVE IRREPS ARE GENERATED AND LISTED.
+            (2) ONLY RELEVANT CLASSES ARE CONSIDERED IN THE CHARACTER TABLE
+            (3) SYMBOLS MAY NOT FULLY COINCIDE WITH THOSE FROM TEXT BOOKS.]
+
+ (P, D, RP, RD, STAND FOR PAIRING, DOUBLING, REAL PAIRING AND REAL DOUBLING 
+ OF THE IRREPS (SEE MANUAL))
+
+ CLASS  | GROUP OPERATORS (SEE SYMMOPS KEYWORD)
+ --------------------------------------------------------------------
+ C2     |   2;
+ SGV    |   3;
+ SGV'   |   4;
+
+ IRREP/CLA      E     C2    SGV   SGV'
+ -------------------------------------
+  MULTIP |      1      1      1      1
+ -------------------------------------
+    A1   |   1.00   1.00   1.00   1.00
+    A2   |   1.00   1.00  -1.00  -1.00
+    B1   |   1.00  -1.00   1.00  -1.00
+    B2   |   1.00  -1.00  -1.00   1.00
+ 
+ A1 -(1,  18); A2 -(1,  18); B1 -(1,  18); B2 -(1,  18);
+
+
+ BORN CHARGE VECTOR IN THE BASIS OF NORMAL MODES (UNITS OF e*M_E**(-1/2) ).
+ e AND M_E ARE UNITS OF ELECTRON CHARGE AND MASS, RESPECTIVELY.
+
+ MODE         X              Y              Z
+   1    0.00000E+00    0.16252E-18    0.53064E-04
+   2   -0.69785E-19    0.39812E-04   -0.78270E-19
+   3   -0.23722E-04   -0.97544E-20   -0.15684E-19
+   4    0.27425E-18   -0.50788E-19    0.21136E-03
+   5   -0.76182E-19    0.19299E-18   -0.18284E-18
+   6    0.66024E-19    0.63993E-18    0.46442E-03
+   7   -0.16252E-18   -0.59075E-03   -0.48756E-18
+   8    0.41611E-03   -0.10056E-17    0.00000E+00
+   9    0.91418E-19    0.16252E-18    0.00000E+00
+  10    0.69072E-18    0.00000E+00    0.56882E-18
+  11    0.76182E-19    0.49809E-02    0.25394E-18
+  12    0.44077E-02    0.40630E-19   -0.32504E-18
+  13    0.23489E-19   -0.44439E-19    0.13840E-18
+  14    0.96497E-19    0.63558E-02    0.81261E-19
+  15    0.11681E-18    0.30473E-19   -0.21707E-02
+  16    0.10579E-01    0.16252E-18   -0.81261E-19
+  17    0.24378E-18   -0.18284E-18   -0.10536E-01
+  18   -0.35422E-02    0.81261E-19    0.00000E+00
+  19    0.67040E-18   -0.13824E-02    0.40630E-19
+  20    0.81261E-19    0.00000E+00   -0.40630E-18
+  21   -0.74546E-03    0.83292E-18   -0.14221E-18
+  22   -0.60945E-19   -0.60945E-19    0.81261E-19
+  23   -0.16252E-18   -0.25404E-02    0.00000E+00
+  24   -0.81261E-19    0.00000E+00   -0.21058E-02
+  25    0.00000E+00   -0.55028E-04    0.16252E-18
+  26   -0.45709E-19    0.34536E-18    0.20315E-19
+  27   -0.55767E-03    0.81261E-19   -0.40630E-18
+  28    0.00000E+00   -0.16252E-18   -0.11409E-03
+  29    0.00000E+00   -0.19748E-03    0.16252E-18
+  30   -0.80939E-03    0.48756E-18    0.00000E+00
+  31    0.36186E-19    0.27750E-03    0.50788E-20
+  32   -0.40630E-19    0.40630E-18   -0.11407E-02
+  33    0.81261E-19    0.00000E+00    0.16252E-18
+  34    0.13078E-02    0.40630E-18    0.00000E+00
+  35    0.00000E+00    0.00000E+00    0.51568E-03
+  36    0.32504E-18    0.16252E-18    0.48756E-18
+  37   -0.15236E-19    0.66024E-19   -0.69817E-02
+  38   -0.10158E-19   -0.40630E-19    0.00000E+00
+  39   -0.10113E-01    0.48756E-18    0.00000E+00
+  40    0.00000E+00    0.28441E-18   -0.10186E-01
+  41    0.00000E+00    0.84306E-02   -0.32504E-18
+  42    0.81261E-19    0.00000E+00    0.00000E+00
+  43    0.11175E-01   -0.16252E-18    0.00000E+00
+  44    0.72243E-02   -0.32504E-18    0.00000E+00
+  45    0.00000E+00    0.16252E-18    0.92937E-02
+  46   -0.52819E-18    0.10958E-01   -0.40630E-19
+  47    0.48756E-18    0.67301E-03    0.16252E-18
+  48   -0.16252E-18    0.40630E-18    0.48756E-18
+  49   -0.48756E-18    0.00000E+00   -0.69167E-02
+  50    0.36567E-18   -0.86690E-02    0.16252E-18
+  51    0.50415E-02   -0.16252E-18   -0.16252E-18
+  52    0.24378E-18   -0.24378E-18    0.32504E-18
+  53   -0.16870E-03    0.40630E-19   -0.81261E-19
+  54    0.00000E+00    0.00000E+00    0.81261E-19
+  55    0.81261E-19    0.40630E-19    0.11990E-02
+  56   -0.28441E-18   -0.19031E-03    0.00000E+00
+  57   -0.40630E-18   -0.52819E-18    0.26962E-01
+  58    0.10970E-17    0.39463E-01    0.73135E-18
+  59    0.16062E-01   -0.16252E-18   -0.40630E-18
+  60   -0.69072E-18    0.28441E-18   -0.10564E-17
+  61    0.11783E-17    0.81261E-19   -0.21940E-17
+  62   -0.58089E-18    0.23741E-01   -0.10158E-19
+  63    0.30473E-18    0.50788E-19    0.38254E-01
+  64   -0.33676E-01   -0.24378E-18   -0.48756E-18
+  65   -0.40630E-19    0.16252E-18    0.34786E-03
+  66   -0.34536E-18    0.29496E-02    0.16252E-18
+  67    0.27429E-01   -0.15998E-18   -0.81261E-19
+  68   -0.52819E-18    0.60945E-19   -0.12157E-02
+  69    0.44693E-18    0.56882E-18    0.73135E-18
+  70   -0.25814E-02    0.12595E-17   -0.24378E-18
+  71    0.30473E-18   -0.12189E-18    0.21128E-17
+  72    0.93450E-18    0.11019E-01    0.81261E-19
+
+ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+ VIBRATIONAL CONTRIBUTIONS TO THE STATIC DIELECTRIC TENSOR (OSCILLATOR
+ STRENGTHS) ARE PURE NUMBERS. THEY ARE COMPUTED FOR EACH nth MODE AS:
+
+   f_(n,ij) = 1 / (4 * pi * eps0) * 4 * pi / V * Z_(n,i) * Z_(n,j) / nu_n**2
+
+ WHERE:
+  1/(4*pi*eps0)  1 A.U. [M*L**3*T**(-4)*C**(-2)]
+  V              CELL VOLUME (BOHR**3) [L**3]
+  Z_(n,i)        ith COMPONENT OF BORN CHARGE VECTOR IN THE BASIS
+                 OF NORMAL MODES ( e*M_E**(-1/2) ) [C*T*M**(-1/2)]
+  nu_n           FREQUENCY (HARTREE) [T**(-1)]
+  e, M_E         UNITS OF ELECTRON CHARGE AND MASS, RESPECTIVELY
+  M, L, T, C     MASS, LENGTH, TIME, CURRENT, RESPECTIVELY
+
+ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+ MODE      CARTESIAN AXES SYSTEM
+
+   4       0.00000   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00297
+
+   6       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.01267
+
+   7       0.00000    0.00000    0.00000
+           0.00000    0.01380    0.00000
+           0.00000    0.00000    0.00000
+
+   8       0.00429   -0.00000    0.00000
+          -0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  11       0.00000    0.00000    0.00000
+           0.00000    0.38370    0.00000
+           0.00000    0.00000    0.00000
+
+  12       0.20324    0.00000   -0.00000
+           0.00000    0.00000   -0.00000
+          -0.00000   -0.00000    0.00000
+
+  14       0.00000    0.00000    0.00000
+           0.00000    0.31554    0.00000
+           0.00000    0.00000    0.00000
+
+  15       0.00000    0.00000   -0.00000
+           0.00000    0.00000   -0.00000
+          -0.00000   -0.00000    0.03676
+
+  16       0.81192    0.00000   -0.00000
+           0.00000    0.00000   -0.00000
+          -0.00000   -0.00000    0.00000
+
+  17       0.00000   -0.00000   -0.00000
+          -0.00000    0.00000    0.00000
+          -0.00000    0.00000    0.80273
+
+  18       0.08392   -0.00000    0.00000
+          -0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  19       0.00000   -0.00000    0.00000
+          -0.00000    0.01169   -0.00000
+           0.00000   -0.00000    0.00000
+
+  21       0.00217   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00000
+
+  23       0.00000    0.00000    0.00000
+           0.00000    0.02123    0.00000
+           0.00000    0.00000    0.00000
+
+  24       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.01437
+
+  25       0.00000    0.00000    0.00000
+           0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00000
+
+  27       0.00045   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00000
+
+  28       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00002
+
+  29       0.00000    0.00000    0.00000
+           0.00000    0.00006   -0.00000
+           0.00000   -0.00000    0.00000
+
+  30       0.00074   -0.00000    0.00000
+          -0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  31       0.00000    0.00000    0.00000
+           0.00000    0.00008    0.00000
+           0.00000    0.00000    0.00000
+
+  32       0.00000   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00136
+
+  34       0.00158    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  35       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00024
+
+  37       0.00000   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.03665
+
+  39       0.07513   -0.00000    0.00000
+          -0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  40       0.00000    0.00000    0.00000
+           0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.07119
+
+  41       0.00000    0.00000    0.00000
+           0.00000    0.04738   -0.00000
+           0.00000   -0.00000    0.00000
+
+  43       0.06929   -0.00000    0.00000
+          -0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  44       0.02864   -0.00000    0.00000
+          -0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  45       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.04667
+
+  46       0.00000   -0.00000    0.00000
+          -0.00000    0.06418   -0.00000
+           0.00000   -0.00000    0.00000
+
+  47       0.00000    0.00000    0.00000
+           0.00000    0.00023    0.00000
+           0.00000    0.00000    0.00000
+
+  49       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.01140
+
+  50       0.00000   -0.00000    0.00000
+          -0.00000    0.01771   -0.00000
+           0.00000   -0.00000    0.00000
+
+  51       0.00593   -0.00000   -0.00000
+          -0.00000    0.00000    0.00000
+          -0.00000    0.00000    0.00000
+
+  53       0.00001   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00000
+
+  55       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00033
+
+  56       0.00000    0.00000    0.00000
+           0.00000    0.00001    0.00000
+           0.00000    0.00000    0.00000
+
+  57       0.00000    0.00000   -0.00000
+           0.00000    0.00000   -0.00000
+          -0.00000   -0.00000    0.04932
+
+  58       0.00000    0.00000    0.00000
+           0.00000    0.10393    0.00000
+           0.00000    0.00000    0.00000
+
+  59       0.01709   -0.00000   -0.00000
+          -0.00000    0.00000    0.00000
+          -0.00000    0.00000    0.00000
+
+  62       0.00000   -0.00000    0.00000
+          -0.00000    0.03405   -0.00000
+           0.00000   -0.00000    0.00000
+
+  63       0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.08840
+
+  64       0.06840    0.00000    0.00000
+           0.00000    0.00000    0.00000
+           0.00000    0.00000    0.00000
+
+  65       0.00000   -0.00000   -0.00000
+          -0.00000    0.00000    0.00000
+          -0.00000    0.00000    0.00001
+
+  66       0.00000   -0.00000   -0.00000
+          -0.00000    0.00051    0.00000
+          -0.00000    0.00000    0.00000
+
+  67       0.04441   -0.00000   -0.00000
+          -0.00000    0.00000    0.00000
+          -0.00000    0.00000    0.00000
+
+  68       0.00000   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00009
+
+  70       0.00037   -0.00000    0.00000
+          -0.00000    0.00000   -0.00000
+           0.00000   -0.00000    0.00000
+
+  72       0.00000    0.00000    0.00000
+           0.00000    0.00670    0.00000
+           0.00000    0.00000    0.00000
+
+ SUM TENSOR OF THE VIBRATIONAL CONTRIBUTIONS TO THE' STATIC DIELECTRIC     TENSOR
+
+           1.41759    0.00000   -0.00000
+           0.00000    1.02079    0.00000
+          -0.00000    0.00000    1.17518
+
+ INTEGRATED IR INTENSITIES, IN UNITS OF KM/MOL, ARE COMPUTED UNDER THE
+ HYPOTHESIS OF ISOTROPIC RESPONSE (I.E. POWDER SAMPLE):
+
+   INTENS_n = 1 / (4 * pi * eps0) * pi * N_AV / 3 / c**2 *
+                             * d_n * ( Z_(n,x)**2 + Z_(n,y)**2 + Z_(n,z)**2 )
+            = 0.17770712E+07 * d_n * ( Z_(n,x)**2 + Z_(n,y)**2 + Z_(n,z)**2 )
+
+ WHERE:
+  1/(4*pi*eps0)  1 A.U. [M*L**3*T**(-4)*C**(-2)]
+  N_AV           AVOGADRO'S NUMBER [QM**(-1)]
+  c              SPEED OF LIGHT [L*T**(-1)]
+  d_n            DEGENERACY OF THE MODE
+  Z_(n,x)        xth COMPONENT OF BORN CHARGE VECTOR IN THE BASIS
+                 OF NORMAL MODES ( e*M_E**(-1/2) ) [C*T*M**(-1/2)]
+  M,L,T,C,QM     MASS, LENGTH, TIME, CURRENT, QUANTITY OF MATTER, RESPECTIVELY
+
+ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+ EIGENVALUES (EIGV) OF THE MASS WEIGHTED HESSIAN MATRIX AND HARMONIC TRANSVERSE
+ OPTICAL (TO) FREQUENCIES. IRREP LABELS REFER TO SYMMETRY REPRESENTATION
+ ANALYSIS; A AND I INDICATE WHETHER THE MODE IS ACTIVE OR INACTIVE,
+ RESPECTIVELY, FOR IR AND RAMAN; INTEGRATED IR INTENSITIES IN BRACKETS.
+
+ CONVERSION FACTORS FOR FREQUENCIES:
+      1 CM**(-1) =   0.4556335E-05 HARTREE
+      1 THZ      =   0.3335641E+02 CM**(-1)
+
+ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+    MODES         EIGV          FREQUENCIES     IRREP  IR   INTENS    RAMAN
+             (HARTREE**2)   (CM**-1)     (THZ)             (KM/MOL)
+    1-   1    0.3107E-19      0.0000    0.0000  (A1 )   A (     0.01)   A
+    2-   2    0.1397E-17      0.0000    0.0000  (B1 )   A (     0.00)   A
+    3-   3    0.2784E-17      0.0000    0.0000  (B2 )   A (     0.00)   A
+    4-   4    0.1091E-06     72.4876    2.1731  (A1 )   A (     0.08)   A
+    5-   5    0.1159E-06     74.7138    2.2399  (A2 )   I (     0.00)   A
+    6-   6    0.1235E-06     77.1445    2.3127  (A1 )   A (     0.38)   A
+    7-   7    0.1836E-06     94.0403    2.8193  (B1 )   A (     0.62)   A
+    8-   8    0.2930E-06    118.7991    3.5615  (B2 )   A (     0.31)   A
+    9-   9    0.4182E-06    141.9348    4.2551  (A2 )   I (     0.00)   A
+   10-  10    0.4407E-06    145.7029    4.3681  (A2 )   I (     0.00)   A
+   11-  11    0.4693E-06    150.3464    4.5073  (B1 )   A (    44.09)   A
+   12-  12    0.6938E-06    182.8085    5.4805  (B2 )   A (    34.52)   A
+   13-  13    0.7526E-06    190.4016    5.7081  (A2 )   I (     0.00)   A
+   14-  14    0.9292E-06    211.5578    6.3423  (B1 )   A (    71.79)   A
+   15-  15    0.9303E-06    211.6835    6.3461  (A1 )   A (     8.37)   A
+   16-  16    0.1000E-05    219.5228    6.5811  (B2 )   A (   198.89)   A
+   17-  17    0.1004E-05    219.8840    6.5920  (A1 )   A (   197.29)   A
+   18-  18    0.1085E-05    228.6285    6.8541  (B2 )   A (    22.30)   A
+   19-  19    0.1187E-05    239.0706    7.1672  (B1 )   A (     3.40)   A
+   20-  20    0.1576E-05    275.5016    8.2593  (A2 )   I (     0.00)   A
+   21-  21    0.1855E-05    298.9029    8.9609  (B2 )   A (     0.99)   A
+   22-  22    0.1918E-05    303.9349    9.1117  (A2 )   I (     0.00)   A
+   23-  23    0.2206E-05    326.0139    9.7737  (B1 )   A (    11.47)   A
+   24-  24    0.2239E-05    328.3966    9.8451  (A1 )   A (     7.88)   A
+   25-  25    0.4824E-05    482.0668   14.4520  (B1 )   A (     0.01)   A
+   26-  26    0.4950E-05    488.2956   14.6387  (A2 )   I (     0.00)   A
+   27-  27    0.4987E-05    490.1171   14.6933  (B2 )   A (     0.55)   A
+   28-  28    0.5018E-05    491.6505   14.7393  (A1 )   A (     0.02)   A
+   29-  29    0.5076E-05    494.4802   14.8241  (B1 )   A (     0.07)   A
+   30-  30    0.6398E-05    555.1546   16.6431  (B2 )   A (     1.16)   A
+   31-  31    0.6951E-05    578.6339   17.3470  (B1 )   A (     0.14)   A
+   32-  32    0.6956E-05    578.8578   17.3537  (A1 )   A (     2.31)   A
+   33-  33    0.6989E-05    580.2386   17.3951  (A2 )   I (     0.00)   A
+   34-  34    0.7852E-05    614.9822   18.4367  (B2 )   A (     3.04)   A
+   35-  35    0.7945E-05    618.6146   18.5456  (A1 )   A (     0.47)   A
+   36-  36    0.8070E-05    623.4610   18.6909  (A2 )   I (     0.00)   A
+   37-  37    0.9653E-05    681.8910   20.4426  (A1 )   A (    86.62)   A
+   38-  38    0.9674E-05    682.6200   20.4644  (A2 )   I (     0.00)   A
+   39-  39    0.9880E-05    689.8540   20.6813  (B2 )   A (   181.74)   A
+   40-  40    0.1058E-04    713.8310   21.4001  (A1 )   A (   184.39)   A
+   41-  41    0.1089E-04    724.2022   21.7110  (B1 )   A (   126.31)   A
+   42-  42    0.1151E-04    744.6151   22.3230  (A2 )   I (     0.00)   A
+   43-  43    0.1308E-04    793.7601   23.7963  (B2 )   A (   221.92)   A
+   44-  44    0.1323E-04    798.1943   23.9293  (B2 )   A (    92.75)   A
+   45-  45    0.1343E-04    804.4056   24.1155  (A1 )   A (   153.49)   A
+   46-  46    0.1358E-04    808.7999   24.2472  (B1 )   A (   213.40)   A
+   47-  47    0.1409E-04    823.8100   24.6972  (B1 )   A (     0.80)   A
+   48-  48    0.1451E-04    836.0743   25.0649  (A2 )   I (     0.00)   A
+   49-  49    0.3045E-04   1211.0048   36.3050  (A1 )   A (    85.02)   A
+   50-  50    0.3080E-04   1218.1189   36.5183  (B1 )   A (   133.55)   A
+   51-  51    0.3110E-04   1223.8845   36.6911  (B2 )   A (    45.17)   A
+   52-  52    0.3115E-04   1224.9374   36.7227  (A2 )   I (     0.00)   A
+   53-  53    0.3141E-04   1229.9811   36.8739  (B2 )   A (     0.05)   A
+   54-  54    0.3179E-04   1237.4392   37.0975  (A2 )   I (     0.00)   A
+   55-  55    0.3200E-04   1241.5453   37.2206  (A1 )   A (     2.55)   A
+   56-  56    0.3247E-04   1250.6672   37.4941  (B1 )   A (     0.06)   A
+   57-  57    0.1070E-03   2269.9036   68.0500  (A1 )   A (  1291.82)   A
+   58-  58    0.1088E-03   2288.8160   68.6170  (B1 )   A (  2767.50)   A
+   59-  59    0.1096E-03   2297.3417   68.8726  (B2 )   A (   458.49)   A
+   60-  60    0.1107E-03   2308.9412   69.2203  (A2 )   I (     0.00)   A
+   61-  61    0.1126E-03   2328.5125   69.8070  (A2 )   I (     0.00)   A
+   62-  62    0.1201E-03   2405.4370   72.1132  (B1 )   A (  1001.62)   A
+   63-  63    0.1201E-03   2405.6896   72.1208  (A1 )   A (  2600.45)   A
+   64-  64    0.1203E-03   2407.5031   72.1751  (B2 )   A (  2015.29)   A
+   65-  65    0.1208E-03   2412.2601   72.3177  (A1 )   A (     0.22)   A
+   66-  66    0.1229E-03   2433.0277   72.9403  (B1 )   A (    15.46)   A
+   67-  67    0.1229E-03   2433.5727   72.9567  (B2 )   A (  1337.02)   A
+   68-  68    0.1261E-03   2464.8729   73.8950  (A1 )   A (     2.63)   A
+   69-  69    0.1300E-03   2502.3103   75.0174  (A2 )   I (     0.00)   A
+   70-  70    0.1307E-03   2508.7869   75.2115  (B2 )   A (    11.84)   A
+   71-  71    0.1310E-03   2511.6949   75.2987  (A2 )   I (     0.00)   A
+   72-  72    0.1315E-03   2516.9902   75.4575  (B1 )   A (   215.77)   A
+
+ NORMAL MODES NORMALIZED TO CLASSICAL AMPLITUDES (IN BOHR)
+
+ FREQ(CM**-1)      0.00      0.00      0.00     72.49     74.71     77.14
+
+ AT.   1 O  X    -0.0000   -0.0000    0.0790    0.0935    0.0070   -0.0325
+            Y    -0.0000    0.0790    0.0000    0.0336   -0.0983    0.0967
+            Z     0.0790   -0.0000   -0.0000   -0.0014   -0.0136   -0.0037
+ AT.   2 O  X     0.0000   -0.0000    0.0790   -0.0935   -0.0070    0.0325
+            Y     0.0000    0.0790    0.0000   -0.0336    0.0983   -0.0967
+            Z     0.0790    0.0000    0.0000   -0.0014   -0.0136   -0.0037
+ AT.   3 O  X     0.0000    0.0000    0.0790   -0.0935    0.0070    0.0325
+            Y    -0.0000    0.0790   -0.0000    0.0336    0.0983    0.0967
+            Z     0.0790   -0.0000    0.0000   -0.0014    0.0136   -0.0037
+ AT.   4 O  X    -0.0000    0.0000    0.0790    0.0935   -0.0070   -0.0325
+            Y     0.0000    0.0790   -0.0000   -0.0336   -0.0983   -0.0967
+            Z     0.0790    0.0000   -0.0000   -0.0014    0.0136   -0.0037
+ AT.   5 O  X    -0.0000    0.0000    0.0790    0.0996   -0.0067   -0.0359
+            Y    -0.0000    0.0790   -0.0000    0.0373   -0.1008    0.0893
+            Z     0.0790    0.0000    0.0000    0.0013    0.0165    0.0027
+ AT.   6 O  X     0.0000    0.0000    0.0790   -0.0996    0.0067    0.0359
+            Y     0.0000    0.0790   -0.0000   -0.0373    0.1008   -0.0893
+            Z     0.0790   -0.0000   -0.0000    0.0013    0.0165    0.0027
+ AT.   7 O  X     0.0000   -0.0000    0.0790   -0.0996   -0.0067    0.0359
+            Y    -0.0000    0.0790    0.0000    0.0373    0.1008    0.0893
+            Z     0.0790    0.0000   -0.0000    0.0013   -0.0165    0.0027
+ AT.   8 O  X    -0.0000   -0.0000    0.0790    0.0996    0.0067   -0.0359
+            Y     0.0000    0.0790    0.0000   -0.0373   -0.1008   -0.0893
+            Z     0.0790   -0.0000    0.0000    0.0013   -0.0165    0.0027
+ AT.   9 H  X    -0.0000    0.0000    0.0790    0.1108    0.0029   -0.0195
+            Y    -0.0000    0.0790    0.0000    0.0370   -0.1081    0.0967
+            Z     0.0790   -0.0000    0.0000   -0.0175   -0.0137   -0.0021
+ AT.  10 H  X     0.0000    0.0000    0.0790   -0.1108   -0.0029    0.0195
+            Y     0.0000    0.0790    0.0000   -0.0370    0.1081   -0.0967
+            Z     0.0790    0.0000   -0.0000   -0.0175   -0.0137   -0.0021
+ AT.  11 H  X     0.0000   -0.0000    0.0790   -0.1108    0.0029    0.0195
+            Y    -0.0000    0.0790   -0.0000    0.0370    0.1081    0.0967
+            Z     0.0790   -0.0000   -0.0000   -0.0175    0.0137   -0.0021
+ AT.  12 H  X    -0.0000   -0.0000    0.0790    0.1108   -0.0029   -0.0195
+            Y     0.0000    0.0790   -0.0000   -0.0370   -0.1081   -0.0967
+            Z     0.0790    0.0000    0.0000   -0.0175    0.0137   -0.0021
+ AT.  13 H  X     0.0000    0.0000    0.0790   -0.0380   -0.0010    0.0154
+            Y    -0.0000    0.0790    0.0000    0.0355    0.0461    0.1012
+            Z     0.0790    0.0000   -0.0000    0.0014   -0.0159    0.0024
+ AT.  14 H  X    -0.0000    0.0000    0.0790    0.0380    0.0010   -0.0154
+            Y     0.0000    0.0790    0.0000   -0.0355   -0.0461   -0.1012
+            Z     0.0790   -0.0000    0.0000    0.0014   -0.0159    0.0024
+ AT.  15 H  X    -0.0000   -0.0000    0.0790    0.0380   -0.0010   -0.0154
+            Y    -0.0000    0.0790   -0.0000    0.0355   -0.0461    0.1012
+            Z     0.0790    0.0000    0.0000    0.0014    0.0159    0.0024
+ AT.  16 H  X     0.0000   -0.0000    0.0790   -0.0380    0.0010    0.0154
+            Y     0.0000    0.0790   -0.0000   -0.0355    0.0461   -0.1012
+            Z     0.0790   -0.0000   -0.0000    0.0014    0.0159    0.0024
+ AT.  17 H  X    -0.0000   -0.0000    0.0790    0.1014    0.0053   -0.0329
+            Y    -0.0000    0.0790   -0.0000    0.0152   -0.1091    0.0473
+            Z     0.0790   -0.0000   -0.0000    0.0255   -0.0167   -0.0074
+ AT.  18 H  X     0.0000   -0.0000    0.0790   -0.1014   -0.0053    0.0329
+            Y     0.0000    0.0790   -0.0000   -0.0152    0.1091   -0.0473
+            Z     0.0790    0.0000    0.0000    0.0255   -0.0167   -0.0074
+ AT.  19 H  X     0.0000    0.0000    0.0790   -0.1014    0.0053    0.0329
+            Y    -0.0000    0.0790    0.0000    0.0152    0.1091    0.0473
+            Z     0.0790   -0.0000    0.0000    0.0255    0.0167   -0.0074
+ AT.  20 H  X    -0.0000    0.0000    0.0790    0.1014   -0.0053   -0.0329
+            Y     0.0000    0.0790    0.0000   -0.0152   -0.1091   -0.0473
+            Z     0.0790    0.0000   -0.0000    0.0255    0.0167   -0.0074
+ AT.  21 H  X    -0.0000   -0.0000    0.0790    0.0932    0.0005   -0.0548
+            Y    -0.0000    0.0790    0.0000    0.0367   -0.1073    0.1020
+            Z     0.0790    0.0000    0.0000   -0.0086    0.0138    0.0150
+ AT.  22 H  X     0.0000   -0.0000    0.0790   -0.0932   -0.0005    0.0548
+            Y     0.0000    0.0790    0.0000   -0.0367    0.1073   -0.1020
+            Z     0.0790   -0.0000   -0.0000   -0.0086    0.0138    0.0150
+ AT.  23 H  X     0.0000    0.0000    0.0790   -0.0932    0.0005    0.0548
+            Y    -0.0000    0.0790   -0.0000    0.0367    0.1073    0.1020
+            Z     0.0790    0.0000   -0.0000   -0.0086   -0.0138    0.0150
+ AT.  24 H  X    -0.0000    0.0000    0.0790    0.0932   -0.0005   -0.0548
+            Y     0.0000    0.0790   -0.0000   -0.0367   -0.1073   -0.1020
+            Z     0.0790   -0.0000    0.0000   -0.0086   -0.0138    0.0150
+
+ FREQ(CM**-1)     94.04    118.80    141.93    145.70    150.35    182.81
+
+ AT.   1 O  X    -0.0269    0.0020    0.0428    0.0524    0.0694   -0.0029
+            Y     0.0036   -0.0800    0.0126   -0.0071    0.0073    0.0171
+            Z    -0.0902    0.0015   -0.0458    0.0692   -0.0262   -0.0634
+ AT.   2 O  X    -0.0269    0.0020   -0.0428   -0.0524    0.0694   -0.0029
+            Y     0.0036   -0.0800   -0.0126    0.0071    0.0073    0.0171
+            Z     0.0902   -0.0015   -0.0458    0.0692    0.0262    0.0634
+ AT.   3 O  X     0.0269    0.0020    0.0428    0.0524   -0.0694   -0.0029
+            Y     0.0036    0.0800   -0.0126    0.0071    0.0073   -0.0171
+            Z    -0.0902   -0.0015    0.0458   -0.0692   -0.0262    0.0634
+ AT.   4 O  X     0.0269    0.0020   -0.0428   -0.0524   -0.0694   -0.0029
+            Y     0.0036    0.0800    0.0126   -0.0071    0.0073   -0.0171
+            Z     0.0902    0.0015    0.0458   -0.0692    0.0262   -0.0634
+ AT.   5 O  X    -0.0158   -0.0029    0.0102    0.0563   -0.0666    0.0003
+            Y    -0.0029   -0.0813    0.0081   -0.0021   -0.0096   -0.0136
+            Z    -0.0869    0.0027    0.0808    0.0004    0.0191    0.0670
+ AT.   6 O  X    -0.0158   -0.0029   -0.0102   -0.0563   -0.0666    0.0003
+            Y    -0.0029   -0.0813   -0.0081    0.0021   -0.0096   -0.0136
+            Z     0.0869   -0.0027    0.0808    0.0004   -0.0191   -0.0670
+ AT.   7 O  X     0.0158   -0.0029    0.0102    0.0563    0.0666    0.0003
+            Y    -0.0029    0.0813   -0.0081    0.0021   -0.0096    0.0136
+            Z    -0.0869   -0.0027   -0.0808   -0.0004    0.0191   -0.0670
+ AT.   8 O  X     0.0158   -0.0029   -0.0102   -0.0563    0.0666    0.0003
+            Y    -0.0029    0.0813    0.0081   -0.0021   -0.0096    0.0136
+            Z     0.0869    0.0027   -0.0808   -0.0004   -0.0191    0.0670
+ AT.   9 H  X    -0.0113   -0.0158    0.0215    0.0478   -0.0264    0.0080
+            Y    -0.0031   -0.0948    0.0065    0.0007    0.0073   -0.0205
+            Z    -0.0923   -0.0125    0.0669    0.0156   -0.0014    0.0533
+ AT.  10 H  X    -0.0113   -0.0158   -0.0215   -0.0478   -0.0264    0.0080
+            Y    -0.0031   -0.0948   -0.0065   -0.0007    0.0073   -0.0205
+            Z     0.0923    0.0125    0.0669    0.0156    0.0014   -0.0533
+ AT.  11 H  X     0.0113   -0.0158    0.0215    0.0478    0.0264    0.0080
+            Y    -0.0031    0.0948   -0.0065   -0.0007    0.0073    0.0205
+            Z    -0.0923    0.0125   -0.0669   -0.0156   -0.0014   -0.0533
+ AT.  12 H  X     0.0113   -0.0158   -0.0215   -0.0478    0.0264    0.0080
+            Y    -0.0031    0.0948    0.0065    0.0007    0.0073    0.0205
+            Z     0.0923   -0.0125   -0.0669   -0.0156    0.0014    0.0533
+ AT.  13 H  X     0.0090    0.0027    0.0171    0.0728    0.0825   -0.0044
+            Y     0.0027    0.0418   -0.0061    0.0046   -0.0023    0.0130
+            Z    -0.0878   -0.0025   -0.0839   -0.0056    0.0218   -0.0679
+ AT.  14 H  X     0.0090    0.0027   -0.0171   -0.0728    0.0825   -0.0044
+            Y     0.0027    0.0418    0.0061   -0.0046   -0.0023    0.0130
+            Z     0.0878    0.0025   -0.0839   -0.0056   -0.0218    0.0679
+ AT.  15 H  X    -0.0090    0.0027    0.0171    0.0728   -0.0825   -0.0044
+            Y     0.0027   -0.0418    0.0061   -0.0046   -0.0023   -0.0130
+            Z    -0.0878    0.0025    0.0839    0.0056    0.0218    0.0679
+ AT.  16 H  X    -0.0090    0.0027   -0.0171   -0.0728   -0.0825   -0.0044
+            Y     0.0027   -0.0418   -0.0061    0.0046   -0.0023   -0.0130
+            Z     0.0878   -0.0025    0.0839    0.0056   -0.0218   -0.0679
+ AT.  17 H  X    -0.0080    0.0006    0.0368    0.0473    0.0625    0.0116
+            Y    -0.0031   -0.0411    0.0107   -0.0010   -0.0053    0.0133
+            Z    -0.0383   -0.0021   -0.0682    0.0404   -0.0436   -0.0296
+ AT.  18 H  X    -0.0080    0.0006   -0.0368   -0.0473    0.0625    0.0116
+            Y    -0.0031   -0.0411   -0.0107    0.0010   -0.0053    0.0133
+            Z     0.0383    0.0021   -0.0682    0.0404    0.0436    0.0296
+ AT.  19 H  X     0.0080    0.0006    0.0368    0.0473   -0.0625    0.0116
+            Y    -0.0031    0.0411   -0.0107    0.0010   -0.0053   -0.0133
+            Z    -0.0383    0.0021    0.0682   -0.0404   -0.0436    0.0296
+ AT.  20 H  X     0.0080    0.0006   -0.0368   -0.0473   -0.0625    0.0116
+            Y    -0.0031    0.0411    0.0107   -0.0010   -0.0053   -0.0133
+            Z     0.0383   -0.0021    0.0682   -0.0404    0.0436   -0.0296
+ AT.  21 H  X    -0.0153    0.0203    0.0303    0.0466    0.0464    0.0058
+            Y    -0.0025   -0.0940    0.0047    0.0030    0.0186   -0.0031
+            Z    -0.0911    0.0109   -0.0145    0.0568   -0.0083   -0.0300
+ AT.  22 H  X    -0.0153    0.0203   -0.0303   -0.0466    0.0464    0.0058
+            Y    -0.0025   -0.0940   -0.0047   -0.0030    0.0186   -0.0031
+            Z     0.0911   -0.0109   -0.0145    0.0568    0.0083    0.0300
+ AT.  23 H  X     0.0153    0.0203    0.0303    0.0466   -0.0464    0.0058
+            Y    -0.0025    0.0940   -0.0047   -0.0030    0.0186    0.0031
+            Z    -0.0911   -0.0109    0.0145   -0.0568   -0.0083    0.0300
+ AT.  24 H  X     0.0153    0.0203   -0.0303   -0.0466   -0.0464    0.0058
+            Y    -0.0025    0.0940    0.0047    0.0030    0.0186    0.0031
+            Z     0.0911    0.0109    0.0145   -0.0568    0.0083   -0.0300
+
+ FREQ(CM**-1)    190.40    211.56    211.68    219.52    219.88    228.63
+
+ AT.   1 O  X    -0.0592    0.0297   -0.0452    0.0413    0.0333   -0.0122
+            Y    -0.0002   -0.0286   -0.0350    0.0355   -0.0267   -0.0114
+            Z    -0.0101    0.0488    0.0126    0.0275    0.0472    0.0559
+ AT.   2 O  X     0.0592    0.0297    0.0452    0.0413   -0.0333   -0.0122
+            Y     0.0002   -0.0286    0.0350    0.0355    0.0267   -0.0114
+            Z    -0.0101   -0.0488    0.0126   -0.0275    0.0472   -0.0559
+ AT.   3 O  X    -0.0592   -0.0297    0.0452    0.0413   -0.0333   -0.0122
+            Y     0.0002   -0.0286   -0.0350   -0.0355   -0.0267    0.0114
+            Z     0.0101    0.0488    0.0126   -0.0275    0.0472   -0.0559
+ AT.   4 O  X     0.0592   -0.0297   -0.0452    0.0413    0.0333   -0.0122
+            Y    -0.0002   -0.0286    0.0350   -0.0355    0.0267    0.0114
+            Z     0.0101   -0.0488    0.0126    0.0275    0.0472    0.0559
+ AT.   5 O  X     0.0695   -0.0090    0.0480   -0.0476   -0.0316    0.0144
+            Y     0.0007    0.0256    0.0393   -0.0351    0.0262    0.0133
+            Z     0.0154   -0.0521   -0.0126    0.0077   -0.0411    0.0529
+ AT.   6 O  X    -0.0695   -0.0090   -0.0480   -0.0476    0.0316    0.0144
+            Y    -0.0007    0.0256   -0.0393   -0.0351   -0.0262    0.0133
+            Z     0.0154    0.0521   -0.0126   -0.0077   -0.0411   -0.0529
+ AT.   7 O  X     0.0695    0.0090   -0.0480   -0.0476    0.0316    0.0144
+            Y    -0.0007    0.0256    0.0393    0.0351    0.0262   -0.0133
+            Z    -0.0154   -0.0521   -0.0126   -0.0077   -0.0411   -0.0529
+ AT.   8 O  X    -0.0695    0.0090    0.0480   -0.0476   -0.0316    0.0144
+            Y     0.0007    0.0256   -0.0393    0.0351   -0.0262   -0.0133
+            Z    -0.0154    0.0521   -0.0126    0.0077   -0.0411    0.0529
+ AT.   9 H  X     0.0395   -0.0147    0.0081   -0.0123   -0.0283    0.0038
+            Y    -0.0231    0.0371    0.0237   -0.0111    0.0403    0.0075
+            Z     0.0120   -0.0365   -0.0013    0.0192   -0.0309    0.0526
+ AT.  10 H  X    -0.0395   -0.0147   -0.0081   -0.0123    0.0283    0.0038
+            Y     0.0231    0.0371   -0.0237   -0.0111   -0.0403    0.0075
+            Z     0.0120    0.0365   -0.0013   -0.0192   -0.0309   -0.0526
+ AT.  11 H  X     0.0395    0.0147   -0.0081   -0.0123    0.0283    0.0038
+            Y     0.0231    0.0371    0.0237    0.0111    0.0403   -0.0075
+            Z    -0.0120   -0.0365   -0.0013   -0.0192   -0.0309   -0.0526
+ AT.  12 H  X    -0.0395    0.0147    0.0081   -0.0123   -0.0283    0.0038
+            Y    -0.0231    0.0371   -0.0237    0.0111   -0.0403   -0.0075
+            Z    -0.0120    0.0365   -0.0013    0.0192   -0.0309    0.0526
+ AT.  13 H  X     0.0315    0.0062   -0.0492   -0.0164    0.0374    0.0057
+            Y     0.0031    0.0077    0.0201    0.0373    0.0107   -0.0104
+            Z    -0.0167   -0.0593   -0.0143   -0.0086   -0.0480   -0.0563
+ AT.  14 H  X    -0.0315    0.0062    0.0492   -0.0164   -0.0374    0.0057
+            Y    -0.0031    0.0077   -0.0201    0.0373   -0.0107   -0.0104
+            Z    -0.0167    0.0593   -0.0143    0.0086   -0.0480    0.0563
+ AT.  15 H  X     0.0315   -0.0062    0.0492   -0.0164   -0.0374    0.0057
+            Y    -0.0031    0.0077    0.0201   -0.0373    0.0107    0.0104
+            Z     0.0167   -0.0593   -0.0143    0.0086   -0.0480    0.0563
+ AT.  16 H  X    -0.0315   -0.0062   -0.0492   -0.0164    0.0374    0.0057
+            Y     0.0031    0.0077   -0.0201   -0.0373   -0.0107    0.0104
+            Z     0.0167    0.0593   -0.0143   -0.0086   -0.0480   -0.0563
+ AT.  17 H  X    -0.0597    0.0304   -0.0495    0.0412    0.0222   -0.0131
+            Y     0.0057   -0.0141   -0.0405    0.0415   -0.0272   -0.0140
+            Z    -0.0152    0.0505    0.0187    0.0102    0.0118    0.0593
+ AT.  18 H  X     0.0597    0.0304    0.0495    0.0412   -0.0222   -0.0131
+            Y    -0.0057   -0.0141    0.0405    0.0415    0.0272   -0.0140
+            Z    -0.0152   -0.0505    0.0187   -0.0102    0.0118   -0.0593
+ AT.  19 H  X    -0.0597   -0.0304    0.0495    0.0412   -0.0222   -0.0131
+            Y    -0.0057   -0.0141   -0.0405   -0.0415   -0.0272    0.0140
+            Z     0.0152    0.0505    0.0187   -0.0102    0.0118   -0.0593
+ AT.  20 H  X     0.0597   -0.0304   -0.0495    0.0412    0.0222   -0.0131
+            Y     0.0057   -0.0141    0.0405   -0.0415    0.0272    0.0140
+            Z     0.0152   -0.0505    0.0187    0.0102    0.0118    0.0593
+ AT.  21 H  X    -0.0434    0.0230   -0.0457    0.0374    0.0089   -0.0138
+            Y    -0.0197   -0.0075   -0.0371    0.0452    0.0003   -0.0114
+            Z     0.0010    0.0075   -0.0029    0.0301    0.0187    0.0519
+ AT.  22 H  X     0.0434    0.0230    0.0457    0.0374   -0.0089   -0.0138
+            Y     0.0197   -0.0075    0.0371    0.0452   -0.0003   -0.0114
+            Z     0.0010   -0.0075   -0.0029   -0.0301    0.0187   -0.0519
+ AT.  23 H  X    -0.0434   -0.0230    0.0457    0.0374   -0.0089   -0.0138
+            Y     0.0197   -0.0075   -0.0371   -0.0452    0.0003    0.0114
+            Z    -0.0010    0.0075   -0.0029   -0.0301    0.0187   -0.0519
+ AT.  24 H  X     0.0434   -0.0230   -0.0457    0.0374    0.0089   -0.0138
+            Y    -0.0197   -0.0075    0.0371   -0.0452   -0.0003    0.0114
+            Z    -0.0010   -0.0075   -0.0029    0.0301    0.0187    0.0519
+
+ FREQ(CM**-1)    239.07    275.50    298.90    303.93    326.01    328.40
+
+ AT.   1 O  X     0.0476    0.0263   -0.0345    0.0025   -0.0040   -0.0175
+            Y     0.0018   -0.0054    0.0358    0.0498   -0.0442    0.0308
+            Z    -0.0202   -0.0457    0.0093   -0.0048   -0.0208    0.0340
+ AT.   2 O  X     0.0476   -0.0263   -0.0345   -0.0025   -0.0040    0.0175
+            Y     0.0018    0.0054    0.0358   -0.0498   -0.0442   -0.0308
+            Z     0.0202   -0.0457   -0.0093   -0.0048    0.0208    0.0340
+ AT.   3 O  X    -0.0476    0.0263   -0.0345    0.0025    0.0040    0.0175
+            Y     0.0018    0.0054   -0.0358   -0.0498   -0.0442    0.0308
+            Z    -0.0202    0.0457   -0.0093    0.0048   -0.0208    0.0340
+ AT.   4 O  X    -0.0476   -0.0263   -0.0345   -0.0025    0.0040   -0.0175
+            Y     0.0018   -0.0054   -0.0358    0.0498   -0.0442   -0.0308
+            Z     0.0202    0.0457    0.0093    0.0048    0.0208    0.0340
+ AT.   5 O  X     0.0617    0.0293    0.0348    0.0028    0.0020    0.0163
+            Y    -0.0011    0.0052   -0.0359   -0.0499    0.0450   -0.0316
+            Z    -0.0023   -0.0411   -0.0098   -0.0075    0.0206   -0.0323
+ AT.   6 O  X     0.0617   -0.0293    0.0348   -0.0028    0.0020   -0.0163
+            Y    -0.0011   -0.0052   -0.0359    0.0499    0.0450    0.0316
+            Z     0.0023   -0.0411    0.0098   -0.0075   -0.0206   -0.0323
+ AT.   7 O  X    -0.0617    0.0293    0.0348    0.0028   -0.0020   -0.0163
+            Y    -0.0011   -0.0052    0.0359    0.0499    0.0450   -0.0316
+            Z    -0.0023    0.0411    0.0098    0.0075    0.0206   -0.0323
+ AT.   8 O  X    -0.0617   -0.0293    0.0348   -0.0028   -0.0020    0.0163
+            Y    -0.0011    0.0052    0.0359   -0.0499    0.0450    0.0316
+            Z     0.0023    0.0411   -0.0098    0.0075   -0.0206   -0.0323
+ AT.   9 H  X     0.0641    0.0333    0.0297    0.0137   -0.0094    0.0189
+            Y    -0.0055    0.0036   -0.0386   -0.0391    0.0345   -0.0259
+            Z    -0.0133   -0.0516   -0.0026    0.0078    0.0106   -0.0233
+ AT.  10 H  X     0.0641   -0.0333    0.0297   -0.0137   -0.0094   -0.0189
+            Y    -0.0055   -0.0036   -0.0386    0.0391    0.0345    0.0259
+            Z     0.0133   -0.0516    0.0026    0.0078   -0.0106   -0.0233
+ AT.  11 H  X    -0.0641    0.0333    0.0297    0.0137    0.0094   -0.0189
+            Y    -0.0055   -0.0036    0.0386    0.0391    0.0345   -0.0259
+            Z    -0.0133    0.0516    0.0026   -0.0078    0.0106   -0.0233
+ AT.  12 H  X    -0.0641   -0.0333    0.0297   -0.0137    0.0094    0.0189
+            Y    -0.0055    0.0036    0.0386   -0.0391    0.0345    0.0259
+            Z     0.0133    0.0516   -0.0026   -0.0078   -0.0106   -0.0233
+ AT.  13 H  X    -0.0293    0.0188    0.0147    0.0023    0.0136   -0.0244
+            Y    -0.0019   -0.0111    0.0454    0.0651    0.0300   -0.0200
+            Z    -0.0013    0.0432    0.0094    0.0071    0.0195   -0.0333
+ AT.  14 H  X    -0.0293   -0.0188    0.0147   -0.0023    0.0136    0.0244
+            Y    -0.0019    0.0111    0.0454   -0.0651    0.0300    0.0200
+            Z     0.0013    0.0432   -0.0094    0.0071   -0.0195   -0.0333
+ AT.  15 H  X     0.0293    0.0188    0.0147    0.0023   -0.0136    0.0244
+            Y    -0.0019    0.0111   -0.0454   -0.0651    0.0300   -0.0200
+            Z    -0.0013   -0.0432   -0.0094   -0.0071    0.0195   -0.0333
+ AT.  16 H  X     0.0293   -0.0188    0.0147   -0.0023   -0.0136   -0.0244
+            Y    -0.0019   -0.0111   -0.0454    0.0651    0.0300    0.0200
+            Z     0.0013   -0.0432    0.0094   -0.0071   -0.0195   -0.0333
+ AT.  17 H  X     0.0497    0.0339   -0.0338    0.0048   -0.0093   -0.0195
+            Y     0.0020   -0.0060    0.0483    0.0281   -0.0272    0.0475
+            Z    -0.0201   -0.0257    0.0109    0.0006   -0.0346    0.0254
+ AT.  18 H  X     0.0497   -0.0339   -0.0338   -0.0048   -0.0093    0.0195
+            Y     0.0020    0.0060    0.0483   -0.0281   -0.0272   -0.0475
+            Z     0.0201   -0.0257   -0.0109    0.0006    0.0346    0.0254
+ AT.  19 H  X    -0.0497    0.0339   -0.0338    0.0048    0.0093    0.0195
+            Y     0.0020    0.0060   -0.0483   -0.0281   -0.0272    0.0475
+            Z    -0.0201    0.0257   -0.0109   -0.0006   -0.0346    0.0254
+ AT.  20 H  X    -0.0497   -0.0339   -0.0338   -0.0048    0.0093   -0.0195
+            Y     0.0020   -0.0060   -0.0483    0.0281   -0.0272   -0.0475
+            Z     0.0201    0.0257    0.0109   -0.0006    0.0346    0.0254
+ AT.  21 H  X     0.0505    0.0311   -0.0127    0.0048   -0.0114   -0.0006
+            Y    -0.0003   -0.0065    0.0209    0.0437   -0.0437    0.0284
+            Z    -0.0190   -0.0500    0.0108    0.0107   -0.0193    0.0178
+ AT.  22 H  X     0.0505   -0.0311   -0.0127   -0.0048   -0.0114    0.0006
+            Y    -0.0003    0.0065    0.0209   -0.0437   -0.0437   -0.0284
+            Z     0.0190   -0.0500   -0.0108    0.0107    0.0193    0.0178
+ AT.  23 H  X    -0.0505    0.0311   -0.0127    0.0048    0.0114    0.0006
+            Y    -0.0003    0.0065   -0.0209   -0.0437   -0.0437    0.0284
+            Z    -0.0190    0.0500   -0.0108   -0.0107   -0.0193    0.0178
+ AT.  24 H  X    -0.0505   -0.0311   -0.0127   -0.0048    0.0114   -0.0006
+            Y    -0.0003   -0.0065   -0.0209    0.0437   -0.0437   -0.0284
+            Z     0.0190    0.0500    0.0108   -0.0107    0.0193    0.0178
+
+ FREQ(CM**-1)    482.07    488.30    490.12    491.65    494.48    555.15
+
+ AT.   1 O  X     0.0022    0.0041    0.0039   -0.0023   -0.0026    0.0022
+            Y     0.0045    0.0027   -0.0011    0.0008    0.0002   -0.0055
+            Z     0.0014    0.0004    0.0024   -0.0035   -0.0016    0.0002
+ AT.   2 O  X     0.0022   -0.0041    0.0039    0.0023   -0.0026    0.0022
+            Y     0.0045   -0.0027   -0.0011   -0.0008    0.0002   -0.0055
+            Z    -0.0014    0.0004   -0.0024   -0.0035    0.0016   -0.0002
+ AT.   3 O  X    -0.0022    0.0041    0.0039    0.0023    0.0026    0.0022
+            Y     0.0045   -0.0027    0.0011    0.0008    0.0002    0.0055
+            Z     0.0014   -0.0004   -0.0024   -0.0035   -0.0016   -0.0002
+ AT.   4 O  X    -0.0022   -0.0041    0.0039   -0.0023    0.0026    0.0022
+            Y     0.0045    0.0027    0.0011   -0.0008    0.0002    0.0055
+            Z    -0.0014   -0.0004    0.0024   -0.0035    0.0016    0.0002
+ AT.   5 O  X    -0.0004   -0.0049   -0.0030    0.0015    0.0033   -0.0015
+            Y    -0.0045   -0.0014   -0.0009   -0.0022   -0.0006   -0.0065
+            Z     0.0015   -0.0005   -0.0035    0.0042    0.0028   -0.0027
+ AT.   6 O  X    -0.0004    0.0049   -0.0030   -0.0015    0.0033   -0.0015
+            Y    -0.0045    0.0014   -0.0009    0.0022   -0.0006   -0.0065
+            Z    -0.0015   -0.0005    0.0035    0.0042   -0.0028    0.0027
+ AT.   7 O  X     0.0004   -0.0049   -0.0030   -0.0015   -0.0033   -0.0015
+            Y    -0.0045    0.0014    0.0009   -0.0022   -0.0006    0.0065
+            Z     0.0015    0.0005    0.0035    0.0042    0.0028    0.0027
+ AT.   8 O  X     0.0004    0.0049   -0.0030    0.0015   -0.0033   -0.0015
+            Y    -0.0045   -0.0014    0.0009    0.0022   -0.0006    0.0065
+            Z    -0.0015    0.0005   -0.0035    0.0042   -0.0028   -0.0027
+ AT.   9 H  X     0.0597    0.0844   -0.0235   -0.0233   -0.0629    0.0726
+            Y     0.0017    0.0500    0.0136   -0.0521   -0.0625    0.0498
+            Z    -0.0701    0.0016    0.0634   -0.0878   -0.0598    0.0335
+ AT.  10 H  X     0.0597   -0.0844   -0.0235    0.0233   -0.0629    0.0726
+            Y     0.0017   -0.0500    0.0136    0.0521   -0.0625    0.0498
+            Z     0.0701    0.0016   -0.0634   -0.0878    0.0598   -0.0335
+ AT.  11 H  X    -0.0597    0.0844   -0.0235    0.0233    0.0629    0.0726
+            Y     0.0017   -0.0500   -0.0136   -0.0521   -0.0625   -0.0498
+            Z    -0.0701   -0.0016   -0.0634   -0.0878   -0.0598   -0.0335
+ AT.  12 H  X    -0.0597   -0.0844   -0.0235   -0.0233    0.0629    0.0726
+            Y     0.0017    0.0500   -0.0136    0.0521   -0.0625   -0.0498
+            Z     0.0701   -0.0016    0.0634   -0.0878    0.0598    0.0335
+ AT.  13 H  X     0.0225    0.0029    0.0988    0.0117    0.0022   -0.0316
+            Y     0.0733    0.0022    0.0250    0.1013    0.0725    0.0588
+            Z     0.0001    0.0007    0.0030    0.0024    0.0015    0.0015
+ AT.  14 H  X     0.0225   -0.0029    0.0988   -0.0117    0.0022   -0.0316
+            Y     0.0733   -0.0022    0.0250   -0.1013    0.0725    0.0588
+            Z    -0.0001    0.0007   -0.0030    0.0024   -0.0015   -0.0015
+ AT.  15 H  X    -0.0225    0.0029    0.0988   -0.0117   -0.0022   -0.0316
+            Y     0.0733   -0.0022   -0.0250    0.1013    0.0725   -0.0588
+            Z     0.0001   -0.0007   -0.0030    0.0024    0.0015   -0.0015
+ AT.  16 H  X    -0.0225   -0.0029    0.0988    0.0117   -0.0022   -0.0316
+            Y     0.0733    0.0022   -0.0250   -0.1013    0.0725   -0.0588
+            Z    -0.0001   -0.0007    0.0030    0.0024   -0.0015    0.0015
+ AT.  17 H  X    -0.0061   -0.0005   -0.0306    0.0011   -0.0015    0.0110
+            Y    -0.0872   -0.1005   -0.0227    0.0033    0.0528   -0.0623
+            Z    -0.0200   -0.0095   -0.0951    0.0063    0.0003    0.0277
+ AT.  18 H  X    -0.0061    0.0005   -0.0306   -0.0011   -0.0015    0.0110
+            Y    -0.0872    0.1005   -0.0227   -0.0033    0.0528   -0.0623
+            Z     0.0200   -0.0095    0.0951    0.0063   -0.0003   -0.0277
+ AT.  19 H  X     0.0061   -0.0005   -0.0306   -0.0011    0.0015    0.0110
+            Y    -0.0872    0.1005    0.0227    0.0033    0.0528    0.0623
+            Z    -0.0200    0.0095    0.0951    0.0063    0.0003   -0.0277
+ AT.  20 H  X     0.0061    0.0005   -0.0306    0.0011    0.0015    0.0110
+            Y    -0.0872   -0.1005    0.0227   -0.0033    0.0528    0.0623
+            Z     0.0200    0.0095   -0.0951    0.0063   -0.0003    0.0277
+ AT.  21 H  X    -0.0609   -0.0880   -0.0524    0.0302    0.0640   -0.0582
+            Y     0.0122    0.0510    0.0147   -0.0491   -0.0595    0.0484
+            Z     0.0659    0.0059    0.0391    0.0730    0.0536   -0.0491
+ AT.  22 H  X    -0.0609    0.0880   -0.0524   -0.0302    0.0640   -0.0582
+            Y     0.0122   -0.0510    0.0147    0.0491   -0.0595    0.0484
+            Z    -0.0659    0.0059   -0.0391    0.0730   -0.0536    0.0491
+ AT.  23 H  X     0.0609   -0.0880   -0.0524   -0.0302   -0.0640   -0.0582
+            Y     0.0122   -0.0510   -0.0147   -0.0491   -0.0595   -0.0484
+            Z     0.0659   -0.0059   -0.0391    0.0730    0.0536    0.0491
+ AT.  24 H  X     0.0609    0.0880   -0.0524    0.0302   -0.0640   -0.0582
+            Y     0.0122    0.0510   -0.0147    0.0491   -0.0595   -0.0484
+            Z    -0.0659   -0.0059    0.0391    0.0730   -0.0536   -0.0491
+
+ FREQ(CM**-1)    578.63    578.86    580.24    614.98    618.61    623.46
+
+ AT.   1 O  X    -0.0006   -0.0048    0.0008    0.0026   -0.0110    0.0020
+            Y    -0.0010   -0.0030    0.0122    0.0093   -0.0035    0.0033
+            Z     0.0118    0.0011   -0.0004   -0.0034   -0.0031   -0.0055
+ AT.   2 O  X    -0.0006    0.0048   -0.0008    0.0026    0.0110   -0.0020
+            Y    -0.0010    0.0030   -0.0122    0.0093    0.0035   -0.0033
+            Z    -0.0118    0.0011   -0.0004    0.0034   -0.0031   -0.0055
+ AT.   3 O  X     0.0006    0.0048    0.0008    0.0026    0.0110    0.0020
+            Y    -0.0010   -0.0030   -0.0122   -0.0093   -0.0035   -0.0033
+            Z     0.0118    0.0011    0.0004    0.0034   -0.0031    0.0055
+ AT.   4 O  X     0.0006   -0.0048   -0.0008    0.0026   -0.0110   -0.0020
+            Y    -0.0010    0.0030    0.0122   -0.0093    0.0035    0.0033
+            Z    -0.0118    0.0011    0.0004   -0.0034   -0.0031    0.0055
+ AT.   5 O  X     0.0109    0.0015    0.0004   -0.0027   -0.0065   -0.0057
+            Y     0.0006    0.0122   -0.0036   -0.0094   -0.0016    0.0021
+            Z    -0.0047   -0.0008    0.0079    0.0050    0.0025   -0.0087
+ AT.   6 O  X     0.0109   -0.0015   -0.0004   -0.0027    0.0065    0.0057
+            Y     0.0006   -0.0122    0.0036   -0.0094    0.0016   -0.0021
+            Z     0.0047   -0.0008    0.0079   -0.0050    0.0025   -0.0087
+ AT.   7 O  X    -0.0109   -0.0015    0.0004   -0.0027    0.0065   -0.0057
+            Y     0.0006    0.0122    0.0036    0.0094   -0.0016   -0.0021
+            Z    -0.0047   -0.0008   -0.0079   -0.0050    0.0025    0.0087
+ AT.   8 O  X    -0.0109    0.0015   -0.0004   -0.0027   -0.0065    0.0057
+            Y     0.0006   -0.0122   -0.0036    0.0094    0.0016    0.0021
+            Z     0.0047   -0.0008   -0.0079    0.0050    0.0025    0.0087
+ AT.   9 H  X    -0.0020   -0.0655    0.0117    0.0420    0.0609   -0.0484
+            Y    -0.0096   -0.0166   -0.0374   -0.0129    0.0197   -0.0074
+            Z    -0.0141    0.0219   -0.0943   -0.0674   -0.0396    0.0267
+ AT.  10 H  X    -0.0020    0.0655   -0.0117    0.0420   -0.0609    0.0484
+            Y    -0.0096    0.0166    0.0374   -0.0129   -0.0197    0.0074
+            Z     0.0141    0.0219   -0.0943    0.0674   -0.0396    0.0267
+ AT.  11 H  X     0.0020    0.0655    0.0117    0.0420   -0.0609   -0.0484
+            Y    -0.0096   -0.0166    0.0374    0.0129    0.0197    0.0074
+            Z    -0.0141    0.0219    0.0943    0.0674   -0.0396   -0.0267
+ AT.  12 H  X     0.0020   -0.0655   -0.0117    0.0420    0.0609    0.0484
+            Y    -0.0096    0.0166   -0.0374    0.0129   -0.0197   -0.0074
+            Z     0.0141    0.0219    0.0943   -0.0674   -0.0396   -0.0267
+ AT.  13 H  X     0.1001   -0.0046   -0.0254    0.0047    0.0455    0.0986
+            Y    -0.0359   -0.0227   -0.0942   -0.0748    0.0106   -0.0116
+            Z    -0.0047   -0.0012   -0.0064   -0.0038    0.0021    0.0096
+ AT.  14 H  X     0.1001    0.0046    0.0254    0.0047   -0.0455   -0.0986
+            Y    -0.0359    0.0227    0.0942   -0.0748   -0.0106    0.0116
+            Z     0.0047   -0.0012   -0.0064    0.0038    0.0021    0.0096
+ AT.  15 H  X    -0.1001    0.0046   -0.0254    0.0047   -0.0455    0.0986
+            Y    -0.0359   -0.0227    0.0942    0.0748    0.0106    0.0116
+            Z    -0.0047   -0.0012    0.0064    0.0038    0.0021   -0.0096
+ AT.  16 H  X    -0.1001   -0.0046    0.0254    0.0047    0.0455   -0.0986
+            Y    -0.0359    0.0227   -0.0942    0.0748   -0.0106   -0.0116
+            Z     0.0047   -0.0012    0.0064   -0.0038    0.0021   -0.0096
+ AT.  17 H  X    -0.0371    0.0001    0.0010    0.0021    0.0252   -0.0166
+            Y     0.0394    0.0953   -0.0184   -0.0659    0.0013   -0.0141
+            Z    -0.0937    0.0126   -0.0008   -0.0049    0.1007   -0.0570
+ AT.  18 H  X    -0.0371   -0.0001   -0.0010    0.0021   -0.0252    0.0166
+            Y     0.0394   -0.0953    0.0184   -0.0659   -0.0013    0.0141
+            Z     0.0937    0.0126   -0.0008    0.0049    0.1007   -0.0570
+ AT.  19 H  X     0.0371   -0.0001    0.0010    0.0021   -0.0252   -0.0166
+            Y     0.0394    0.0953    0.0184    0.0659    0.0013    0.0141
+            Z    -0.0937    0.0126    0.0008    0.0049    0.1007    0.0570
+ AT.  20 H  X     0.0371    0.0001   -0.0010    0.0021    0.0252    0.0166
+            Y     0.0394   -0.0953   -0.0184    0.0659   -0.0013   -0.0141
+            Z     0.0937    0.0126    0.0008   -0.0049    0.1007    0.0570
+ AT.  21 H  X    -0.0124    0.0831    0.0047   -0.0480    0.0231   -0.0242
+            Y     0.0095   -0.0364   -0.0146    0.0110    0.0003   -0.0143
+            Z     0.0005   -0.0358    0.0583    0.0601   -0.0588    0.0717
+ AT.  22 H  X    -0.0124   -0.0831   -0.0047   -0.0480   -0.0231    0.0242
+            Y     0.0095    0.0364    0.0146    0.0110   -0.0003    0.0143
+            Z    -0.0005   -0.0358    0.0583   -0.0601   -0.0588    0.0717
+ AT.  23 H  X     0.0124   -0.0831    0.0047   -0.0480   -0.0231   -0.0242
+            Y     0.0095   -0.0364    0.0146   -0.0110    0.0003    0.0143
+            Z     0.0005   -0.0358   -0.0583   -0.0601   -0.0588   -0.0717
+ AT.  24 H  X     0.0124    0.0831   -0.0047   -0.0480    0.0231    0.0242
+            Y     0.0095    0.0364   -0.0146   -0.0110   -0.0003   -0.0143
+            Z    -0.0005   -0.0358   -0.0583    0.0601   -0.0588   -0.0717
+
+ FREQ(CM**-1)    681.89    682.62    689.85    713.83    724.20    744.62
+
+ AT.   1 O  X    -0.0022    0.0061    0.0043    0.0009   -0.0068   -0.0040
+            Y    -0.0009   -0.0062    0.0087   -0.0115   -0.0063   -0.0029
+            Z     0.0052    0.0126   -0.0069    0.0076    0.0069    0.0054
+ AT.   2 O  X     0.0022   -0.0061    0.0043   -0.0009   -0.0068    0.0040
+            Y     0.0009    0.0062    0.0087    0.0115   -0.0063    0.0029
+            Z     0.0052    0.0126    0.0069    0.0076   -0.0069    0.0054
+ AT.   3 O  X     0.0022    0.0061    0.0043   -0.0009    0.0068   -0.0040
+            Y    -0.0009    0.0062   -0.0087   -0.0115   -0.0063    0.0029
+            Z     0.0052   -0.0126    0.0069    0.0076    0.0069   -0.0054
+ AT.   4 O  X    -0.0022   -0.0061    0.0043    0.0009    0.0068    0.0040
+            Y     0.0009   -0.0062   -0.0087    0.0115   -0.0063   -0.0029
+            Z     0.0052   -0.0126   -0.0069    0.0076   -0.0069   -0.0054
+ AT.   5 O  X     0.0128    0.0009    0.0094   -0.0074   -0.0047   -0.0082
+            Y     0.0036   -0.0020    0.0067   -0.0039   -0.0060   -0.0114
+            Z     0.0042   -0.0028   -0.0042    0.0056    0.0089    0.0030
+ AT.   6 O  X    -0.0128   -0.0009    0.0094    0.0074   -0.0047    0.0082
+            Y    -0.0036    0.0020    0.0067    0.0039   -0.0060    0.0114
+            Z     0.0042   -0.0028    0.0042    0.0056   -0.0089    0.0030
+ AT.   7 O  X    -0.0128    0.0009    0.0094    0.0074    0.0047   -0.0082
+            Y     0.0036    0.0020   -0.0067   -0.0039   -0.0060    0.0114
+            Z     0.0042    0.0028    0.0042    0.0056    0.0089   -0.0030
+ AT.   8 O  X     0.0128   -0.0009    0.0094   -0.0074    0.0047    0.0082
+            Y    -0.0036   -0.0020   -0.0067    0.0039   -0.0060   -0.0114
+            Z     0.0042    0.0028   -0.0042    0.0056   -0.0089   -0.0030
+ AT.   9 H  X     0.0052    0.0171   -0.0681    0.0688    0.0634    0.0241
+            Y    -0.0126    0.0019   -0.0297    0.0295    0.0090    0.0042
+            Z    -0.0258   -0.0169    0.0120   -0.0181   -0.0496   -0.0047
+ AT.  10 H  X    -0.0052   -0.0171   -0.0681   -0.0688    0.0634   -0.0241
+            Y     0.0126   -0.0019   -0.0297   -0.0295    0.0090   -0.0042
+            Z    -0.0258   -0.0169   -0.0120   -0.0181    0.0496   -0.0047
+ AT.  11 H  X    -0.0052    0.0171   -0.0681   -0.0688   -0.0634    0.0241
+            Y    -0.0126   -0.0019    0.0297    0.0295    0.0090   -0.0042
+            Z    -0.0258    0.0169   -0.0120   -0.0181   -0.0496    0.0047
+ AT.  12 H  X     0.0052   -0.0171   -0.0681    0.0688   -0.0634   -0.0241
+            Y     0.0126    0.0019    0.0297   -0.0295    0.0090    0.0042
+            Z    -0.0258    0.0169    0.0120   -0.0181    0.0496    0.0047
+ AT.  13 H  X     0.1209   -0.0425   -0.0469   -0.0329    0.0257    0.0736
+            Y    -0.0298    0.0042    0.0576    0.0446    0.0381   -0.0681
+            Z     0.0048    0.0026    0.0033    0.0044    0.0085   -0.0020
+ AT.  14 H  X    -0.1209    0.0425   -0.0469    0.0329    0.0257   -0.0736
+            Y     0.0298   -0.0042    0.0576   -0.0446    0.0381    0.0681
+            Z     0.0048    0.0026   -0.0033    0.0044   -0.0085   -0.0020
+ AT.  15 H  X    -0.1209   -0.0425   -0.0469    0.0329   -0.0257    0.0736
+            Y    -0.0298   -0.0042   -0.0576    0.0446    0.0381    0.0681
+            Z     0.0048   -0.0026   -0.0033    0.0044    0.0085    0.0020
+ AT.  16 H  X     0.1209    0.0425   -0.0469   -0.0329   -0.0257   -0.0736
+            Y     0.0298    0.0042   -0.0576   -0.0446    0.0381   -0.0681
+            Z     0.0048   -0.0026    0.0033    0.0044   -0.0085    0.0020
+ AT.  17 H  X    -0.0220   -0.0378    0.0139   -0.0233    0.0016   -0.0036
+            Y     0.0207    0.0470   -0.0641    0.0656    0.0389    0.0360
+            Z    -0.0504   -0.1153    0.0213   -0.0624    0.0304    0.0052
+ AT.  18 H  X     0.0220    0.0378    0.0139    0.0233    0.0016    0.0036
+            Y    -0.0207   -0.0470   -0.0641   -0.0656    0.0389   -0.0360
+            Z    -0.0504   -0.1153   -0.0213   -0.0624   -0.0304    0.0052
+ AT.  19 H  X     0.0220   -0.0378    0.0139    0.0233   -0.0016   -0.0036
+            Y     0.0207   -0.0470    0.0641    0.0656    0.0389   -0.0360
+            Z    -0.0504    0.1153   -0.0213   -0.0624    0.0304   -0.0052
+ AT.  20 H  X    -0.0220    0.0378    0.0139   -0.0233   -0.0016    0.0036
+            Y    -0.0207    0.0470    0.0641   -0.0656    0.0389    0.0360
+            Z    -0.0504    0.1153    0.0213   -0.0624   -0.0304   -0.0052
+ AT.  21 H  X    -0.0144   -0.0155   -0.0074    0.0010    0.0249   -0.0018
+            Y     0.0080    0.0159   -0.0116    0.0038    0.0118    0.0272
+            Z    -0.0031   -0.0095    0.0567   -0.0289   -0.0809   -0.0724
+ AT.  22 H  X     0.0144    0.0155   -0.0074   -0.0010    0.0249    0.0018
+            Y    -0.0080   -0.0159   -0.0116   -0.0038    0.0118   -0.0272
+            Z    -0.0031   -0.0095   -0.0567   -0.0289    0.0809   -0.0724
+ AT.  23 H  X     0.0144   -0.0155   -0.0074   -0.0010   -0.0249   -0.0018
+            Y     0.0080   -0.0159    0.0116    0.0038    0.0118   -0.0272
+            Z    -0.0031    0.0095   -0.0567   -0.0289   -0.0809    0.0724
+ AT.  24 H  X    -0.0144    0.0155   -0.0074    0.0010   -0.0249    0.0018
+            Y    -0.0080    0.0159    0.0116   -0.0038    0.0118    0.0272
+            Z    -0.0031    0.0095    0.0567   -0.0289    0.0809    0.0724
+
+ FREQ(CM**-1)    793.76    798.19    804.41    808.80    823.81    836.07
+
+ AT.   1 O  X    -0.0075   -0.0044   -0.0047    0.0060   -0.0055   -0.0065
+            Y     0.0050   -0.0005    0.0025   -0.0064    0.0007   -0.0007
+            Z    -0.0075   -0.0065   -0.0072    0.0062   -0.0043   -0.0039
+ AT.   2 O  X    -0.0075   -0.0044    0.0047    0.0060   -0.0055    0.0065
+            Y     0.0050   -0.0005   -0.0025   -0.0064    0.0007    0.0007
+            Z     0.0075    0.0065   -0.0072   -0.0062    0.0043   -0.0039
+ AT.   3 O  X    -0.0075   -0.0044    0.0047   -0.0060    0.0055   -0.0065
+            Y    -0.0050    0.0005    0.0025   -0.0064    0.0007    0.0007
+            Z     0.0075    0.0065   -0.0072    0.0062   -0.0043    0.0039
+ AT.   4 O  X    -0.0075   -0.0044   -0.0047   -0.0060    0.0055    0.0065
+            Y    -0.0050    0.0005   -0.0025   -0.0064    0.0007   -0.0007
+            Z    -0.0075   -0.0065   -0.0072   -0.0062    0.0043    0.0039
+ AT.   5 O  X    -0.0076   -0.0061   -0.0041   -0.0076   -0.0073   -0.0095
+            Y    -0.0028    0.0030    0.0016   -0.0066   -0.0016   -0.0028
+            Z    -0.0051   -0.0031   -0.0055   -0.0031   -0.0040   -0.0016
+ AT.   6 O  X    -0.0076   -0.0061    0.0041   -0.0076   -0.0073    0.0095
+            Y    -0.0028    0.0030   -0.0016   -0.0066   -0.0016    0.0028
+            Z     0.0051    0.0031   -0.0055    0.0031    0.0040   -0.0016
+ AT.   7 O  X    -0.0076   -0.0061    0.0041    0.0076    0.0073   -0.0095
+            Y     0.0028   -0.0030    0.0016   -0.0066   -0.0016    0.0028
+            Z     0.0051    0.0031   -0.0055   -0.0031   -0.0040    0.0016
+ AT.   8 O  X    -0.0076   -0.0061   -0.0041    0.0076    0.0073    0.0095
+            Y     0.0028   -0.0030   -0.0016   -0.0066   -0.0016   -0.0028
+            Z    -0.0051   -0.0031   -0.0055    0.0031    0.0040    0.0016
+ AT.   9 H  X    -0.0095    0.0645    0.0534    0.0089    0.0712    0.0793
+            Y     0.0086    0.0476    0.0467    0.0094    0.0517    0.0514
+            Z     0.0245    0.0078    0.0259    0.0114    0.0171    0.0056
+ AT.  10 H  X    -0.0095    0.0645   -0.0534    0.0089    0.0712   -0.0793
+            Y     0.0086    0.0476   -0.0467    0.0094    0.0517   -0.0514
+            Z    -0.0245   -0.0078    0.0259   -0.0114   -0.0171    0.0056
+ AT.  11 H  X    -0.0095    0.0645   -0.0534   -0.0089   -0.0712    0.0793
+            Y    -0.0086   -0.0476    0.0467    0.0094    0.0517   -0.0514
+            Z    -0.0245   -0.0078    0.0259    0.0114    0.0171   -0.0056
+ AT.  12 H  X    -0.0095    0.0645    0.0534   -0.0089   -0.0712   -0.0793
+            Y    -0.0086   -0.0476   -0.0467    0.0094    0.0517    0.0514
+            Z     0.0245    0.0078    0.0259   -0.0114   -0.0171   -0.0056
+ AT.  13 H  X     0.0817   -0.0096    0.0132   -0.0802    0.0014    0.0127
+            Y    -0.0129    0.0336   -0.0362    0.0411   -0.0209    0.0090
+            Z     0.0055    0.0030   -0.0052   -0.0037   -0.0036    0.0022
+ AT.  14 H  X     0.0817   -0.0096   -0.0132   -0.0802    0.0014   -0.0127
+            Y    -0.0129    0.0336    0.0362    0.0411   -0.0209   -0.0090
+            Z    -0.0055   -0.0030   -0.0052    0.0037    0.0036    0.0022
+ AT.  15 H  X     0.0817   -0.0096   -0.0132    0.0802   -0.0014    0.0127
+            Y     0.0129   -0.0336   -0.0362    0.0411   -0.0209   -0.0090
+            Z    -0.0055   -0.0030   -0.0052   -0.0037   -0.0036   -0.0022
+ AT.  16 H  X     0.0817   -0.0096    0.0132    0.0802   -0.0014   -0.0127
+            Y     0.0129   -0.0336    0.0362    0.0411   -0.0209    0.0090
+            Z     0.0055    0.0030   -0.0052    0.0037    0.0036   -0.0022
+ AT.  17 H  X     0.0252   -0.0037   -0.0020   -0.0216   -0.0056   -0.0047
+            Y    -0.0310    0.0183    0.0108    0.0384    0.0285    0.0360
+            Z     0.0843   -0.0041    0.0007   -0.0753   -0.0051    0.0020
+ AT.  18 H  X     0.0252   -0.0037    0.0020   -0.0216   -0.0056    0.0047
+            Y    -0.0310    0.0183   -0.0108    0.0384    0.0285   -0.0360
+            Z    -0.0843    0.0041    0.0007    0.0753    0.0051    0.0020
+ AT.  19 H  X     0.0252   -0.0037    0.0020    0.0216    0.0056   -0.0047
+            Y     0.0310   -0.0183    0.0108    0.0384    0.0285   -0.0360
+            Z    -0.0843    0.0041    0.0007   -0.0753   -0.0051   -0.0020
+ AT.  20 H  X     0.0252   -0.0037   -0.0020    0.0216    0.0056    0.0047
+            Y     0.0310   -0.0183   -0.0108    0.0384    0.0285    0.0360
+            Z     0.0843   -0.0041    0.0007    0.0753    0.0051   -0.0020
+ AT.  21 H  X     0.0220    0.0321    0.0312   -0.0179    0.0405    0.0412
+            Y    -0.0137   -0.0552   -0.0539    0.0144   -0.0518   -0.0489
+            Z    -0.0039    0.0750    0.0796   -0.0103    0.0591    0.0446
+ AT.  22 H  X     0.0220    0.0321   -0.0312   -0.0179    0.0405   -0.0412
+            Y    -0.0137   -0.0552    0.0539    0.0144   -0.0518    0.0489
+            Z     0.0039   -0.0750    0.0796    0.0103   -0.0591    0.0446
+ AT.  23 H  X     0.0220    0.0321   -0.0312    0.0179   -0.0405    0.0412
+            Y     0.0137    0.0552   -0.0539    0.0144   -0.0518    0.0489
+            Z     0.0039   -0.0750    0.0796   -0.0103    0.0591   -0.0446
+ AT.  24 H  X     0.0220    0.0321    0.0312    0.0179   -0.0405   -0.0412
+            Y     0.0137    0.0552    0.0539    0.0144   -0.0518   -0.0489
+            Z    -0.0039    0.0750    0.0796    0.0103   -0.0591   -0.0446
+
+ FREQ(CM**-1)   1211.00   1218.12   1223.88   1224.94   1229.98   1237.44
+
+ AT.   1 O  X    -0.0040   -0.0029   -0.0042   -0.0042   -0.0029   -0.0035
+            Y     0.0077    0.0063    0.0056    0.0044    0.0064    0.0075
+            Z     0.0065    0.0056    0.0065    0.0055    0.0035    0.0044
+ AT.   2 O  X     0.0040   -0.0029   -0.0042    0.0042   -0.0029    0.0035
+            Y    -0.0077    0.0063    0.0056   -0.0044    0.0064   -0.0075
+            Z     0.0065   -0.0056   -0.0065    0.0055   -0.0035    0.0044
+ AT.   3 O  X     0.0040    0.0029   -0.0042   -0.0042   -0.0029   -0.0035
+            Y     0.0077    0.0063   -0.0056   -0.0044   -0.0064   -0.0075
+            Z     0.0065    0.0056   -0.0065   -0.0055   -0.0035   -0.0044
+ AT.   4 O  X    -0.0040    0.0029   -0.0042    0.0042   -0.0029    0.0035
+            Y    -0.0077    0.0063   -0.0056    0.0044   -0.0064    0.0075
+            Z     0.0065   -0.0056    0.0065   -0.0055    0.0035   -0.0044
+ AT.   5 O  X    -0.0037   -0.0046   -0.0040   -0.0048    0.0030    0.0022
+            Y     0.0040    0.0073    0.0047    0.0071   -0.0075   -0.0046
+            Z     0.0048    0.0047    0.0059    0.0058   -0.0047   -0.0044
+ AT.   6 O  X     0.0037   -0.0046   -0.0040    0.0048    0.0030   -0.0022
+            Y    -0.0040    0.0073    0.0047   -0.0071   -0.0075    0.0046
+            Z     0.0048   -0.0047   -0.0059    0.0058    0.0047   -0.0044
+ AT.   7 O  X     0.0037    0.0046   -0.0040   -0.0048    0.0030    0.0022
+            Y     0.0040    0.0073   -0.0047   -0.0071    0.0075    0.0046
+            Z     0.0048    0.0047   -0.0059   -0.0058    0.0047    0.0044
+ AT.   8 O  X    -0.0037    0.0046   -0.0040    0.0048    0.0030   -0.0022
+            Y    -0.0040    0.0073   -0.0047    0.0071    0.0075   -0.0046
+            Z     0.0048   -0.0047    0.0059   -0.0058   -0.0047    0.0044
+ AT.   9 H  X     0.0108    0.0036    0.0109    0.0054   -0.0006   -0.0066
+            Y    -0.0060   -0.0106   -0.0087   -0.0114    0.0156    0.0126
+            Z    -0.0402   -0.0503   -0.0464   -0.0534    0.0537    0.0464
+ AT.  10 H  X    -0.0108    0.0036    0.0109   -0.0054   -0.0006    0.0066
+            Y     0.0060   -0.0106   -0.0087    0.0114    0.0156   -0.0126
+            Z    -0.0402    0.0503    0.0464   -0.0534   -0.0537    0.0464
+ AT.  11 H  X    -0.0108   -0.0036    0.0109    0.0054   -0.0006   -0.0066
+            Y    -0.0060   -0.0106    0.0087    0.0114   -0.0156   -0.0126
+            Z    -0.0402   -0.0503    0.0464    0.0534   -0.0537   -0.0464
+ AT.  12 H  X     0.0108   -0.0036    0.0109   -0.0054   -0.0006    0.0066
+            Y     0.0060   -0.0106    0.0087   -0.0114   -0.0156    0.0126
+            Z    -0.0402    0.0503   -0.0464    0.0534    0.0537   -0.0464
+ AT.  13 H  X    -0.0204   -0.0348    0.0223    0.0351   -0.0314   -0.0201
+            Y    -0.0343   -0.0479    0.0388    0.0487   -0.0487   -0.0380
+            Z     0.0054    0.0046   -0.0054   -0.0046    0.0043    0.0051
+ AT.  14 H  X     0.0204   -0.0348    0.0223   -0.0351   -0.0314    0.0201
+            Y     0.0343   -0.0479    0.0388   -0.0487   -0.0487    0.0380
+            Z     0.0054   -0.0046    0.0054   -0.0046   -0.0043    0.0051
+ AT.  15 H  X     0.0204    0.0348    0.0223    0.0351   -0.0314   -0.0201
+            Y    -0.0343   -0.0479   -0.0388   -0.0487    0.0487    0.0380
+            Z     0.0054    0.0046    0.0054    0.0046   -0.0043   -0.0051
+ AT.  16 H  X    -0.0204    0.0348    0.0223   -0.0351   -0.0314    0.0201
+            Y     0.0343   -0.0479   -0.0388    0.0487    0.0487   -0.0380
+            Z     0.0054   -0.0046   -0.0054    0.0046    0.0043   -0.0051
+ AT.  17 H  X    -0.0165   -0.0132   -0.0158   -0.0116   -0.0111   -0.0133
+            Y    -0.0528   -0.0405   -0.0469   -0.0368   -0.0399   -0.0517
+            Z    -0.0316   -0.0293   -0.0274   -0.0193   -0.0246   -0.0250
+ AT.  18 H  X     0.0165   -0.0132   -0.0158    0.0116   -0.0111    0.0133
+            Y     0.0528   -0.0405   -0.0469    0.0368   -0.0399    0.0517
+            Z    -0.0316    0.0293    0.0274   -0.0193    0.0246   -0.0250
+ AT.  19 H  X     0.0165    0.0132   -0.0158   -0.0116   -0.0111   -0.0133
+            Y    -0.0528   -0.0405    0.0469    0.0368    0.0399    0.0517
+            Z    -0.0316   -0.0293    0.0274    0.0193    0.0246    0.0250
+ AT.  20 H  X    -0.0165    0.0132   -0.0158    0.0116   -0.0111    0.0133
+            Y     0.0528   -0.0405    0.0469   -0.0368    0.0399   -0.0517
+            Z    -0.0316    0.0293   -0.0274    0.0193   -0.0246    0.0250
+ AT.  21 H  X     0.0532    0.0408    0.0480    0.0390    0.0423    0.0521
+            Y    -0.0126   -0.0092   -0.0089   -0.0073   -0.0136   -0.0155
+            Z    -0.0234   -0.0164   -0.0305   -0.0272   -0.0134   -0.0193
+ AT.  22 H  X    -0.0532    0.0408    0.0480   -0.0390    0.0423   -0.0521
+            Y     0.0126   -0.0092   -0.0089    0.0073   -0.0136    0.0155
+            Z    -0.0234    0.0164    0.0305   -0.0272    0.0134   -0.0193
+ AT.  23 H  X    -0.0532   -0.0408    0.0480    0.0390    0.0423    0.0521
+            Y    -0.0126   -0.0092    0.0089    0.0073    0.0136    0.0155
+            Z    -0.0234   -0.0164    0.0305    0.0272    0.0134    0.0193
+ AT.  24 H  X     0.0532   -0.0408    0.0480   -0.0390    0.0423   -0.0521
+            Y     0.0126   -0.0092    0.0089   -0.0073    0.0136   -0.0155
+            Z    -0.0234    0.0164   -0.0305    0.0272   -0.0134    0.0193
+
+ FREQ(CM**-1)   1241.55   1250.67   2269.90   2288.82   2297.34   2308.94
+
+ AT.   1 O  X    -0.0034   -0.0039    0.0011   -0.0015   -0.0006    0.0022
+            Y     0.0038    0.0058   -0.0046   -0.0059    0.0041    0.0051
+            Z     0.0032    0.0043   -0.0031   -0.0031    0.0032    0.0028
+ AT.   2 O  X     0.0034   -0.0039   -0.0011   -0.0015   -0.0006   -0.0022
+            Y    -0.0038    0.0058    0.0046   -0.0059    0.0041   -0.0051
+            Z     0.0032   -0.0043   -0.0031    0.0031   -0.0032    0.0028
+ AT.   3 O  X     0.0034    0.0039   -0.0011    0.0015   -0.0006    0.0022
+            Y     0.0038    0.0058   -0.0046   -0.0059   -0.0041   -0.0051
+            Z     0.0032    0.0043   -0.0031   -0.0031   -0.0032   -0.0028
+ AT.   4 O  X    -0.0034    0.0039    0.0011    0.0015   -0.0006   -0.0022
+            Y    -0.0038    0.0058    0.0046   -0.0059   -0.0041    0.0051
+            Z     0.0032   -0.0043   -0.0031    0.0031    0.0032   -0.0028
+ AT.   5 O  X     0.0032    0.0023    0.0023    0.0024   -0.0033   -0.0033
+            Y    -0.0080   -0.0050   -0.0040   -0.0034    0.0058    0.0054
+            Z    -0.0052   -0.0047   -0.0034   -0.0031    0.0002    0.0009
+ AT.   6 O  X    -0.0032    0.0023   -0.0023    0.0024   -0.0033    0.0033
+            Y     0.0080   -0.0050    0.0040   -0.0034    0.0058   -0.0054
+            Z    -0.0052    0.0047   -0.0034    0.0031   -0.0002    0.0009
+ AT.   7 O  X    -0.0032   -0.0023   -0.0023   -0.0024   -0.0033   -0.0033
+            Y    -0.0080   -0.0050   -0.0040   -0.0034   -0.0058   -0.0054
+            Z    -0.0052   -0.0047   -0.0034   -0.0031   -0.0002   -0.0009
+ AT.   8 O  X     0.0032   -0.0023    0.0023   -0.0024   -0.0033    0.0033
+            Y     0.0080   -0.0050    0.0040   -0.0034   -0.0058    0.0054
+            Z    -0.0052    0.0047   -0.0034    0.0031    0.0002   -0.0009
+ AT.   9 H  X    -0.0033   -0.0079   -0.0180   -0.0160    0.0250    0.0237
+            Y     0.0153    0.0121    0.0321    0.0289   -0.0445   -0.0424
+            Z     0.0574    0.0478   -0.0132   -0.0120    0.0181    0.0175
+ AT.  10 H  X     0.0033   -0.0079    0.0180   -0.0160    0.0250   -0.0237
+            Y    -0.0153    0.0121   -0.0321    0.0289   -0.0445    0.0424
+            Z     0.0574   -0.0478   -0.0132    0.0120   -0.0181    0.0175
+ AT.  11 H  X     0.0033    0.0079    0.0180    0.0160    0.0250    0.0237
+            Y     0.0153    0.0121    0.0321    0.0289    0.0445    0.0424
+            Z     0.0574    0.0478   -0.0132   -0.0120   -0.0181   -0.0175
+ AT.  12 H  X    -0.0033    0.0079   -0.0180    0.0160    0.0250   -0.0237
+            Y    -0.0153    0.0121   -0.0321    0.0289    0.0445   -0.0424
+            Z     0.0574   -0.0478   -0.0132    0.0120    0.0181   -0.0175
+ AT.  13 H  X     0.0293    0.0188   -0.0001   -0.0003   -0.0005   -0.0007
+            Y     0.0561    0.0436    0.0002    0.0001   -0.0001   -0.0001
+            Z    -0.0042   -0.0041    0.0396    0.0358    0.0218    0.0258
+ AT.  14 H  X    -0.0293    0.0188    0.0001   -0.0003   -0.0005    0.0007
+            Y    -0.0561    0.0436   -0.0002    0.0001   -0.0001    0.0001
+            Z    -0.0042    0.0041    0.0396   -0.0358   -0.0218    0.0258
+ AT.  15 H  X    -0.0293   -0.0188    0.0001    0.0003   -0.0005   -0.0007
+            Y     0.0561    0.0436    0.0002    0.0001    0.0001    0.0001
+            Z    -0.0042   -0.0041    0.0396    0.0358   -0.0218   -0.0258
+ AT.  16 H  X     0.0293   -0.0188   -0.0001    0.0003   -0.0005    0.0007
+            Y    -0.0561    0.0436   -0.0002    0.0001    0.0001   -0.0001
+            Z    -0.0042    0.0041    0.0396   -0.0358    0.0218   -0.0258
+ AT.  17 H  X    -0.0089   -0.0120   -0.0305   -0.0172    0.0266    0.0094
+            Y    -0.0335   -0.0490    0.0001   -0.0004    0.0001    0.0005
+            Z    -0.0157   -0.0207    0.0104    0.0058   -0.0087   -0.0029
+ AT.  18 H  X     0.0089   -0.0120    0.0305   -0.0172    0.0266   -0.0094
+            Y     0.0335   -0.0490   -0.0001   -0.0004    0.0001   -0.0005
+            Z    -0.0157    0.0207    0.0104   -0.0058    0.0087   -0.0029
+ AT.  19 H  X     0.0089    0.0120    0.0305    0.0172    0.0266    0.0094
+            Y    -0.0335   -0.0490    0.0001   -0.0004   -0.0001   -0.0005
+            Z    -0.0157   -0.0207    0.0104    0.0058    0.0087    0.0029
+ AT.  20 H  X    -0.0089    0.0120   -0.0305    0.0172    0.0266   -0.0094
+            Y     0.0335   -0.0490   -0.0001   -0.0004   -0.0001    0.0005
+            Z    -0.0157    0.0207    0.0104   -0.0058   -0.0087    0.0029
+ AT.  21 H  X     0.0367    0.0489    0.0204    0.0257   -0.0195   -0.0228
+            Y    -0.0100   -0.0128    0.0360    0.0456   -0.0342   -0.0404
+            Z    -0.0223   -0.0265    0.0148    0.0188   -0.0138   -0.0164
+ AT.  22 H  X    -0.0367    0.0489   -0.0204    0.0257   -0.0195    0.0228
+            Y     0.0100   -0.0128   -0.0360    0.0456   -0.0342    0.0404
+            Z    -0.0223    0.0265    0.0148   -0.0188    0.0138   -0.0164
+ AT.  23 H  X    -0.0367   -0.0489   -0.0204   -0.0257   -0.0195   -0.0228
+            Y    -0.0100   -0.0128    0.0360    0.0456    0.0342    0.0404
+            Z    -0.0223   -0.0265    0.0148    0.0188    0.0138    0.0164
+ AT.  24 H  X     0.0367   -0.0489    0.0204   -0.0257   -0.0195    0.0228
+            Y     0.0100   -0.0128   -0.0360    0.0456    0.0342   -0.0404
+            Z    -0.0223    0.0265    0.0148   -0.0188   -0.0138    0.0164
+
+ FREQ(CM**-1)   2328.51   2405.44   2405.69   2407.50   2412.26   2433.03
+
+ AT.   1 O  X    -0.0042   -0.0001    0.0008    0.0068   -0.0087   -0.0031
+            Y     0.0030    0.0002    0.0001    0.0063   -0.0061    0.0034
+            Z     0.0029   -0.0007    0.0007    0.0014   -0.0006    0.0031
+ AT.   2 O  X     0.0042   -0.0001   -0.0008    0.0068    0.0087   -0.0031
+            Y    -0.0030    0.0002   -0.0001    0.0063    0.0061    0.0034
+            Z     0.0029    0.0007    0.0007   -0.0014   -0.0006   -0.0031
+ AT.   3 O  X    -0.0042    0.0001   -0.0008    0.0068    0.0087    0.0031
+            Y    -0.0030    0.0002    0.0001   -0.0063   -0.0061    0.0034
+            Z    -0.0029   -0.0007    0.0007   -0.0014   -0.0006    0.0031
+ AT.   4 O  X     0.0042    0.0001    0.0008    0.0068   -0.0087    0.0031
+            Y     0.0030    0.0002   -0.0001   -0.0063    0.0061    0.0034
+            Z    -0.0029    0.0007    0.0007    0.0014   -0.0006   -0.0031
+ AT.   5 O  X     0.0002    0.0031   -0.0032    0.0007   -0.0005    0.0022
+            Y    -0.0012   -0.0055    0.0055   -0.0024    0.0022   -0.0040
+            Z    -0.0062    0.0093   -0.0092   -0.0030    0.0006   -0.0027
+ AT.   6 O  X    -0.0002    0.0031    0.0032    0.0007    0.0005    0.0022
+            Y     0.0012   -0.0055   -0.0055   -0.0024   -0.0022   -0.0040
+            Z    -0.0062   -0.0093   -0.0092    0.0030    0.0006    0.0027
+ AT.   7 O  X     0.0002   -0.0031    0.0032    0.0007    0.0005   -0.0022
+            Y     0.0012   -0.0055    0.0055    0.0024    0.0022   -0.0040
+            Z     0.0062    0.0093   -0.0092    0.0030    0.0006   -0.0027
+ AT.   8 O  X    -0.0002   -0.0031   -0.0032    0.0007   -0.0005   -0.0022
+            Y    -0.0012   -0.0055   -0.0055    0.0024   -0.0022   -0.0040
+            Z     0.0062   -0.0093   -0.0092   -0.0030    0.0006    0.0027
+ AT.   9 H  X    -0.0056   -0.0232    0.0231   -0.0098    0.0088   -0.0182
+            Y     0.0093    0.0411   -0.0410    0.0167   -0.0148    0.0316
+            Z    -0.0043   -0.0160    0.0160   -0.0075    0.0064   -0.0133
+ AT.  10 H  X     0.0056   -0.0232   -0.0231   -0.0098   -0.0088   -0.0182
+            Y    -0.0093    0.0411    0.0410    0.0167    0.0148    0.0316
+            Z    -0.0043    0.0160    0.0160    0.0075    0.0064    0.0133
+ AT.  11 H  X    -0.0056    0.0232   -0.0231   -0.0098   -0.0088    0.0182
+            Y    -0.0093    0.0411   -0.0410   -0.0167   -0.0148    0.0316
+            Z     0.0043   -0.0160    0.0160    0.0075    0.0064   -0.0133
+ AT.  12 H  X     0.0056    0.0232    0.0231   -0.0098    0.0088    0.0182
+            Y     0.0093    0.0411    0.0410   -0.0167    0.0148    0.0316
+            Z     0.0043    0.0160    0.0160   -0.0075    0.0064    0.0133
+ AT.  13 H  X    -0.0001   -0.0001    0.0002    0.0001    0.0003   -0.0002
+            Y    -0.0002   -0.0010    0.0010    0.0002    0.0004   -0.0002
+            Z    -0.0505   -0.0522    0.0521   -0.0308   -0.0112    0.0351
+ AT.  14 H  X     0.0001   -0.0001   -0.0002    0.0001   -0.0003   -0.0002
+            Y     0.0002   -0.0010   -0.0010    0.0002   -0.0004   -0.0002
+            Z    -0.0505    0.0522    0.0521    0.0308   -0.0112   -0.0351
+ AT.  15 H  X    -0.0001    0.0001   -0.0002    0.0001   -0.0003    0.0002
+            Y     0.0002   -0.0010    0.0010   -0.0002    0.0004   -0.0002
+            Z     0.0505   -0.0522    0.0521    0.0308   -0.0112    0.0351
+ AT.  16 H  X     0.0001    0.0001    0.0002    0.0001    0.0003    0.0002
+            Y    -0.0002   -0.0010   -0.0010   -0.0002   -0.0004   -0.0002
+            Z     0.0505    0.0522    0.0521   -0.0308   -0.0112   -0.0351
+ AT.  17 H  X     0.0452   -0.0014   -0.0020   -0.0237    0.0392    0.0404
+            Y    -0.0001    0.0002    0.0001    0.0010   -0.0009    0.0006
+            Z    -0.0157    0.0005    0.0011    0.0082   -0.0139   -0.0133
+ AT.  18 H  X    -0.0452   -0.0014    0.0020   -0.0237   -0.0392    0.0404
+            Y     0.0001    0.0002   -0.0001    0.0010    0.0009    0.0006
+            Z    -0.0157   -0.0005    0.0011   -0.0082   -0.0139    0.0133
+ AT.  19 H  X     0.0452    0.0014    0.0020   -0.0237   -0.0392   -0.0404
+            Y     0.0001    0.0002    0.0001   -0.0010   -0.0009    0.0006
+            Z     0.0157    0.0005    0.0011   -0.0082   -0.0139   -0.0133
+ AT.  20 H  X    -0.0452    0.0014   -0.0020   -0.0237    0.0392   -0.0404
+            Y    -0.0001    0.0002   -0.0001   -0.0010    0.0009    0.0006
+            Z     0.0157   -0.0005    0.0011    0.0082   -0.0139    0.0133
+ AT.  21 H  X    -0.0138    0.0007   -0.0019   -0.0266    0.0253   -0.0163
+            Y    -0.0236    0.0017   -0.0038   -0.0476    0.0454   -0.0271
+            Z    -0.0097    0.0003   -0.0011   -0.0200    0.0189   -0.0110
+ AT.  22 H  X     0.0138    0.0007    0.0019   -0.0266   -0.0253   -0.0163
+            Y     0.0236    0.0017    0.0038   -0.0476   -0.0454   -0.0271
+            Z    -0.0097   -0.0003   -0.0011    0.0200    0.0189    0.0110
+ AT.  23 H  X    -0.0138   -0.0007    0.0019   -0.0266   -0.0253    0.0163
+            Y     0.0236    0.0017   -0.0038    0.0476    0.0454   -0.0271
+            Z     0.0097    0.0003   -0.0011    0.0200    0.0189   -0.0110
+ AT.  24 H  X     0.0138   -0.0007   -0.0019   -0.0266    0.0253    0.0163
+            Y    -0.0236    0.0017    0.0038    0.0476   -0.0454   -0.0271
+            Z     0.0097   -0.0003   -0.0011   -0.0200    0.0189    0.0110
+
+ FREQ(CM**-1)   2433.57   2464.87   2502.31   2508.79   2511.69   2516.99
+
+ AT.   1 O  X    -0.0069   -0.0048   -0.0018   -0.0024   -0.0085   -0.0090
+            Y    -0.0004    0.0022   -0.0038    0.0021   -0.0032   -0.0039
+            Z     0.0022    0.0031   -0.0018    0.0022    0.0009    0.0008
+ AT.   2 O  X    -0.0069    0.0048    0.0018   -0.0024    0.0085   -0.0090
+            Y    -0.0004   -0.0022    0.0038    0.0021    0.0032   -0.0039
+            Z    -0.0022    0.0031   -0.0018   -0.0022    0.0009   -0.0008
+ AT.   3 O  X    -0.0069    0.0048   -0.0018   -0.0024   -0.0085    0.0090
+            Y     0.0004    0.0022    0.0038   -0.0021    0.0032   -0.0039
+            Z    -0.0022    0.0031    0.0018   -0.0022   -0.0009    0.0008
+ AT.   4 O  X    -0.0069   -0.0048    0.0018   -0.0024    0.0085    0.0090
+            Y     0.0004   -0.0022   -0.0038   -0.0021   -0.0032   -0.0039
+            Z     0.0022    0.0031    0.0018    0.0022   -0.0009   -0.0008
+ AT.   5 O  X     0.0007    0.0021   -0.0033    0.0027   -0.0003   -0.0010
+            Y    -0.0008   -0.0034    0.0054   -0.0047    0.0005    0.0018
+            Z    -0.0057   -0.0027   -0.0065    0.0075    0.0042    0.0014
+ AT.   6 O  X     0.0007   -0.0021    0.0033    0.0027    0.0003   -0.0010
+            Y    -0.0008    0.0034   -0.0054   -0.0047   -0.0005    0.0018
+            Z     0.0057   -0.0027   -0.0065   -0.0075    0.0042   -0.0014
+ AT.   7 O  X     0.0007   -0.0021   -0.0033    0.0027   -0.0003    0.0010
+            Y     0.0008   -0.0034   -0.0054    0.0047   -0.0005    0.0018
+            Z     0.0057   -0.0027    0.0065   -0.0075   -0.0042    0.0014
+ AT.   8 O  X     0.0007    0.0021    0.0033    0.0027    0.0003    0.0010
+            Y     0.0008    0.0034    0.0054    0.0047    0.0005    0.0018
+            Z    -0.0057   -0.0027    0.0065    0.0075   -0.0042   -0.0014
+ AT.   9 H  X    -0.0042   -0.0158    0.0245   -0.0212    0.0023    0.0079
+            Y     0.0078    0.0282   -0.0422    0.0374   -0.0036   -0.0135
+            Z    -0.0042   -0.0121    0.0169   -0.0151    0.0024    0.0062
+ AT.  10 H  X    -0.0042    0.0158   -0.0245   -0.0212   -0.0023    0.0079
+            Y     0.0078   -0.0282    0.0422    0.0374    0.0036   -0.0135
+            Z     0.0042   -0.0121    0.0169    0.0151    0.0024   -0.0062
+ AT.  11 H  X    -0.0042    0.0158    0.0245   -0.0212    0.0023   -0.0079
+            Y    -0.0078    0.0282    0.0422   -0.0374    0.0036   -0.0135
+            Z     0.0042   -0.0121   -0.0169    0.0151   -0.0024    0.0062
+ AT.  12 H  X    -0.0042   -0.0158   -0.0245   -0.0212   -0.0023   -0.0079
+            Y    -0.0078   -0.0282   -0.0422   -0.0374   -0.0036   -0.0135
+            Z    -0.0042   -0.0121   -0.0169   -0.0151   -0.0024   -0.0062
+ AT.  13 H  X     0.0005   -0.0006    0.0003    0.0001   -0.0002    0.0008
+            Y     0.0001   -0.0003   -0.0010    0.0010   -0.0000    0.0005
+            Z    -0.0472    0.0336   -0.0332    0.0420    0.0343   -0.0164
+ AT.  14 H  X     0.0005    0.0006   -0.0003    0.0001    0.0002    0.0008
+            Y     0.0001    0.0003    0.0010    0.0010    0.0000    0.0005
+            Z     0.0472    0.0336   -0.0332   -0.0420    0.0343    0.0164
+ AT.  15 H  X     0.0005    0.0006    0.0003    0.0001   -0.0002   -0.0008
+            Y    -0.0001   -0.0003    0.0010   -0.0010    0.0000    0.0005
+            Z     0.0472    0.0336    0.0332   -0.0420   -0.0343   -0.0164
+ AT.  16 H  X     0.0005   -0.0006   -0.0003    0.0001    0.0002   -0.0008
+            Y    -0.0001    0.0003   -0.0010   -0.0010   -0.0000    0.0005
+            Z    -0.0472    0.0336    0.0332    0.0420   -0.0343    0.0164
+ AT.  17 H  X     0.0528    0.0493   -0.0041    0.0284    0.0522    0.0537
+            Y     0.0001    0.0007   -0.0008    0.0006   -0.0001   -0.0003
+            Z    -0.0185   -0.0167    0.0009   -0.0099   -0.0179   -0.0185
+ AT.  18 H  X     0.0528   -0.0493    0.0041    0.0284   -0.0522    0.0537
+            Y     0.0001   -0.0007    0.0008    0.0006    0.0001   -0.0003
+            Z     0.0185   -0.0167    0.0009    0.0099   -0.0179    0.0185
+ AT.  19 H  X     0.0528   -0.0493   -0.0041    0.0284    0.0522   -0.0537
+            Y    -0.0001    0.0007    0.0008   -0.0006    0.0001   -0.0003
+            Z     0.0185   -0.0167   -0.0009    0.0099    0.0179   -0.0185
+ AT.  20 H  X     0.0528    0.0493    0.0041    0.0284   -0.0522   -0.0537
+            Y    -0.0001   -0.0007   -0.0008   -0.0006   -0.0001   -0.0003
+            Z    -0.0185   -0.0167   -0.0009   -0.0099    0.0179    0.0185
+ AT.  21 H  X    -0.0002   -0.0116    0.0179   -0.0100    0.0133    0.0165
+            Y     0.0007   -0.0189    0.0298   -0.0163    0.0247    0.0301
+            Z     0.0003   -0.0075    0.0124   -0.0070    0.0106    0.0127
+ AT.  22 H  X    -0.0002    0.0116   -0.0179   -0.0100   -0.0133    0.0165
+            Y     0.0007    0.0189   -0.0298   -0.0163   -0.0247    0.0301
+            Z    -0.0003   -0.0075    0.0124    0.0070    0.0106   -0.0127
+ AT.  23 H  X    -0.0002    0.0116    0.0179   -0.0100    0.0133   -0.0165
+            Y    -0.0007   -0.0189   -0.0298    0.0163   -0.0247    0.0301
+            Z    -0.0003   -0.0075   -0.0124    0.0070   -0.0106    0.0127
+ AT.  24 H  X    -0.0002   -0.0116   -0.0179   -0.0100   -0.0133   -0.0165
+            Y    -0.0007    0.0189    0.0298    0.0163    0.0247    0.0301
+            Z     0.0003   -0.0075   -0.0124   -0.0070   -0.0106   -0.0127
+
+ *******************************************************************************
+
+ VIBRATIONAL TEMPERATURES (K) [MODE NUMBER;IRREP]
+
+ TO MODES
+   104.3 [   4;A1 ]   107.5 [   5;A2 ]   111.0 [   6;A1 ]   135.3 [   7;B1 ]
+   170.9 [   8;B2 ]   204.2 [   9;A2 ]   209.6 [  10;A2 ]   216.3 [  11;B1 ]
+   263.0 [  12;B2 ]   273.9 [  13;A2 ]   304.4 [  14;B1 ]   304.6 [  15;A1 ]
+   315.8 [  16;B2 ]   316.4 [  17;A1 ]   328.9 [  18;B2 ]   344.0 [  19;B1 ]
+   396.4 [  20;A2 ]   430.1 [  21;B2 ]   437.3 [  22;A2 ]   469.1 [  23;B1 ]
+   472.5 [  24;A1 ]   693.6 [  25;B1 ]   702.5 [  26;A2 ]   705.2 [  27;B2 ]
+   707.4 [  28;A1 ]   711.4 [  29;B1 ]   798.7 [  30;B2 ]   832.5 [  31;B1 ]
+   832.8 [  32;A1 ]   834.8 [  33;A2 ]   884.8 [  34;B2 ]   890.0 [  35;A1 ]
+   897.0 [  36;A2 ]   981.1 [  37;A1 ]   982.1 [  38;A2 ]   992.5 [  39;B2 ]
+  1027.0 [  40;A1 ]  1042.0 [  41;B1 ]  1071.3 [  42;A2 ]  1142.0 [  43;B2 ]
+  1148.4 [  44;B2 ]  1157.4 [  45;A1 ]  1163.7 [  46;B1 ]  1185.3 [  47;B1 ]
+  1202.9 [  48;A2 ]  1742.4 [  49;A1 ]  1752.6 [  50;B1 ]  1760.9 [  51;B2 ]
+  1762.4 [  52;A2 ]  1769.7 [  53;B2 ]  1780.4 [  54;A2 ]  1786.3 [  55;A1 ]
+  1799.4 [  56;B1 ]  3265.9 [  57;A1 ]  3293.1 [  58;B1 ]  3305.4 [  59;B2 ]
+  3322.0 [  60;A2 ]  3350.2 [  61;A2 ]  3460.9 [  62;B1 ]  3461.2 [  63;A1 ]
+  3463.9 [  64;B2 ]  3470.7 [  65;A1 ]  3500.6 [  66;B1 ]  3501.4 [  67;B2 ]
+  3546.4 [  68;A1 ]  3600.3 [  69;A2 ]  3609.6 [  70;B2 ]  3613.8 [  71;A2 ]
+  3621.4 [  72;B1 ]
+
+ *******************************************************************************
+
+ HARMONIC VIBRATIONAL CONTRIBUTIONS TO THERMODYNAMIC FUNCTIONS AT GIVEN
+ TEMPERATURE AND PRESSURE:
+
+ (EL = ELECTRONIC ENERGY
+  E0 = ZERO-POINT ENERGY
+  ET = THERMAL CONTRIBUTION TO THE VIBRATIONAL ENERGY
+  PV = PRESSURE * VOLUME
+  TS = TEMPERATURE * ENTROPY)
+
+                          AU/CELL             EV/CELL                 KJ/MOL
+ EL            :    -609.754872816488  -16592.273624227695    -1600911.19297039
+ E0            :       0.155241918693       4.224347369318         407.58760009
+
+
+ *******************************************************************************
+
+ THERMODYNAMIC FUNCTIONS WITH VIBRATIONAL CONTRIBUTIONS
+
+ AT (T =  298.15 K, P =   0.10132500E+00 MPA):
+
+                          AU/CELL             EV/CELL                 KJ/MOL
+ ET            :       0.015689751124       0.426939833290          41.19343577
+ PV            :       0.000005963048       0.000162262790           0.01565598
+ TS            :       0.028526130230       0.776235466615          74.89534436
+ ET+PV-TS      :      -0.012830416058      -0.349133370535         -33.68625261
+ EL+E0+ET+PV-TS:    -609.612461313853  -16588.398410228914    -1600537.29162291
+
+ OTHER THERMODYNAMIC FUNCTIONS:
+
+                      mHARTREE/(CELL*K)     mEV/(CELL*K)              J/(MOL*K)
+ ENTROPY       :       0.095677109610       2.603506512207         251.20021588
+ HEAT CAPACITY :       0.099301717461       2.702137106114         260.71662245
+
+ *******************************************************************************
+ TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT END         TELAPSE    27046.70 TCPU    27046.32
+ MMMMM END         USED MEM(MB)    115.87 MAX MEM    122.19 TOT MEM      2315.28
+ EEEEEEEEEE TERMINATION  DATE 20 11 2026 TIME 17:53:49.5
+NODE    0 CPU TIME =     27046.317
+NODE    1 CPU TIME =     27046.303
+NODE    2 CPU TIME =     27046.309
+NODE    3 CPU TIME =     27046.314
+NODE    4 CPU TIME =     27046.314
+NODE    5 CPU TIME =     27046.304
+NODE    6 CPU TIME =     27046.321
+NODE    7 CPU TIME =     27046.299
+NODE    8 CPU TIME =     27046.309
+NODE    9 CPU TIME =     27046.290
+NODE   10 CPU TIME =     27046.300
+NODE   11 CPU TIME =     27046.310
+NODE   12 CPU TIME =     27046.309
+NODE   13 CPU TIME =     27046.307
+NODE   14 CPU TIME =     27046.305
+NODE   15 CPU TIME =     27046.295
+NODE   16 CPU TIME =     27046.316
+NODE   17 CPU TIME =     27046.305
+NODE   18 CPU TIME =     27046.296
+NODE   19 CPU TIME =     27046.302
+    TOTAL CPU TIME =    540926.125
+Fri Nov 20 17:53:49 CET 2026
+Contents of temporary directory in master node rune05:
+total 221936
+-rw-r--r-- 1 lme users     3600 Nov 20 17:53 BORN.DAT
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 dffit3.dat
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err1.pe15
+-rw-r--r-- 1 lme users   230464 Nov 20 10:26 diis_err1.pe16
+-rw-r--r-- 1 lme users   230464 Nov 20 10:26 diis_err1.pe17
+-rw-r--r-- 1 lme users   230464 Nov 20 10:26 diis_err1.pe18
+-rw-r--r-- 1 lme users  2764848 Nov 20 17:43 diis_err1.pe19
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_err2.pe15
+-rw-r--r-- 1 lme users   201656 Nov 20 10:26 diis_err2.pe16
+-rw-r--r-- 1 lme users   201656 Nov 20 10:26 diis_err2.pe17
+-rw-r--r-- 1 lme users   201656 Nov 20 10:26 diis_err2.pe18
+-rw-r--r-- 1 lme users  2304040 Nov 20 17:41 diis_err2.pe19
+-rw-r--r-- 1 lme users  4964120 Nov 20 17:43 diis_Fg
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 diis_Sk.pe19
+-rw-r--r-- 1 lme users   921608 Nov 20 17:53 fort.10.pe00
+-rw-r--r-- 1 lme users   921608 Nov 20 17:53 fort.10.pe01
+-rw-r--r-- 1 lme users   921608 Nov 20 17:53 fort.10.pe02
+-rw-r--r-- 1 lme users   921608 Nov 20 17:53 fort.10.pe03
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe04
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe05
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe06
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe07
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe08
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe09
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe10
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe11
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe12
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe13
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe14
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe15
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe16
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe17
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:53 fort.10.pe18
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:53 fort.10.pe19
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe00
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe01
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe02
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe03
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe04
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe05
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe06
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe07
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe08
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe09
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe10
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe11
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe12
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe13
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe14
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe15
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe16
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe17
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe18
+-rw-r--r-- 1 lme users   709160 Nov 20 17:43 fort.11.pe19
+-rw-r--r-- 1 lme users    26920 Nov 20 17:31 fort.12
+-rw-r--r-- 1 lme users  3443336 Nov 20 10:29 fort.13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.17.pe19
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.18.pe19
+-rw-r--r-- 1 lme users     3840 Nov 20 17:53 fort.19.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.19.pe19
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.1.pe19
+-rw-r--r-- 1 lme users  1191508 Nov 20 10:29 fort.20
+-rw-r--r-- 1 lme users     1352 Nov 20 10:29 fort.28
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.28.pe19
+-rw-r--r-- 1 lme users     1352 Nov 20 17:53 fort.29
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.29.pe19
+-rw-r--r-- 1 lme users     2818 Nov 20 10:23 fort.34
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.38.pe19
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe00
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe01
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe02
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe03
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe04
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe05
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe06
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe07
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe08
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe09
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe10
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe11
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe12
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe13
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe14
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe15
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe16
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe17
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe18
+-rw-r--r-- 1 lme users   704744 Nov 20 17:31 fort.3.pe19
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.40.pe19
+-rw-r--r-- 1 lme users    16288 Nov 20 17:53 fort.61.pe00
+-rw-r--r-- 1 lme users    11248 Nov 20 17:53 fort.61.pe01
+-rw-r--r-- 1 lme users    24928 Nov 20 17:53 fort.61.pe02
+-rw-r--r-- 1 lme users    17184 Nov 20 17:53 fort.61.pe03
+-rw-r--r-- 1 lme users    16288 Nov 20 17:53 fort.61.pe04
+-rw-r--r-- 1 lme users    14016 Nov 20 17:53 fort.61.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.61.pe06
+-rw-r--r-- 1 lme users    14016 Nov 20 17:53 fort.61.pe07
+-rw-r--r-- 1 lme users    16288 Nov 20 17:53 fort.61.pe08
+-rw-r--r-- 1 lme users    17184 Nov 20 17:53 fort.61.pe09
+-rw-r--r-- 1 lme users    24928 Nov 20 17:53 fort.61.pe10
+-rw-r--r-- 1 lme users    11248 Nov 20 17:53 fort.61.pe11
+-rw-r--r-- 1 lme users    16288 Nov 20 17:53 fort.61.pe12
+-rw-r--r-- 1 lme users    22496 Nov 20 17:53 fort.61.pe13
+-rw-r--r-- 1 lme users    32576 Nov 20 17:53 fort.61.pe14
+-rw-r--r-- 1 lme users    18352 Nov 20 17:53 fort.61.pe15
+-rw-r--r-- 1 lme users    32576 Nov 20 17:53 fort.61.pe16
+-rw-r--r-- 1 lme users    18352 Nov 20 17:53 fort.61.pe17
+-rw-r--r-- 1 lme users    32576 Nov 20 17:53 fort.61.pe18
+-rw-r--r-- 1 lme users    23440 Nov 20 17:53 fort.61.pe19
+-rw-r--r-- 1 lme users    22016 Nov 20 17:53 fort.62.pe00
+-rw-r--r-- 1 lme users     7360 Nov 20 17:53 fort.62.pe01
+-rw-r--r-- 1 lme users    14720 Nov 20 17:53 fort.62.pe02
+-rw-r--r-- 1 lme users    14720 Nov 20 17:53 fort.62.pe03
+-rw-r--r-- 1 lme users    12288 Nov 20 17:53 fort.62.pe04
+-rw-r--r-- 1 lme users     9856 Nov 20 17:53 fort.62.pe05
+-rw-r--r-- 1 lme users    12288 Nov 20 17:53 fort.62.pe06
+-rw-r--r-- 1 lme users    22016 Nov 20 17:53 fort.62.pe07
+-rw-r--r-- 1 lme users    17152 Nov 20 17:53 fort.62.pe08
+-rw-r--r-- 1 lme users    22016 Nov 20 17:53 fort.62.pe09
+-rw-r--r-- 1 lme users     7360 Nov 20 17:53 fort.62.pe10
+-rw-r--r-- 1 lme users    14720 Nov 20 17:53 fort.62.pe11
+-rw-r--r-- 1 lme users    22016 Nov 20 17:53 fort.62.pe12
+-rw-r--r-- 1 lme users    20160 Nov 20 17:53 fort.62.pe13
+-rw-r--r-- 1 lme users    17728 Nov 20 17:53 fort.62.pe14
+-rw-r--r-- 1 lme users    22016 Nov 20 17:53 fort.62.pe15
+-rw-r--r-- 1 lme users    20160 Nov 20 17:53 fort.62.pe16
+-rw-r--r-- 1 lme users    17728 Nov 20 17:53 fort.62.pe17
+-rw-r--r-- 1 lme users    26944 Nov 20 17:53 fort.62.pe18
+-rw-r--r-- 1 lme users    12288 Nov 20 17:53 fort.62.pe19
+-rw-r--r-- 1 lme users 39321600 Nov 20 17:53 fort.70
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.82.pe19
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.83.pe19
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe00
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe01
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe02
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe03
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe04
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe05
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe06
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe07
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe08
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe09
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe10
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe11
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe12
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe13
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe14
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe15
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe16
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe17
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe18
+-rw-r--r-- 1 lme users        0 Nov 20 10:23 fort.84.pe19
+-rw-r--r-- 1 lme users    10400 Nov 20 17:53 fort.8.pe00
+-rw-r--r-- 1 lme users   921608 Nov 20 17:41 fort.8.pe01
+-rw-r--r-- 1 lme users   921608 Nov 20 17:41 fort.8.pe02
+-rw-r--r-- 1 lme users   921608 Nov 20 17:41 fort.8.pe03
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe04
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe05
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe06
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe07
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe08
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe09
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe10
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe11
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe12
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe13
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe14
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe15
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe16
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe17
+-rw-r--r-- 1 lme users  1843216 Nov 20 17:41 fort.8.pe18
+-rw-r--r-- 1 lme users  1382416 Nov 20 17:41 fort.8.pe19
+-rw-r--r-- 1 lme users  1191508 Nov 20 10:29 fort.9
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe00
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe01
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe02
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe03
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe04
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe05
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe06
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe07
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe08
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe09
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe10
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe11
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe12
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe13
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe14
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe15
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe16
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe17
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe18
+-rw-r--r-- 1 lme users  1776728 Nov 20 17:41 fort.95.pe19
+-rw-r--r-- 1 lme users  5076052 Nov 20 17:53 FREQINFO.DAT
+-rw-r--r-- 1 lme users   110160 Nov 20 17:53 HESSFREQ.DAT
+-rw-r--r-- 1 lme users      419 Nov 20 10:23 INPUT
+-rw-r--r-- 1 lme users        0 Nov 20 10:29 MULLIKEN.DAT
+-rwxr-xr-x 1 lme users 42130718 Nov 20 10:23 Pcrystal
+-rw-r--r-- 1 lme users   412559 Nov 20 17:53 SCFOUT.LOG
+wave function binary file /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.f9
+file HESSFREQ.DAT saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.hessfreq
+file SCFOUT.LOG saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.SCFLOG
+file FREQINFO.DAT saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.freqinfo
+file BORN.DAT saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.born
+file fort.13 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.f13
+file fort.28 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.f28
+file fort.20 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.f20
+geometry input file fort.34 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00118/freq/ih_c00118_d2o.gui
+removing temporary directories /scratch/lme/tmp_p10143_lme from each node
