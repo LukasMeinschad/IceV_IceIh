@@ -62,14 +62,15 @@ STRUCTURES = {
         # B. Kamb, A. Prakash, C. Knobler, Acta Cryst. 22, 706 (1967)
         cell=(9.22, 7.54, 10.35, 90.0, 109.2, 90.0),
         # 4 symmetry-independent O: O1 on 4e, O2-O4 on 8f  (28 H2O / cell).
-        # Coordinates: oxygen positions of the P1 input used in the CRYSTAL
-        # runs of this repository (Kamb cell scaled by 0.9978) symmetrised
-        # to A2/a with spglib and transformed to the A 1 2/a 1 setting.
+        # Kamb et al. (1967) oxygen positions (COD 2310425, crystal_calcs/iceV/Ice_V.cif), written as
+        # the symmetry-equivalent representatives closest to the sites used before (the GenIce
+        # P1 input symmetrised to A2/a, deviations 0.00-0.13 A), so that site order and topology
+        # numbering are unchanged.
         oxygens=[
-            (0.7500, 0.6846, 0.5000),   # O1 4e
-            (0.5987, 0.1294, 0.5072),   # O2 8f
-            (0.7318, 0.8414, 0.2440),   # O3 8f
-            (0.5368, 0.9372, 0.8404),   # O4 8f
+            (0.7500, 0.6847, 0.5000),   # O1 4e   (Kamb 0.25, -0.1847, 0)
+            (0.6007, 0.1404, 0.5146),   # O2 8f   (Kamb O4 0.3993, 0.3596, -0.0146)
+            (0.7249, 0.8475, 0.2523),   # O3 8f   (Kamb O3 0.2751, -0.3475, 0.2477)
+            (0.5371, 0.9435, 0.8456),   # O4 8f   (Kamb O2 0.4629, 0.0565, 0.1544)
         ],
         reference=("B. Kamb, A. Prakash, C. Knobler, Acta Cryst. 22, 706 (1967); "
                    "see also Lobban, Finney, Kuhs, J. Chem. Phys. 112, 7169 (2000)"),
