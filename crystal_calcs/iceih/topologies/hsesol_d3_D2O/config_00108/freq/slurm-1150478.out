@@ -11,3 +11,16 @@ copying input file on each node
 external geometry input from /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.gui
 external geometry input saved in /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o_inp.gui
 Pcrystal job running in /scratch/lme/tmp_p111889_lme on each node ...
+wave function binary file /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.f9
+ls: No match.
+ls: No match.
+ls: No match.
+file HESSFREQ.DAT saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.hessfreq
+file SCFOUT.LOG saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.SCFLOG
+file FREQINFO.DAT saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.freqinfo
+file BORN.DAT saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.born
+file fort.13 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.f13
+file fort.28 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.f28
+file fort.20 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.f20
+geometry input file fort.34 saved as /media/storage_5/lme/IceV_IceIh/crystal_calcs/iceih/topologies/hsesol_d3_D2O/config_00108/freq/ih_c00108_d2o.gui
+removing temporary directories /scratch/lme/tmp_p111889_lme from each node
