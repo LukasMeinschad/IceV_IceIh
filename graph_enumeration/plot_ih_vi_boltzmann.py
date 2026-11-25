@@ -65,9 +65,10 @@ def main():
     p.add_argument("--temp", type=float, default=108.0, help="temperature of the population column (72 or 108)")
     p.add_argument("--fwhm", type=float, default=30.0)
     p.add_argument("--nshow", type=int, default=6, help="topologies drawn individually in the bottom row")
+    p.add_argument("--full", action="store_true", help="2x2 figure with multiplicity average and topology contributions")
     p.add_argument("-o", "--out", default=None)
     a = p.parse_args()
-    out = a.out or os.path.join(a.vi, "analysis", f"ih_vs_vi_boltzmann_{a.temp:g}K.png")
+    out = a.out or os.path.join(a.vi, "analysis", f"ih_vs_vi_boltzmann_{a.temp:g}K" + ("" if a.full else "_simple") + ".png")
 
     ih = load(a.ih, a.fwhm, a.temp)
     vi = load(a.vi, a.fwhm, a.temp)
@@ -99,6 +100,9 @@ def main():
     import matplotlib.pyplot as plt
     plt.rcParams.update({"font.size": 10.5, "axes.linewidth": 1.0, "xtick.direction": "in",
                          "ytick.direction": "in", "xtick.top": True, "ytick.right": True})
+    if not a.full:
+        simple(a, plt, ih, vi, segs, bix, biy, bvx, bvy, rows, out)
+        return
     fig, ax = plt.subplots(2, 2, figsize=(16, 9.5), dpi=200, sharex=True,
                            gridspec_kw={"height_ratios": [1.25, 1], "hspace": 0.06, "wspace": 0.08})
     panels = [(ih, bix, biy, "ice Ih", "Bertie & Whalley 1964, H$_2$O ice Ih (digitised)", "#eb6834"),
@@ -161,6 +165,49 @@ def main():
                   va="top", bbox=dict(facecolor="white", edgecolor="#9a9a94", lw=0.6))
     fig.text(0.01, 0.005, "Normalised to the O-H stretch maximum after subtracting the minimum. Dotted: experimental band "
              "maxima (ice Ih from Bertie & Whalley Table I); dashed: regions marked uncertain in the paper. Ice VI: Kamb cell.", fontsize=8, color="#3d3d3a")
+    fig.savefig(out, bbox_inches="tight")
+    print("written", out)
+
+
+def simple(a, plt, ih, vi, segs, bix, biy, bvx, bvy, rows, out):
+    """two spectra panels (experiment + Boltzmann-weighted calculation) and a frequency table"""
+    fig = plt.figure(figsize=(15, 8), dpi=200)
+    gs = fig.add_gridspec(2, 2, height_ratios=[1, 0.42], hspace=0.28, wspace=0.08)
+    axs = [fig.add_subplot(gs[0, 0]), fig.add_subplot(gs[0, 1])]
+    sb = (bix >= 400) & (bix <= 4000)
+    b0, b1 = biy[sb].min(), biy[(bix >= 2900) & (bix <= 3700)].max()
+    for k, sg in enumerate(segs):
+        sx = np.array([q[0] for q in sg])
+        sy = (np.array([q[1] for q in sg]) - b0) / (b1 - b0)
+        unc = np.array([q[2] != "" for q in sg])
+        axs[0].plot(np.where(~unc, sx, np.nan), np.where(~unc, sy, np.nan), color="#c0392b", lw=1.8,
+                    label="experiment: Bertie & Whalley 1964" if k == 0 else None)
+        axs[0].plot(np.where(unc, sx, np.nan), np.where(unc, sy, np.nan), color="#c0392b", lw=1.4, ls="--")
+    axs[1].plot(bvx, norm(bvx, bvy), color="#c0392b", lw=1.8, label="experiment: Bertie, Labbé & Whalley 1968")
+    for x, d, ph in ((axs[0], ih, "ice Ih"), (axs[1], vi, "ice VI")):
+        x.plot(GRID, norm(GRID, d[3]), color="black", lw=1.6,
+               label=f"calculated: HSEsol-D3, Boltzmann {a.temp:g} K ({len(d[0])} topologies)")
+        x.set_xlim(4000, 400)
+        x.set_ylim(-0.04, 1.18)
+        x.minorticks_on()
+        x.set_xlabel(r"wavenumber (cm$^{-1}$)")
+        x.set_title(ph, fontsize=12, fontweight="bold", loc="left")
+        x.legend(loc="upper left", frameon=True, edgecolor="black", fancybox=False, fontsize=9)
+    axs[0].set_ylabel("normalised absorbance")
+    axs[1].tick_params(labelleft=False)
+    tb = fig.add_subplot(gs[1, :])
+    tb.axis("off")
+    cells = [[n, f"{ei:.0f}", f"{ci:.0f}", f"{ci - ei:+.0f}", f"{ev:.0f}", f"{cv:.0f}", f"{cv - ev:+.0f}",
+              f"{ev - ei:+.0f}", f"{cv - ci:+.0f}"] for n, ei, ci, ev, cv in rows]
+    t = tb.table(cellText=cells, colLabels=["band (cm$^{-1}$)", "Ih exp", "Ih calc", "calc − exp",
+                                            "VI exp", "VI calc", "calc − exp", "Ih→VI exp", "Ih→VI calc"],
+                 loc="center", cellLoc="center")
+    t.auto_set_font_size(False)
+    t.set_fontsize(10.5)
+    t.scale(1, 2.0)
+    fig.text(0.5, 0.03, f"harmonic, unscaled; Lorentzian FWHM {a.fwhm:g} cm$^{{-1}}$; spectra normalised to the O-H stretch "
+             "maximum; exp Ih from Bertie & Whalley Table I, exp VI from the digitised curve", ha="center",
+             fontsize=8.5, color="#3d3d3a")
     fig.savefig(out, bbox_inches="tight")
     print("written", out)
 
